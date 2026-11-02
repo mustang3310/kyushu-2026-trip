@@ -2,7 +2,7 @@
 
 自行整理的行程筆記：路線圖、每日深度導覽、自由行方案、購物與現金規劃。手冊內容以旅行社資料為準。
 
-入口：**[index.html](index.html)**（下載後用瀏覽器開啟，或在 GitHub 上逐一點選）。
+線上版：**https://kyushu-2026-trip.pages.dev/**（Cloudflare Pages，推送 main 後自動更新）。離線版：下載後用瀏覽器開啟 [index.html](index.html)。
 
 - `九州五日遊_路線圖.html`：五天 Google 地圖路線
 - `Day1_方案A/B/C_*.html`：第一天夜間三方案
