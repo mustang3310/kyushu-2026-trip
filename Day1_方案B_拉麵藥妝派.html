@@ -1,0 +1,209 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Day 1 夜訪福岡・方案 B 拉麵加藥妝派</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#F5EDDF; --card:#FFFBF4; --ink:#233A52; --ink-2:#51637A; --ink-3:#8A98AA; --line:#E2D6C2;
+  --c:#2F5D8A; --c2:#BCD3E8; --ok:#3F8F5E; --bad:#C0392B; --bad-bg:#FBE4E0; --ok-bg:#E2F1E7;
+  --display:'Zen Maru Gothic','Noto Sans TC',sans-serif; --body:'Noto Sans TC','Zen Maru Gothic',sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#17202B; --card:#1F2A37; --ink:#EEF2F6; --ink-2:#B9C4D1; --ink-3:#7F8C9C; --line:#2F3C4B; --c2:#2B3B4C; --bad-bg:#4A2622; --ok-bg:#1F3B2B; --ok:#7FD1A0; --bad:#F09A8E;
+}}
+:root[data-theme="dark"]{
+  --paper:#17202B; --card:#1F2A37; --ink:#EEF2F6; --ink-2:#B9C4D1; --ink-3:#7F8C9C; --line:#2F3C4B; --c2:#2B3B4C; --bad-bg:#4A2622; --ok-bg:#1F3B2B; --ok:#7FD1A0; --bad:#F09A8E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:15px}
+a{color:var(--c)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+header{display:grid;grid-template-columns:auto 1fr;gap:18px 22px;align-items:start;border-bottom:3px solid var(--c);padding-bottom:22px;margin-bottom:26px}
+.badge{font-family:var(--display);font-weight:900;font-size:56px;line-height:1;color:#fff;background:var(--c);width:92px;height:92px;border-radius:22px;display:grid;place-items:center}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(26px,3.4vw,38px);margin:4px 0 8px;text-wrap:balance}
+.tagline{font-size:17px;color:var(--ink-2);max-width:60ch;margin:0}
+.meta{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
+.meta div{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;padding:10px 14px}
+.meta b{display:block;font-size:11.5px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;margin-bottom:3px}
+.layout{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
+.mapbox{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.bar h2{font-family:var(--display);font-size:16px;margin:0}
+.bar a{font-size:13px;font-weight:700;text-decoration:none;background:var(--c);color:#fff;padding:7px 12px;border-radius:999px;white-space:nowrap}
+.frame{position:relative;aspect-ratio:4/3.4}
+@media (min-width:861px){.layout{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}.mapbox{position:sticky;top:16px}}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.legend{padding:12px 16px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line)}
+.legend ol{margin:6px 0 0;padding-left:20px}
+h2.sec{font-family:var(--display);font-size:20px;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+h2.sec::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--c)}
+section{margin-bottom:30px}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--c2);margin-left:50px}
+.timeline li{position:relative;padding:6px 0 14px 20px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:13px;width:12px;height:12px;border-radius:50%;background:var(--c);border:2px solid var(--paper)}
+.timeline time{position:absolute;left:-60px;top:6px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+.spot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.spot .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.spot h3{font-family:var(--display);font-size:17px;margin:0}
+.spot h3 a{color:var(--ink);text-decoration:none;border-bottom:1.5px dotted var(--c)}
+.kind{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--c);background:var(--c2);padding:3px 9px;border-radius:999px}
+.spot .addr{font-size:13px;color:var(--ink-3);margin:4px 0 8px}
+.spot p{margin:0 0 6px}
+.spot .tip{font-size:13.5px;color:var(--ink-2);background:var(--paper);border-radius:8px;padding:6px 10px;margin-top:6px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px;margin:6px 0}
+.hours b{color:var(--ink-3);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.08em;color:var(--ink-3);font-weight:700}
+td.ok{color:var(--ok);background:var(--ok-bg);font-weight:700;text-align:center}
+td.bad{color:var(--bad);background:var(--bad-bg);font-weight:700;text-align:center}
+.tbl{overflow-x:auto}
+ul.tips{margin:0;padding-left:20px}
+ul.tips li{margin-bottom:6px}
+.rain{background:var(--c2);border-radius:12px;padding:12px 16px;font-weight:500}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:16px}
+.kstore{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--k);border-radius:14px;padding:12px 14px}
+.kstore h3{font-family:var(--display);font-size:16px;margin:0;color:var(--k)}
+.kwhere{font-size:12.5px;color:var(--ink-3);margin:2px 0 8px}
+.kstore ul{list-style:none;margin:0;padding:0}
+.kstore li{padding:6px 0;border-top:1px dashed var(--line);font-size:13.5px}
+.kstore li b{display:block;color:var(--ink)}
+.kstore li span{color:var(--ink-2)}
+h3.sub{font-family:var(--display);font-size:15px;margin:14px 0 8px;color:var(--ink-2)}
+.srcs{font-size:13px;color:var(--ink-2)}
+.srcs li{margin-bottom:3px;word-break:break-all}
+.other{display:flex;gap:10px;flex-wrap:wrap}
+.other a{text-decoration:none;font-weight:700;font-size:13.5px;border:1.5px solid var(--line);padding:7px 12px;border-radius:999px;color:var(--ink)}
+footer{margin-top:30px;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:14px}
+
+/* ---- mobile ---- */
+html{-webkit-text-size-adjust:100%}
+@media (max-width:640px){
+  .wrap{padding:16px 14px 40px}
+  header{grid-template-columns:1fr;gap:10px}
+  .badge{width:64px;height:64px;font-size:36px;border-radius:16px}
+  .badge small{font-size:11px}
+  h1{font-size:24px;line-height:1.25}
+  .tagline{font-size:15px}
+  .meta{grid-template-columns:1fr;gap:8px}
+  .meta div,.weather,.marathon{padding:9px 12px;font-size:13.5px}
+  .timeline{margin-left:46px}
+  .timeline time{left:-54px;font-size:13px}
+  .timeline li{padding:4px 0 12px 16px;font-size:14px}
+  .spot{padding:14px 14px;border-radius:14px}
+  .spot h2{font-size:20px}
+  .spot h3{font-size:16px}
+  .spot-head{grid-template-columns:auto 1fr;gap:10px}
+  .spot-head .maplink{grid-column:2;justify-self:start}
+  .num{width:40px;height:40px;font-size:20px;border-radius:11px}
+  .frame{aspect-ratio:1/1}
+  .mapbox{position:static}
+  .nav{display:flex;overflow-x:auto;gap:4px;padding:8px;-webkit-overflow-scrolling:touch}
+  .nav a{grid-template-columns:1fr;min-width:150px;flex:0 0 auto;background:var(--paper);padding:8px 10px}
+  .nav .free{font-size:11px}
+  .hl,.cols,.kgrid,.souv-list{grid-template-columns:1fr}
+  table{font-size:12.5px}
+  th,td{padding:7px 8px}
+  .item{font-size:13.5px}
+  .steps{padding-left:16px}
+  .other a,.bar a{padding:9px 12px}
+  .bar{flex-wrap:wrap}
+  .bar h2{font-size:15px}
+  a,button{min-height:32px}
+  details.src ul{padding-left:14px}
+}
+</style>
+<div class="wrap">
+<header>
+  <div class="badge">B</div>
+  <div>
+    <div class="eyebrow">Day 1 · 第六梯 11/05（四） · 夜訪福岡 · 2 到 4 人小組</div>
+    <h1>方案 B：拉麵加藥妝派</h1>
+    <p class="tagline">先在大名吃一碗 24 小時不打烊的一蘭，再到唐吉訶德把藥妝與零食一次買齊。</p>
+  </div>
+  <div class="meta">
+    <div><b>適合誰</b>想吃飽、也想第一晚就把採買清單解決一半的人</div>
+    <div><b>步行距離</b>飯店 → 一蘭天神西通店 約 0.9 公里 12 分鐘；一蘭 → 唐吉訶德福岡天神本店 約 5 分鐘；回飯店約 10 分鐘</div>
+    <div><b>預算</b>拉麵每人約 ¥1,000 – 1,500，藥妝視採買而定；唐吉訶德滿 ¥5,000 可憑護照免稅</div>
+    <div><b>當晚前提</b>CI116 20:00 落地，晚餐只有機上簡餐，約 21:10 抵達渡邊通的飯店</div>
+    <div><b>交通</b>機場到飯店搭旅行社的團體遊覽車約 20 到 30 分；之後全程步行，太累或下雨可搭計程車回飯店，¥1,000 內</div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="mapbox">
+    <div class="bar"><h2>步行路線</h2><a href="https://www.google.com/maps/dir/?api=1&origin=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%A2%E3%83%B3%E3%83%86%E3%82%A8%E3%83%AB%E3%83%9E%E3%83%BC%E3%83%8A%E7%A6%8F%E5%B2%A1&destination=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%A2%E3%83%B3%E3%83%86%E3%82%A8%E3%83%AB%E3%83%9E%E3%83%BC%E3%83%8A%E7%A6%8F%E5%B2%A1&waypoints=%E4%B8%80%E8%98%AD%20%E5%A4%A9%E7%A5%9E%E8%A5%BF%E9%80%9A%E3%82%8A%E5%BA%97%7C%E3%83%89%E3%83%B3%E3%83%BB%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86%20%E7%A6%8F%E5%B2%A1%E5%A4%A9%E7%A5%9E%E6%9C%AC%E5%BA%97&travelmode=walking&hl=zh-TW" target="_blank" rel="noopener">在 Google 地圖開啟</a></div>
+    <div class="frame"><iframe src="https://www.google.com/maps?saddr=33.5852143%2C130.4050977&daddr=33.5889152,130.3961798+to:33.5863485,130.3980199+to:33.5852143,130.4050977&dirflg=w&hl=zh-TW&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    <div class="legend">從飯店出發、最後回飯店的步行路線（Google 推估）：
+      <ol><li>福岡蒙特埃馬納酒店</li><li>一蘭 天神西通店</li><li>唐吉訶德 福岡天神本店</li><li>福岡蒙特埃馬納酒店</li></ol>
+    </div>
+  </aside>
+
+  <main>
+    <section>
+      <h2 class="sec">當晚時間軸</h2>
+      <ol class="timeline"><li><time>21:10</time>抵達飯店，放行李，護照帶在身上（免稅要用）</li><li><time>21:25</time>出發：往西北走到大名的一蘭天神西通店</li><li><time>21:40</time>一蘭：食券機點餐、填口味單，4 人可以並排坐單人座</li><li><time>22:20</time>走 5 分鐘到國體道路旁的唐吉訶德福岡天神本店採買</li><li><time>23:00</time>經今泉、渡邊通走回飯店，23:20 前回房</li></ol>
+    </section>
+
+    <section>
+      <h2 class="sec">推薦地點</h2>
+      <article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E4%B8%80%E8%98%AD%20%E5%A4%A9%E7%A5%9E%E8%A5%BF%E9%80%9A%E5%BA%97" target="_blank" rel="noopener">一蘭 天神西通店（釜だれとんこつ）</a></h3><span class="kind">拉麵・首選</span></div>
+        <div class="addr">中央區大名2-1-57｜050-1808-9452</div>
+        <div class="hours"><b>營業</b><span>24 小時（2026 年 10 月 1 日起）</span><b>公休</b><span>年中無休</span></div>
+        <p>一蘭發源於福岡，這家是天神西通的旗艦店，24 小時營業，不管幾點到都吃得到。</p>
+        <div class="tip">客製口味單可選麵硬度與辣度，加麵「替玉」用桌上小盤叫。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E3%82%89%E3%83%BC%E3%82%81%E3%82%93%20ShinShin%20%E5%A4%A9%E7%A5%9E%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">博多らーめん ShinShin 天神本店</a></h3><span class="kind">拉麵・在地派</span></div>
+        <div class="addr">中央區天神3-2-19 久保田ビル1F</div>
+        <div class="hours"><b>營業</b><span>11:00 – 翌 03:00</span><b>公休</b><span>週三、每月第 3 個週二</span></div>
+        <p>福岡人的口袋名單，湯頭比一蘭清爽，晚上還有居酒屋菜單，4 人可以點小菜配啤酒。</p>
+        <div class="tip">11/05 是週四，當晚有營業。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%85%83%E7%A5%96%E9%95%B7%E6%B5%9C%E5%B1%8B" target="_blank" rel="noopener">元祖長浜屋</a></h3><span class="kind">拉麵・進階</span></div>
+        <div class="addr">中央區長浜2-5-25｜092-711-8154</div>
+        <div class="hours"><b>營業</b><span>06:00 – 翌 01:45</span><b>公休</b><span>僅年末年初休</span></div>
+        <p>昭和 27 年創業的長浜拉麵元祖，便宜、快、極細麵，是福岡最道地的一碗。</p>
+        <div class="tip">離飯店約 2 公里，4 人搭計程車約 ¥1,000 比走路划算。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%94%90%E5%90%89%E8%A8%B6%E5%BE%B7%20%E7%A6%8F%E5%B2%A1%E5%A4%A9%E7%A5%9E%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">唐吉訶德 福岡天神本店</a></h3><span class="kind">藥妝採買・首選</span></div>
+        <div class="addr">中央區今泉1-20-17｜0570-079-711</div>
+        <div class="hours"><b>營業</b><span>24 小時</span><b>公休</b><span>全年無休</span></div>
+        <p>國體道路旁的 24 小時大店，藥妝、零食、伴手禮一次買齊，離一蘭只有 5 分鐘。</p>
+        <div class="tip">免稅櫃台需出示護照；大件行李第五天還要搬，第一晚先買輕的。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%BE%E6%9C%AC%E6%B8%85%20%E5%A4%A9%E7%A5%9E%E5%9C%B0%E4%B8%8B%E8%A1%97%E5%BA%97" target="_blank" rel="noopener">松本清 天神地下街店</a></h3><span class="kind">藥妝・備案</span></div>
+        <div class="addr">天神地下街</div>
+        <div class="hours"><b>營業</b><span>09:00 – 22:30</span><b>公休</b><span>無</span></div>
+        <p>若只想買藥妝不逛唐吉訶德，地下街的松本清品項齊，但 22:30 關門，要先去。</p>
+        
+      </article>
+    </section>
+
+    <section>
+      <h2 class="sec">11/05（四）當晚營業確認</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>地點</th><th>公休日</th><th>11/05（四）</th></tr></thead>
+        <tbody><tr><td>一蘭 天神西通店（釜だれとんこつ）</td><td>年中無休</td><td class="ok">營業</td></tr><tr><td>博多らーめん ShinShin 天神本店</td><td>週三、每月第 3 個週二</td><td class="ok">營業</td></tr><tr><td>元祖長浜屋</td><td>僅年末年初休</td><td class="ok">營業</td></tr><tr><td>唐吉訶德 福岡天神本店</td><td>全年無休</td><td class="ok">營業</td></tr><tr><td>松本清 天神地下街店</td><td>無</td><td class="ok">營業</td></tr></tbody>
+      </table></div>
+      <p style="font-size:13px;color:var(--ink-3);margin:8px 0 0">依固定公休日判斷（當天是週四），不定休與臨時休店無法預先得知，出發前請再查一次 Google 地圖的營業資訊。</p>
+    </section>
+
+    
+    <section>
+      <h2 class="sec">小提醒</h2>
+      <ul class="tips"><li>一蘭與唐吉訶德都是 24 小時，這條路線最不怕飛機延誤。</li><li>一蘭是食券機，先在機器買券再入座；4 人並排坐沒問題，但不太能聊天。</li><li>唐吉訶德免稅要同一天、同一店滿 ¥5,000（未稅），4 人若湊單請同一人結帳。</li><li>想吃在地口味就改 ShinShin；想衝元祖長浜屋就搭計程車。</li></ul>
+      <p class="rain" style="margin-top:12px">下雨：路線不受影響，一蘭與唐吉訶德都在室內，只有步行段要撐傘。</p>
+    </section>
+
+    <section>
+      <h2 class="sec">其他方案</h2>
+      <div class="other"><a href="Day1_方案A_屋台派.html">方案 A：屋台派</a><a href="Day1_方案C_休息派.html">方案 C：休息派</a><a href="九州五日遊_路線圖.html">五日路線圖</a></div>
+    </section>
+  </main>
+</div>
+
+<footer>營業時間與公休日整理自各店官網與日本美食網站（2026 年 10 月查詢），完整來源列在 Day1_福岡.md。路線與步行時間為 Google 地圖推估。</footer>
+</div>

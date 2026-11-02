@@ -1,0 +1,221 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Day 1 夜訪福岡・方案 A 屋台派</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#F5EDDF; --card:#FFFBF4; --ink:#233A52; --ink-2:#51637A; --ink-3:#8A98AA; --line:#E2D6C2;
+  --c:#D9643A; --c2:#F3C9B5; --ok:#3F8F5E; --bad:#C0392B; --bad-bg:#FBE4E0; --ok-bg:#E2F1E7;
+  --display:'Zen Maru Gothic','Noto Sans TC',sans-serif; --body:'Noto Sans TC','Zen Maru Gothic',sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#17202B; --card:#1F2A37; --ink:#EEF2F6; --ink-2:#B9C4D1; --ink-3:#7F8C9C; --line:#2F3C4B; --c2:#2B3B4C; --bad-bg:#4A2622; --ok-bg:#1F3B2B; --ok:#7FD1A0; --bad:#F09A8E;
+}}
+:root[data-theme="dark"]{
+  --paper:#17202B; --card:#1F2A37; --ink:#EEF2F6; --ink-2:#B9C4D1; --ink-3:#7F8C9C; --line:#2F3C4B; --c2:#2B3B4C; --bad-bg:#4A2622; --ok-bg:#1F3B2B; --ok:#7FD1A0; --bad:#F09A8E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:15px}
+a{color:var(--c)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+header{display:grid;grid-template-columns:auto 1fr;gap:18px 22px;align-items:start;border-bottom:3px solid var(--c);padding-bottom:22px;margin-bottom:26px}
+.badge{font-family:var(--display);font-weight:900;font-size:56px;line-height:1;color:#fff;background:var(--c);width:92px;height:92px;border-radius:22px;display:grid;place-items:center}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(26px,3.4vw,38px);margin:4px 0 8px;text-wrap:balance}
+.tagline{font-size:17px;color:var(--ink-2);max-width:60ch;margin:0}
+.meta{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
+.meta div{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;padding:10px 14px}
+.meta b{display:block;font-size:11.5px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;margin-bottom:3px}
+.layout{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
+.mapbox{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.bar h2{font-family:var(--display);font-size:16px;margin:0}
+.bar a{font-size:13px;font-weight:700;text-decoration:none;background:var(--c);color:#fff;padding:7px 12px;border-radius:999px;white-space:nowrap}
+.frame{position:relative;aspect-ratio:4/3.4}
+@media (min-width:861px){.layout{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}.mapbox{position:sticky;top:16px}}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.legend{padding:12px 16px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line)}
+.legend ol{margin:6px 0 0;padding-left:20px}
+h2.sec{font-family:var(--display);font-size:20px;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+h2.sec::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--c)}
+section{margin-bottom:30px}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--c2);margin-left:50px}
+.timeline li{position:relative;padding:6px 0 14px 20px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:13px;width:12px;height:12px;border-radius:50%;background:var(--c);border:2px solid var(--paper)}
+.timeline time{position:absolute;left:-60px;top:6px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+.spot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.spot .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.spot h3{font-family:var(--display);font-size:17px;margin:0}
+.spot h3 a{color:var(--ink);text-decoration:none;border-bottom:1.5px dotted var(--c)}
+.kind{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--c);background:var(--c2);padding:3px 9px;border-radius:999px}
+.spot .addr{font-size:13px;color:var(--ink-3);margin:4px 0 8px}
+.spot p{margin:0 0 6px}
+.spot .tip{font-size:13.5px;color:var(--ink-2);background:var(--paper);border-radius:8px;padding:6px 10px;margin-top:6px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px;margin:6px 0}
+.hours b{color:var(--ink-3);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.08em;color:var(--ink-3);font-weight:700}
+td.ok{color:var(--ok);background:var(--ok-bg);font-weight:700;text-align:center}
+td.bad{color:var(--bad);background:var(--bad-bg);font-weight:700;text-align:center}
+.tbl{overflow-x:auto}
+ul.tips{margin:0;padding-left:20px}
+ul.tips li{margin-bottom:6px}
+.rain{background:var(--c2);border-radius:12px;padding:12px 16px;font-weight:500}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:16px}
+.kstore{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--k);border-radius:14px;padding:12px 14px}
+.kstore h3{font-family:var(--display);font-size:16px;margin:0;color:var(--k)}
+.kwhere{font-size:12.5px;color:var(--ink-3);margin:2px 0 8px}
+.kstore ul{list-style:none;margin:0;padding:0}
+.kstore li{padding:6px 0;border-top:1px dashed var(--line);font-size:13.5px}
+.kstore li b{display:block;color:var(--ink)}
+.kstore li span{color:var(--ink-2)}
+h3.sub{font-family:var(--display);font-size:15px;margin:14px 0 8px;color:var(--ink-2)}
+.srcs{font-size:13px;color:var(--ink-2)}
+.srcs li{margin-bottom:3px;word-break:break-all}
+.other{display:flex;gap:10px;flex-wrap:wrap}
+.other a{text-decoration:none;font-weight:700;font-size:13.5px;border:1.5px solid var(--line);padding:7px 12px;border-radius:999px;color:var(--ink)}
+footer{margin-top:30px;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:14px}
+
+/* ---- mobile ---- */
+html{-webkit-text-size-adjust:100%}
+@media (max-width:640px){
+  .wrap{padding:16px 14px 40px}
+  header{grid-template-columns:1fr;gap:10px}
+  .badge{width:64px;height:64px;font-size:36px;border-radius:16px}
+  .badge small{font-size:11px}
+  h1{font-size:24px;line-height:1.25}
+  .tagline{font-size:15px}
+  .meta{grid-template-columns:1fr;gap:8px}
+  .meta div,.weather,.marathon{padding:9px 12px;font-size:13.5px}
+  .timeline{margin-left:46px}
+  .timeline time{left:-54px;font-size:13px}
+  .timeline li{padding:4px 0 12px 16px;font-size:14px}
+  .spot{padding:14px 14px;border-radius:14px}
+  .spot h2{font-size:20px}
+  .spot h3{font-size:16px}
+  .spot-head{grid-template-columns:auto 1fr;gap:10px}
+  .spot-head .maplink{grid-column:2;justify-self:start}
+  .num{width:40px;height:40px;font-size:20px;border-radius:11px}
+  .frame{aspect-ratio:1/1}
+  .mapbox{position:static}
+  .nav{display:flex;overflow-x:auto;gap:4px;padding:8px;-webkit-overflow-scrolling:touch}
+  .nav a{grid-template-columns:1fr;min-width:150px;flex:0 0 auto;background:var(--paper);padding:8px 10px}
+  .nav .free{font-size:11px}
+  .hl,.cols,.kgrid,.souv-list{grid-template-columns:1fr}
+  table{font-size:12.5px}
+  th,td{padding:7px 8px}
+  .item{font-size:13.5px}
+  .steps{padding-left:16px}
+  .other a,.bar a{padding:9px 12px}
+  .bar{flex-wrap:wrap}
+  .bar h2{font-size:15px}
+  a,button{min-height:32px}
+  details.src ul{padding-left:14px}
+}
+</style>
+<div class="wrap">
+<header>
+  <div class="badge">A</div>
+  <div>
+    <div class="eyebrow">Day 1 · 第六梯 11/05（四） · 夜訪福岡 · 2 到 4 人小組</div>
+    <h1>方案 A：屋台派</h1>
+    <p class="tagline">走到那珂川邊，坐進橘黃燈光下的屋台，用博多拉麵和串燒補上今天的晚餐。</p>
+  </div>
+  <div class="meta">
+    <div><b>適合誰</b>想感受福岡味、不怕人擠人、願意站著等位的人</div>
+    <div><b>步行距離</b>飯店 → 中洲屋台街 約 1.2 公里，步行 15 分鐘</div>
+    <div><b>預算</b>每人約 ¥2,000 – 3,000（一碗拉麵 + 兩三樣小菜 + 一杯飲料）</div>
+    <div><b>當晚前提</b>CI116 20:00 落地，晚餐只有機上簡餐，約 21:10 抵達渡邊通的飯店</div>
+    <div><b>交通</b>機場到飯店搭旅行社的團體遊覽車約 20 到 30 分；之後全程步行，太累或下雨可搭計程車回飯店，¥1,000 內</div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="mapbox">
+    <div class="bar"><h2>步行路線</h2><a href="https://www.google.com/maps/dir/?api=1&origin=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%A2%E3%83%B3%E3%83%86%E3%82%A8%E3%83%AB%E3%83%9E%E3%83%BC%E3%83%8A%E7%A6%8F%E5%B2%A1&destination=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%A2%E3%83%B3%E3%83%86%E3%82%A8%E3%83%AB%E3%83%9E%E3%83%BC%E3%83%8A%E7%A6%8F%E5%B2%A1&waypoints=%E4%B8%AD%E6%B4%B2%E5%B1%8B%E5%8F%B0%20%E6%B8%85%E6%B5%81%E5%85%AC%E5%9C%92%7C%E3%83%89%E3%83%B3%E3%83%BB%E3%82%AD%E3%83%9B%E3%83%BC%E3%83%86%20%E4%B8%AD%E6%B4%B2%E5%BA%97&travelmode=walking&hl=zh-TW" target="_blank" rel="noopener">在 Google 地圖開啟</a></div>
+    <div class="frame"><iframe src="https://www.google.com/maps?saddr=33.5852143%2C130.4050977&daddr=33.5895827,130.409301+to:33.5939851,130.4058456+to:33.5852143,130.4050977&dirflg=w&hl=zh-TW&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    <div class="legend">從飯店出發、最後回飯店的步行路線（Google 推估）：
+      <ol><li>福岡蒙特埃馬納酒店</li><li>中洲屋台街（清流公園）</li><li>唐吉訶德 中洲店</li><li>福岡蒙特埃馬納酒店</li></ol>
+    </div>
+  </aside>
+
+  <main>
+    <section>
+      <h2 class="sec">當晚時間軸</h2>
+      <ol class="timeline"><li><time>21:10</time>抵達飯店，放行李、換輕便衣物，帶現金與外套</li><li><time>21:25</time>出發：沿渡邊通往北走，過春吉橋到那珂川西岸的清流公園</li><li><time>21:40</time>抵達中洲屋台街，沿河邊挑一攤有空位的坐下（4 人可分兩攤）</li><li><time>22:40</time>吃飽後沿河散步到中洲川端，想補貨可順路進 24 小時的唐吉訶德中洲店</li><li><time>23:00</time>回程經春吉，喝咖啡的人在 Manu Coffee 春吉店收尾 20 分</li><li><time>23:20</time>走回飯店，23:30 前回房</li></ol>
+    </section>
+
+    <section>
+      <h2 class="sec">推薦地點</h2>
+      <article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E6%B4%B2%E5%B1%8B%E5%8F%B0%20%E5%A4%A7%E3%81%A1%E3%82%83%E3%82%93" target="_blank" rel="noopener">中洲屋台 大ちゃん</a></h3><span class="kind">屋台・首選</span></div>
+        <div class="addr">博多區中洲1丁目 清流公園（河邊第一攤）</div>
+        <div class="hours"><b>營業</b><span>17:00 – 翌 02:00</span><b>公休</b><span>週日</span></div>
+        <p>清流公園最靠橋頭的第一攤，拉麵、燒拉麵、關東煮拼盤、串燒拼盤、牛舌都有，4 人分食很好點。</p>
+        <div class="tip">坐滿就先去下一攤，不要在原地等。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E3%81%A3%E5%AD%90%E7%B4%94%E6%83%85%E5%B1%8B%E5%8F%B0%20%E5%96%9C%E6%9F%B3" target="_blank" rel="noopener">博多っ子純情屋台 喜柳</a></h3><span class="kind">屋台</span></div>
+        <div class="addr">博多區中洲 那珂川沿岸</div>
+        <div class="hours"><b>營業</b><span>18:00 – 翌 03:00</span><b>公休</b><span>不定休</span></div>
+        <p>菜單超過 100 種，招牌是「モチモチ餃子」，營業到凌晨 3 點，晚到也不怕。</p>
+        
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%B0%8F%E5%B3%B6%E5%95%86%E5%BA%97" target="_blank" rel="noopener">小島商店</a></h3><span class="kind">屋台</span></div>
+        <div class="addr">博多區中洲1丁目8 清流公園</div>
+        <div class="hours"><b>營業</b><span>19:00 – 翌 02:00</span><b>公休</b><span>週日與雨天</span></div>
+        <p>台灣部落客常推的攤，老闆親切，適合第一次坐屋台的人。</p>
+        
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E5%B1%8B%E5%8F%B0%20%E4%B8%AD%E6%B4%B2%20%E5%8D%81%E7%95%AA" target="_blank" rel="noopener">博多屋台 中洲 十番</a></h3><span class="kind">屋台</span></div>
+        <div class="addr">博多區中洲 那珂川沿岸</div>
+        <div class="hours"><b>營業</b><span>17:30 – 翌 02:30</span><b>公休</b><span>不定休</span></div>
+        <p>位置好找、座位相對多，前幾攤都滿時的候補。</p>
+        
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E9%89%84%E3%81%AA%E3%81%B9%20%E4%B8%AD%E6%B4%B2%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">鉄なべ 中洲本店</a></h3><span class="kind">雨天備案・店面</span></div>
+        <div class="addr">中央區西中洲1-5｜092-725-4688</div>
+        <div class="hours"><b>營業</b><span>平日 17:00 – 24:00（L.O. 23:30）、六日假日 11:30 – 24:00</span><b>公休</b><span>全年無休</span></div>
+        <p>下雨屋台不開時的備案。昭和 38 年創業的鐵鍋一口餃子，在屋台街對岸的西中洲，走 3 分鐘。</p>
+        <div class="tip">最後點餐 23:30，若 23:00 後才到請直接點。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=Manu%20Coffee%20%E6%98%A5%E5%90%89%E5%BA%97" target="_blank" rel="noopener">Manu Coffee 春吉店</a></h3><span class="kind">咖啡・深夜</span></div>
+        <div class="addr">中央區春吉（渡邊通與中洲之間，飯店步行約 8 分）</div>
+        <div class="hours"><b>營業</b><span>09:00 – 翌 01:00</span><b>公休</b><span>無休</span></div>
+        <p>2003 年開業、比精品咖啡風潮更早的福岡老牌自家焙煎店，春吉店開到凌晨 1 點，是福岡少數深夜還能喝到手沖的地方。從中洲走回飯店剛好順路，喝咖啡的同伴可以在這裡收尾；也賣豆子。</p>
+        <div class="tip">深夜店內偏安靜，4 人請壓低音量；想帶豆子回台灣買 200 公克裝。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%94%90%E5%90%89%E8%A8%B6%E5%BE%B7%20%E4%B8%AD%E6%B4%B2%E5%BA%97" target="_blank" rel="noopener">唐吉訶德 中洲店</a></h3><span class="kind">順路採買</span></div>
+        <div class="addr">博多區中洲3-7-24（中洲川端站直結）</div>
+        <div class="hours"><b>營業</b><span>24 小時</span><b>公休</b><span>全年無休</span></div>
+        <p>吃完屋台順路補零食、藥妝，不用擔心時間。</p>
+        
+      </article>
+    </section>
+
+    <section>
+      <h2 class="sec">11/05（四）當晚營業確認</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>地點</th><th>公休日</th><th>11/05（四）</th></tr></thead>
+        <tbody><tr><td>中洲屋台 大ちゃん</td><td>週日</td><td class="ok">營業</td></tr><tr><td>博多っ子純情屋台 喜柳</td><td>不定休</td><td class="ok">營業</td></tr><tr><td>小島商店</td><td>週日與雨天</td><td class="ok">營業</td></tr><tr><td>博多屋台 中洲 十番</td><td>不定休</td><td class="ok">營業</td></tr><tr><td>鉄なべ 中洲本店</td><td>全年無休</td><td class="ok">營業</td></tr><tr><td>Manu Coffee 春吉店</td><td>無休</td><td class="ok">營業</td></tr><tr><td>唐吉訶德 中洲店</td><td>全年無休</td><td class="ok">營業</td></tr></tbody>
+      </table></div>
+      <p style="font-size:13px;color:var(--ink-3);margin:8px 0 0">依固定公休日判斷（當天是週四），不定休與臨時休店無法預先得知，出發前請再查一次 Google 地圖的營業資訊。</p>
+    </section>
+
+    
+    <section>
+      <h2 class="sec">小提醒</h2>
+      <ul class="tips"><li>屋台多數只收現金，每人先備 ¥5,000 左右零錢，不要全靠信用卡。</li><li>每攤座位約 8 到 10 個，4 人最好分成 2 組各坐一攤，或先坐 2 人、再等 2 人的位子。</li><li>屋台的規矩：先點一樣餐點加一杯飲料，不要只坐著聊天，也避免大聲喧嘩。</li><li>雨天屋台大多不出攤，當晚下雨就直接改去西中洲的鉄なべ。</li><li>河邊 10、11 月入夜約 15 度，帶一件外套。</li></ul>
+      <p class="rain" style="margin-top:12px">下雨：屋台街改成「鉄なべ 中洲本店」，位置在西中洲，離飯店更近，步行 12 分鐘。</p>
+    </section>
+
+    <section>
+      <h2 class="sec">其他方案</h2>
+      <div class="other"><a href="Day1_方案B_拉麵藥妝派.html">方案 B：拉麵加藥妝派</a><a href="Day1_方案C_休息派.html">方案 C：休息派</a><a href="九州五日遊_路線圖.html">五日路線圖</a></div>
+    </section>
+  </main>
+</div>
+
+<footer>營業時間與公休日整理自各店官網與日本美食網站（2026 年 10 月查詢），完整來源列在 Day1_福岡.md。路線與步行時間為 Google 地圖推估。</footer>
+</div>

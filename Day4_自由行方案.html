@@ -1,0 +1,495 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Day 4 福岡自由行方案</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{--paper:#F5EDDF;--card:#FFFBF4;--ink:#233A52;--ink-2:#51637A;--ink-3:#8A98AA;--line:#E2D6C2;--c:#C9981F;--ok:#3F8F5E;--ok-bg:#E2F1E7;--bad:#C0392B;--bad-bg:#FBE4E0;--warn:#B07A12;--warn-bg:#F7EBD0;
+  --p1:#C9981F;--p2:#2F5D8A;--p3:#5E9C78;--p4:#D9643A;--p5:#8A6AAE;
+  --display:'Zen Maru Gothic','Noto Sans TC',sans-serif;--body:'Noto Sans TC','Zen Maru Gothic',sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#17202B;--card:#1F2A37;--ink:#EEF2F6;--ink-2:#B9C4D1;--ink-3:#7F8C9C;--line:#2F3C4B;--bad-bg:#4A2622;--ok-bg:#1F3B2B;--ok:#7FD1A0;--bad:#F09A8E;--warn:#E6B85C;--warn-bg:#3E3320}}
+:root[data-theme="dark"]{--paper:#17202B;--card:#1F2A37;--ink:#EEF2F6;--ink-2:#B9C4D1;--ink-3:#7F8C9C;--line:#2F3C4B;--bad-bg:#4A2622;--ok-bg:#1F3B2B;--ok:#7FD1A0;--bad:#F09A8E;--warn:#E6B85C;--warn-bg:#3E3320}
+*{box-sizing:border-box}html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:15px}
+a{color:var(--c)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+header{border-bottom:3px solid var(--ink);padding-bottom:18px;margin-bottom:18px}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(26px,3.4vw,38px);margin:4px 0 8px;text-wrap:balance}
+.lead{color:var(--ink-2);max-width:70ch;margin:0 0 12px}
+.marathon{background:var(--warn-bg);border-radius:12px;padding:10px 14px;font-size:14px}
+.marathon b{color:var(--warn);margin-right:6px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 14px}
+.tabs button{font:inherit;font-weight:700;border:2px solid var(--line);background:var(--card);color:var(--ink);padding:8px 14px;border-radius:999px;cursor:pointer;display:flex;align-items:center;gap:8px;min-height:40px}
+.tabs button::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--tc)}
+.tabs button[aria-selected="true"]{background:var(--tc);border-color:var(--tc);color:#fff}
+.tabs button[aria-selected="true"]::before{background:#fff}
+.panel{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--c);border-radius:18px;padding:20px 22px;margin-bottom:26px}
+.phead{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;margin-bottom:12px}
+.badge{font-family:var(--display);font-weight:900;font-size:40px;line-height:1;color:#fff;background:var(--c);width:68px;height:68px;border-radius:18px;display:grid;place-items:center}
+.phead h2{font-family:var(--display);font-size:24px;margin:0}
+.tagline{margin:4px 0 0;color:var(--ink-2)}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:12px 0}
+.meta div{background:var(--paper);border-left:4px solid var(--c);border-radius:10px;padding:9px 12px;font-size:14px}
+.meta b,.personal b{display:block;font-size:11.5px;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase;margin-bottom:2px}
+.personal{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:0 0 16px;border:1.5px dashed var(--c);border-radius:12px;padding:10px 12px}
+.personal div{font-size:14px}
+.layout{display:grid;grid-template-columns:1fr;gap:22px;align-items:start}
+@media (min-width:861px){.layout{grid-template-columns:minmax(0,1fr) minmax(0,1.1fr)}.mapbox{position:sticky;top:16px}}
+.mapbox{background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.bar h3{font-family:var(--display);font-size:15px;margin:0}
+.bar a{font-size:13px;font-weight:700;text-decoration:none;background:var(--c);color:#fff;padding:7px 12px;border-radius:999px;white-space:nowrap}
+.frame{position:relative;aspect-ratio:4/3.4}.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.legend{padding:8px 14px 10px;font-size:13px;color:var(--ink-2)}.legend ol{margin:0;padding-left:20px}
+h3.sec{font-family:var(--display);font-size:17px;margin:4px 0 10px;display:flex;align-items:center;gap:8px}
+h3.sec::before{content:"";width:12px;height:12px;border-radius:4px;background:var(--c)}
+.timeline{list-style:none;margin:0 0 16px;padding:0;border-left:2px solid var(--line);margin-left:50px}
+.timeline li{position:relative;padding:4px 0 12px 18px;font-size:14.5px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:11px;width:12px;height:12px;border-radius:50%;background:var(--c);border:2px solid var(--card)}
+.timeline time{position:absolute;left:-58px;top:4px;font-weight:700;font-variant-numeric:tabular-nums}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+.chip{text-decoration:none;font-size:13px;font-weight:700;color:var(--ink);background:var(--paper);border:1.5px solid var(--line);padding:5px 10px;border-radius:999px}
+.hint{font-size:12.5px;color:var(--ink-3);margin:0 0 14px}
+ul.tips{margin:0 0 10px;padding-left:20px;font-size:14px}ul.tips li{margin-bottom:4px}
+.rain{background:var(--paper);border-radius:10px;padding:10px 12px;font-weight:500;margin:0}
+.shared{margin-top:10px}
+.shared h2{font-family:var(--display);font-size:22px;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+.shared h2::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--ink)}
+.filter{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px;font-size:13px;align-items:center}
+.filter button{font:inherit;font-size:13px;font-weight:700;border:1.5px solid var(--line);background:var(--card);color:var(--ink);padding:5px 10px;border-radius:999px;cursor:pointer}
+.filter button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.spot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px;scroll-margin-top:12px}
+.spot .top{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.spot h3{font-family:var(--display);font-size:17px;margin:0;flex:1 1 auto}
+.spot h3 a{color:var(--ink);text-decoration:none;border-bottom:1.5px dotted var(--ink-3)}
+.kind{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--ink-2);background:var(--paper);padding:3px 9px;border-radius:999px}
+.fit{font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.fit.ok{color:var(--ok);background:var(--ok-bg)}.fit.bad{color:var(--bad);background:var(--bad-bg)}
+.spot .addr{font-size:13px;color:var(--ink-3);margin:4px 0 8px}
+.spot p{margin:0 0 6px}
+.spot .tip{font-size:13.5px;color:var(--ink-2);background:var(--paper);border-radius:8px;padding:6px 10px;margin-top:6px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;font-size:13.5px;margin:6px 0}
+.hours b{color:var(--ink-3);font-weight:500}
+.usedby{font-size:12px;color:var(--ink-3);margin-top:8px;display:flex;gap:4px;align-items:center;flex-wrap:wrap}
+.pk{color:#fff;border-radius:6px;padding:1px 7px;font-weight:700}
+.pk1{background:var(--p1)}.pk2{background:var(--p2)}.pk3{background:var(--p3)}.pk4{background:var(--p4)}.pk5{background:var(--p5)}
+.spot.dim{display:none}
+.info{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.info .box{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px}
+.info h3{font-family:var(--display);font-size:16px;margin:0 0 8px}
+.info ul{margin:0;padding-left:18px;font-size:14px}.info li{margin-bottom:5px}
+footer{margin-top:30px;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:14px}
+.other{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+.other a{text-decoration:none;font-weight:700;font-size:13.5px;border:1.5px solid var(--line);padding:7px 12px;border-radius:999px;color:var(--ink)}
+@media (max-width:640px){
+  .wrap{padding:16px 14px 40px}h1{font-size:24px}
+  .tabs{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:4px}.tabs button{flex:0 0 auto}
+  .panel{padding:14px 14px}.phead{gap:10px}.badge{width:52px;height:52px;font-size:28px;border-radius:14px}.phead h2{font-size:20px}
+  .meta,.personal,.info{grid-template-columns:1fr}
+  .timeline{margin-left:46px}.timeline time{left:-54px;font-size:13px}
+  .frame{aspect-ratio:1/1}.mapbox{position:static}
+}
+</style>
+<div class="wrap">
+<header>
+  <div class="eyebrow">Day 4 · 第六梯 11/08（日） · 全日自由行 · 2 到 4 人小組</div>
+  <h1>福岡自由行：五個方案</h1>
+  <p class="lead">上方切換方案看時間軸與路線；地點與店家的介紹、營業時間、交通與付款、個人採買清單在下方只寫一次，所有方案共用。天氣預報多雲，最高 19°C、最低 12°C，降雨 30%。</p>
+  <div class="marathon"><b>福岡馬拉松</b>11/08 08:20 自天神起跑，路線經百道（飯店旁，5.3 公里關門 09:25）往糸島，沿線 06:00 – 16:35 分段管制；百道上午、天神 07:00 到 09:00 前後最嚴。旅行社巴士發車時間請先確認。</div>
+</header>
+
+<div class="tabs" role="tablist"><button role="tab" style="--tc:#C9981F" aria-selected="false" aria-controls="plan1" data-key="1">方案 1 市中心經典</button><button role="tab" style="--tc:#2F5D8A" aria-selected="false" aria-controls="plan2" data-key="2">方案 2 博多文化與運河城</button><button role="tab" style="--tc:#5E9C78" aria-selected="false" aria-controls="plan3" data-key="3">方案 3 海邊慢活</button><button role="tab" style="--tc:#D9643A" aria-selected="false" aria-controls="plan4" data-key="4">方案 4 能古島加天神</button><button role="tab" style="--tc:#8A6AAE" aria-selected="true" aria-controls="plan5" data-key="5">方案 5 混搭推薦</button></div>
+
+<section class="panel" id="plan1" role="tabpanel" style="--c:#C9981F" hidden>
+  <div class="phead">
+    <div class="badge">1</div>
+    <div><h2>方案 1：市中心經典</h2><p class="tagline">以天神為圓心：大濠公園與福岡城跡的綠，天神的機能服飾、帽子與墨鏡，傍晚走到中洲看河。</p></div>
+  </div>
+  <div class="meta">
+    <div><b>適合誰</b>想一次看到福岡城市感與公園綠地、購物只占三分之一的人</div>
+    <div><b>交通</b>巴士進天神後，地鐵 1 站到大濠公園，其餘步行；全天搭車約 40 分</div>
+    <div><b>預算</b>午餐 ¥2,000、晚餐 ¥2,000、購物另計</div>
+    <div><b>馬拉松</b>上午天神與大濠公園一帶管制，順序可對調：先逛天神購物，14:00 後再去大濠公園。</div>
+  </div>
+  <div class="personal">
+    <div><b>🧢 帽子</b>OVERRIDE（ソラリアプラザ B1F）與 CA4LA，相距 3 分鐘</div>
+    <div><b>🕶 墨鏡</b>金子眼鏡店 VIORO（高價長用）或 JINS 天神西通（平價快取）</div>
+    <div><b>⚡ 寶可夢</b>這案不到博多站；想去的人傍晚從天神搭地鐵 5 分到博多，博多マルイ 2F，再從博多站搭 306 回飯店</div>
+  </div>
+  <div class="layout">
+    <aside class="mapbox">
+      <div class="bar"><h3>當日路線</h3><a href="https://www.google.com/maps/dir/?api=1&origin=%E7%A6%8F%E5%B2%A1%E3%82%BF%E3%83%AF%E3%83%BC%E5%8D%97%E5%8F%A3%20%E3%83%90%E3%82%B9%E5%81%9C&destination=%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85&waypoints=%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85%7C%E8%AD%A6%E5%9B%BA%E7%A5%9E%E7%A4%BE%7C%E5%A4%A7%E6%BF%A0%E5%85%AC%E5%9C%92%7C%E7%A6%8F%E5%B2%A1%E5%9F%8E%E8%B7%A1%20%E5%A4%A9%E5%AE%88%E5%8F%B0%7C%E3%83%A6%E3%83%8B%E3%82%AF%E3%83%AD%20%E5%A4%A9%E7%A5%9E%E5%BA%97%7C%E3%83%A2%E3%83%B3%E3%83%99%E3%83%AB%20%E7%A6%8F%E5%B2%A1%E5%A4%A9%E7%A5%9E%E5%BA%97%7C%E3%82%BD%E3%83%A9%E3%83%AA%E3%82%A2%E3%83%97%E3%83%A9%E3%82%B6%7CCA4LA%20%E7%A6%8F%E5%B2%A1%7C%E9%87%91%E5%AD%90%E7%9C%BC%E9%8F%A1%E5%BA%97%20%E5%A4%A9%E7%A5%9EVIORO%E5%BA%97%7C%E7%A6%8F%E5%8D%9A%E3%81%A7%E3%81%82%E3%81%84%E6%A9%8B&travelmode=transit&hl=zh-TW" target="_blank" rel="noopener">在 Google 地圖開啟</a></div>
+      <div class="frame"><iframe data-src="https://www.google.com/maps?saddr=33.592%2C130.3515&daddr=33.5895,130.3995+to:33.5885,130.3985+to:33.5862,130.376+to:33.5838,130.383+to:33.59,130.4+to:33.5878,130.3984+to:33.589,130.3995+to:33.5896,130.3988+to:33.5897,130.3993+to:33.5918,130.404+to:33.5895,130.3995&hl=zh-TW&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      <div class="legend"><ol><li>福岡タワー南口 巴士站</li><li>天神（西鐵福岡站）</li><li>警固神社（足湯）</li><li>大濠公園</li><li>福岡城跡 天守台</li><li>UNIQLO 天神店</li><li>mont-bell 福岡天神店</li><li>ソラリアプラザ（ABC-MART 5F・OVERRIDE 帽子 B1F）</li><li>CA4LA 福岡（帽子）</li><li>金子眼鏡店 天神 VIORO</li><li>中洲・福博であい橋</li><li>天神（西鐵福岡站）</li></ol></div>
+    </aside>
+    <div>
+      <h3 class="sec">時間軸</h3>
+      <ol class="timeline"><li><time>10:00</time>巴士抵達天神（視馬拉松調整）→ 警固神社足湯 10 分</li><li><time>10:30</time>地鐵 1 站到大濠公園站，環湖散步、福岡城跡天守台（上午若管制改下午）</li><li><time>12:00</time>午餐：Royal Garden Cafe 湖景，或回天神吃水炊き</li><li><time>14:00</time>天神購物：UNIQLO 天神店 → mont-bell → ソラリアプラザ（ABC-MART 鞋、OVERRIDE 帽子）→ CA4LA → 金子眼鏡店或 JINS 墨鏡，約 2.5 小時</li><li><time>17:00</time>步行 15 分到中洲，福博であい橋看河景</li><li><time>18:00</time>晚餐：西中洲 鉄なべ 餃子或博多拉麵</li><li><time>20:00</time>天神搭 302 巴士（約 20 分）或計程車回飯店</li></ol>
+      <h3 class="sec">這案會去的地點</h3>
+      <div class="chips"><a class="chip" href="#s-kego">警固神社（足湯）</a><a class="chip" href="#s-ohori">大濠公園</a><a class="chip" href="#s-rgc">Royal Garden Cafe 大濠公園</a><a class="chip" href="#s-uniqlo">UNIQLO 天神店</a><a class="chip" href="#s-montbell">mont-bell 福岡天神店</a><a class="chip" href="#s-solaria">ソラリアプラザ（ABC-MART 5F・OVERRIDE 帽子 B1F）</a><a class="chip" href="#s-ca4la">CA4LA 福岡（帽子）</a><a class="chip" href="#s-kaneko">金子眼鏡店 天神 VIORO</a><a class="chip" href="#s-jins">JINS 天神西通店</a><a class="chip" href="#s-nakasu">中洲・福博であい橋</a></div>
+      <p class="hint">地點的營業時間、費用與介紹在下方「地點與店家總表」只寫一次，點名稱可跳過去。</p>
+      <h3 class="sec">小提醒</h3>
+      <ul class="tips"><li>大濠公園環湖一圈 2 公里約 30 分，走不完就只走東岸到中島。</li><li>福岡城跡天守台免費，石垣路面不平請穿好走的鞋。</li><li>帽子與墨鏡的店都集中在天神西通到大名這 300 公尺內，排在同一段。</li></ul>
+      <p class="rain">下雨：大濠公園改成天神地下街加 PARCO，中洲散步改成運河城。</p>
+    </div>
+  </div>
+</section><section class="panel" id="plan2" role="tabpanel" style="--c:#2F5D8A" hidden>
+  <div class="phead">
+    <div class="badge">2</div>
+    <div><h2>方案 2：博多文化與運河城</h2><p class="tagline">離馬拉松最遠：空海的東長寺、烏龍麵發祥的承天寺、川端的紅豆湯，然後把戶外機能、寶可夢中心一次解決。</p></div>
+  </div>
+  <div class="meta">
+    <div><b>適合誰</b>想看博多老街與寺院、也想認真逛戶外機能店與寶可夢中心的人</div>
+    <div><b>交通</b>巴士到天神，地鐵 5 分到祇園，其餘步行；回程博多站 306 直達飯店；全天搭車約 45 分</div>
+    <div><b>預算</b>午餐 ¥1,500、晚餐 ¥1,500、購物另計</div>
+    <div><b>馬拉松</b>祇園與博多不在馬拉松路線上，只有上午巴士進天神這段可能延後。</div>
+  </div>
+  <div class="personal">
+    <div><b>🧢 帽子</b>Alpen Outdoors 的戶外帽（The North Face、Snow Peak）；時尚款帽子這案沒有，需要的話改方案 5</div>
+    <div><b>🕶 墨鏡</b>Alpen Outdoors 的運動墨鏡（Oakley、SWANS），或博多站 JR 博多シティ 7F 金子眼鏡店</div>
+    <div><b>⚡ 寶可夢</b>寶可夢中心就在博多站旁的博多マルイ 2F，排在 15:30</div>
+  </div>
+  <div class="layout">
+    <aside class="mapbox">
+      <div class="bar"><h3>當日路線</h3><a href="https://www.google.com/maps/dir/?api=1&origin=%E7%A6%8F%E5%B2%A1%E3%82%BF%E3%83%AF%E3%83%BC%E5%8D%97%E5%8F%A3%20%E3%83%90%E3%82%B9%E5%81%9C&destination=%E5%8D%9A%E5%A4%9A%E9%A7%85&waypoints=%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85%7C%E7%A5%87%E5%9C%92%E9%A7%85%20%E7%A6%8F%E5%B2%A1%7C%E6%9D%B1%E9%95%B7%E5%AF%BA%7C%E6%89%BF%E5%A4%A9%E5%AF%BA%20%E5%8D%9A%E5%A4%9A%7C%E5%B7%9D%E7%AB%AF%E3%81%9C%E3%82%93%E3%81%96%E3%81%84%E5%BA%83%E5%A0%B4%7C%E3%82%AD%E3%83%A3%E3%83%8A%E3%83%AB%E3%82%B7%E3%83%86%E3%82%A3%E5%8D%9A%E5%A4%9A%7C%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%AF%E3%82%AA%E3%82%AB%20%E5%8D%9A%E5%A4%9A%E3%83%9E%E3%83%AB%E3%82%A4&travelmode=transit&hl=zh-TW" target="_blank" rel="noopener">在 Google 地圖開啟</a></div>
+      <div class="frame"><iframe data-src="https://www.google.com/maps?saddr=33.592%2C130.3515&daddr=33.5895,130.3995+to:33.5932,130.4155+to:33.5937,130.4158+to:33.5945,130.418+to:33.5935,130.41+to:33.5897,130.4115+to:33.59,130.4195+to:33.5897,130.4207&hl=zh-TW&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      <div class="legend"><ol><li>福岡タワー南口 巴士站</li><li>天神（西鐵福岡站）</li><li>祇園站</li><li>東長寺（福岡大佛）</li><li>承天寺</li><li>川端通商店街・川端ぜんざい廣場</li><li>博多運河城（Alpen Outdoors、MUJI）</li><li>寶可夢中心 福岡（博多マルイ 2F）</li><li>博多站（阪急、KITTE、AMU、金子眼鏡店）</li></ol></div>
+    </aside>
+    <div>
+      <h3 class="sec">時間軸</h3>
+      <ol class="timeline"><li><time>10:00</time>巴士抵達天神 → 地鐵空港線 5 分到祇園站</li><li><time>10:15</time>東長寺 福岡大佛、地獄極樂巡禮 30 分 → 承天寺 20 分</li><li><time>11:15</time>川端通商店街，川端ぜんざい廣場吃紅豆湯（週日有開）</li><li><time>12:00</time>午餐：運河城 5F 拉麵競技場</li><li><time>13:00</time>運河城購物：Alpen Outdoors 旗艦店 3F（戶外帽、運動墨鏡在這裡）、Sports Depo 2F、MUJI，約 2 小時</li><li><time>15:30</time>步行 10 分到博多站：寶可夢中心（博多マルイ 2F）40 分 → 金子眼鏡店 JR 博多シティ 7F → 阪急 8F New Balance</li><li><time>17:30</time>晚餐：一雙 博多駅東本店 或 一幸舎</li><li><time>19:00</time>博多站搭 306 巴士直達福岡タワー南口（約 25 分）</li></ol>
+      <h3 class="sec">這案會去的地點</h3>
+      <div class="chips"><a class="chip" href="#s-tocho">東長寺（福岡大佛）</a><a class="chip" href="#s-joten">承天寺</a><a class="chip" href="#s-kawabata">川端通商店街・川端ぜんざい廣場</a><a class="chip" href="#s-canal">博多運河城（Alpen Outdoors、MUJI）</a><a class="chip" href="#s-pokemon">寶可夢中心 福岡（博多マルイ 2F）</a><a class="chip" href="#s-hakata">博多站（阪急、KITTE、AMU、金子眼鏡店）</a></div>
+      <p class="hint">地點的營業時間、費用與介紹在下方「地點與店家總表」只寫一次，點名稱可跳過去。</p>
+      <h3 class="sec">小提醒</h3>
+      <ul class="tips"><li>想去 Workman 的小組：博多站搭 JR 一站到吉塚，WORKMAN Plus 福岡吉塚店 07:00 – 20:00，往返約 40 分。</li><li>Alpen Outdoors 很大，先鎖定要買的類別，不然 2 小時不夠。</li><li>306 巴士末班約 23:00，乘車處請先用 Google 地圖查「福岡タワー南口」。</li></ul>
+      <p class="rain">下雨：全程幾乎都在室內與地鐵，只有東長寺到川端通 10 分鐘要撐傘。</p>
+    </div>
+  </div>
+</section><section class="panel" id="plan3" role="tabpanel" style="--c:#5E9C78" hidden>
+  <div class="phead">
+    <div class="badge">3</div>
+    <div><h2>方案 3：海邊慢活</h2><p class="tagline">上午不搭車：看馬拉松、金印、福岡塔，先在 MARK IS 買基本款；下午管制解除再進天神買帽子、墨鏡與機能服。</p></div>
+  </div>
+  <div class="meta">
+    <div><b>適合誰</b>想少搭車、早上慢慢來、順便看一場馬拉松的人</div>
+    <div><b>交通</b>上午全步行，下午一趟巴士或計程車進天神，晚上一趟回來；全天搭車約 30 分，五案最少</div>
+    <div><b>預算</b>午餐 ¥1,200、晚餐 ¥2,000、購物另計</div>
+    <div><b>馬拉松</b>與馬拉松錯開最好：08:40 到 09:30 在百道路邊看跑者，13:00 後百道與天神的管制都已解除。</div>
+  </div>
+  <div class="personal">
+    <div><b>🧢 帽子</b>OVERRIDE 與 CA4LA 排在 14:00 的天神段</div>
+    <div><b>🕶 墨鏡</b>JINS 天神西通（30 分可取件）或金子眼鏡店 VIORO</div>
+    <div><b>⚡ 寶可夢</b>這案不到博多站；想去的人 17:00 從天神搭地鐵 5 分到博多マルイ，再搭 306 回飯店</div>
+  </div>
+  <div class="layout">
+    <aside class="mapbox">
+      <div class="bar"><h3>當日路線</h3><a href="https://www.google.com/maps/dir/?api=1&origin=%E7%A6%8F%E5%B2%A1%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%82%E3%82%82%E3%81%A1%E6%B5%9C&destination=%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85&waypoints=%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E7%89%A9%E9%A4%A8%7C%E7%A6%8F%E5%B2%A1%E3%82%BF%E3%83%AF%E3%83%BC%7CMARK%20IS%20%E7%A6%8F%E5%B2%A1%E3%82%82%E3%82%82%E3%81%A1%7C%E7%A6%8F%E5%B2%A1%E3%82%BF%E3%83%AF%E3%83%BC%E5%8D%97%E5%8F%A3%20%E3%83%90%E3%82%B9%E5%81%9C%7C%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85%7C%E3%83%A2%E3%83%B3%E3%83%99%E3%83%AB%20%E7%A6%8F%E5%B2%A1%E5%A4%A9%E7%A5%9E%E5%BA%97%7C%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%94%E3%83%BC%E3%82%AF%20%E3%83%AF%E3%83%B3%E3%83%BB%E3%83%95%E3%82%AF%E3%82%AA%E3%82%AB%E3%83%BB%E3%83%93%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0%7C%E3%82%BD%E3%83%A9%E3%83%AA%E3%82%A2%E3%83%97%E3%83%A9%E3%82%B6%7CCA4LA%20%E7%A6%8F%E5%B2%A1%7CJINS%20%E5%A4%A9%E7%A5%9E%E8%A5%BF%E9%80%9A%E3%82%8A%E5%BA%97%7C%E8%AD%A6%E5%9B%BA%E7%A5%9E%E7%A4%BE&travelmode=transit&hl=zh-TW" target="_blank" rel="noopener">在 Google 地圖開啟</a></div>
+      <div class="frame"><iframe data-src="https://www.google.com/maps?saddr=33.5922%2C130.3535&daddr=33.5905,130.353+to:33.5932,130.3514+to:33.5945,130.359+to:33.592,130.3515+to:33.5895,130.3995+to:33.5878,130.3984+to:33.592,130.401+to:33.589,130.3995+to:33.5896,130.3988+to:33.5886,130.3978+to:33.5885,130.3985+to:33.5895,130.3995&hl=zh-TW&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      <div class="legend"><ol><li>福岡王子大飯店百道濱</li><li>福岡市博物館（金印）</li><li>福岡塔</li><li>MARK IS 福岡ももち</li><li>福岡タワー南口 巴士站</li><li>天神（西鐵福岡站）</li><li>mont-bell 福岡天神店</li><li>Snow Peak ワン・フクオカ</li><li>ソラリアプラザ（ABC-MART 5F・OVERRIDE 帽子 B1F）</li><li>CA4LA 福岡（帽子）</li><li>JINS 天神西通店</li><li>警固神社（足湯）</li><li>天神（西鐵福岡站）</li></ol></div>
+    </aside>
+    <div>
+      <h3 class="sec">時間軸</h3>
+      <ol class="timeline"><li><time>08:40</time>早餐後走 3 分鐘到路邊看馬拉松（百道中央公園 5.3 公里關門 09:25）</li><li><time>09:30</time>福岡市博物館看國寶金印 50 分</li><li><time>10:30</time>福岡塔展望室 40 分</li><li><time>11:15</time>MARK IS 福岡ももち：UNIQLO 1F、GU 3F 買機能基本款</li><li><time>12:15</time>午餐：MARK IS 美食街或西新</li><li><time>13:30</time>巴士 302 或計程車到天神（15 到 20 分）</li><li><time>14:00</time>天神購物：mont-bell → Snow Peak → ソラリアプラザ（ABC-MART、OVERRIDE 帽子）→ CA4LA → JINS 或金子眼鏡店，約 2.5 小時；累了去警固神社足湯</li><li><time>17:00</time>晚餐：天神水炊き或走到中洲</li><li><time>19:30</time>天神搭 302 巴士回飯店</li></ol>
+      <h3 class="sec">這案會去的地點</h3>
+      <div class="chips"><a class="chip" href="#s-museum">福岡市博物館（金印）</a><a class="chip" href="#s-tower">福岡塔</a><a class="chip" href="#s-markis">MARK IS 福岡ももち</a><a class="chip" href="#s-montbell">mont-bell 福岡天神店</a><a class="chip" href="#s-snowpeak">Snow Peak ワン・フクオカ</a><a class="chip" href="#s-solaria">ソラリアプラザ（ABC-MART 5F・OVERRIDE 帽子 B1F）</a><a class="chip" href="#s-ca4la">CA4LA 福岡（帽子）</a><a class="chip" href="#s-jins">JINS 天神西通店</a><a class="chip" href="#s-kaneko">金子眼鏡店 天神 VIORO</a><a class="chip" href="#s-kego">警固神社（足湯）</a></div>
+      <p class="hint">地點的營業時間、費用與介紹在下方「地點與店家總表」只寫一次，點名稱可跳過去。</p>
+      <h3 class="sec">小提醒</h3>
+      <ul class="tips"><li>看馬拉松站在人行道內側，不要穿越賽道；輪椅組與 Fun Run 的終點就在博物館旁。</li><li>博物館 09:30 開門，看完金印再去福岡塔，兩處相距 3 分鐘。</li><li>基本款在 MARK IS 買完，天神就只逛機能品牌、帽子與墨鏡，時間最省。</li></ul>
+      <p class="rain">下雨：上午改成博物館加 BOSS E・ZO 的 teamLab Forest（室內），下午照常。</p>
+    </div>
+  </div>
+</section><section class="panel" id="plan4" role="tabpanel" style="--c:#D9643A" hidden>
+  <div class="phead">
+    <div class="badge">4</div>
+    <div><h2>方案 4：能古島加天神</h2><p class="tagline">搭 10 分鐘渡輪到博多灣中的小島看花海，下午回天神購物。搭車最長，列為備選。</p></div>
+  </div>
+  <div class="meta">
+    <div><b>適合誰</b>想離開城市半天、不介意多搭一點車的人</div>
+    <div><b>交通</b>計程車 10 分到姪浜渡船場，渡輪 10 分，島上巴士 13 分；回程地鐵姪浜到天神 15 分；全天搭車約 60 到 70 分</div>
+    <div><b>預算</b>渡輪與園區 ¥2,000、午餐 ¥1,000、晚餐 ¥2,000、購物另計</div>
+    <div><b>馬拉松</b>姪浜在馬拉松路線上（約 10 公里處），上午計程車可能繞路，建議 10:00 後出發或改地鐵西新到姪浜。</div>
+  </div>
+  <div class="personal">
+    <div><b>🧢 帽子</b>OVERRIDE（ソラリアプラザ B1F）</div>
+    <div><b>🕶 墨鏡</b>JINS 天神西通</div>
+    <div><b>⚡ 寶可夢</b>這案時間不夠去博多站</div>
+  </div>
+  <div class="layout">
+    <aside class="mapbox">
+      <div class="bar"><h3>當日路線</h3><a href="https://www.google.com/maps/dir/?api=1&origin=%E7%A6%8F%E5%B2%A1%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%82%E3%82%82%E3%81%A1%E6%B5%9C&destination=%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85&waypoints=%E5%A7%AA%E6%B5%9C%E6%97%85%E5%AE%A2%E5%BE%85%E5%90%88%E6%89%80%7C%E3%81%AE%E3%81%93%E3%81%AE%E3%81%97%E3%81%BE%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%91%E3%83%BC%E3%82%AF%7C%E5%A7%AA%E6%B5%9C%E6%97%85%E5%AE%A2%E5%BE%85%E5%90%88%E6%89%80%7C%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85%7C%E3%83%A6%E3%83%8B%E3%82%AF%E3%83%AD%20%E5%A4%A9%E7%A5%9E%E5%BA%97%7C%E3%83%A2%E3%83%B3%E3%83%99%E3%83%AB%20%E7%A6%8F%E5%B2%A1%E5%A4%A9%E7%A5%9E%E5%BA%97%7C%E3%82%BD%E3%83%A9%E3%83%AA%E3%82%A2%E3%83%97%E3%83%A9%E3%82%B6%7CJINS%20%E5%A4%A9%E7%A5%9E%E8%A5%BF%E9%80%9A%E3%82%8A%E5%BA%97&travelmode=transit&hl=zh-TW" target="_blank" rel="noopener">在 Google 地圖開啟</a></div>
+      <div class="frame"><iframe data-src="https://www.google.com/maps?saddr=33.5922%2C130.3535&daddr=33.5968,130.322+to:33.623,130.303+to:33.5968,130.322+to:33.5895,130.3995+to:33.59,130.4+to:33.5878,130.3984+to:33.589,130.3995+to:33.5886,130.3978+to:33.5895,130.3995&hl=zh-TW&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      <div class="legend"><ol><li>福岡王子大飯店百道濱</li><li>姪浜渡船場</li><li>能古島 Island Park</li><li>姪浜渡船場</li><li>天神（西鐵福岡站）</li><li>UNIQLO 天神店</li><li>mont-bell 福岡天神店</li><li>ソラリアプラザ（ABC-MART 5F・OVERRIDE 帽子 B1F）</li><li>JINS 天神西通店</li><li>天神（西鐵福岡站）</li></ol></div>
+    </aside>
+    <div>
+      <h3 class="sec">時間軸</h3>
+      <ol class="timeline"><li><time>09:45</time>計程車到姪浜渡船場（或西新站地鐵 2 站到姪浜再走 15 分）</li><li><time>10:15</time>渡輪到能古島，島上巴士到 Island Park</li><li><time>10:45</time>Island Park 花田、海景展望，約 90 分</li><li><time>12:30</time>午餐：島上能古烏龍麵或園區內</li><li><time>14:00</time>渡輪回姪浜，地鐵姪浜到天神 15 分</li><li><time>15:00</time>天神購物：UNIQLO 天神店 → mont-bell → ソラリアプラザ（ABC-MART、OVERRIDE）→ JINS，約 2 小時</li><li><time>17:30</time>晚餐：天神或中洲</li><li><time>19:30</time>天神搭 302 巴士回飯店</li></ol>
+      <h3 class="sec">這案會去的地點</h3>
+      <div class="chips"><a class="chip" href="#s-meinohama">姪浜渡船場</a><a class="chip" href="#s-nokonoshima">能古島 Island Park</a><a class="chip" href="#s-uniqlo">UNIQLO 天神店</a><a class="chip" href="#s-montbell">mont-bell 福岡天神店</a><a class="chip" href="#s-solaria">ソラリアプラザ（ABC-MART 5F・OVERRIDE 帽子 B1F）</a><a class="chip" href="#s-jins">JINS 天神西通店</a></div>
+      <p class="hint">地點的營業時間、費用與介紹在下方「地點與店家總表」只寫一次，點名稱可跳過去。</p>
+      <h3 class="sec">小提醒</h3>
+      <ul class="tips"><li>11 月上旬大波斯菊接近尾聲，出發前查 Island Park 官網花況，不好就改方案 3。</li><li>渡輪班次固定，回程班次先拍下來，錯過要等一小時。</li><li>島上風大，比市區冷 2 到 3 度。</li></ul>
+      <p class="rain">下雨：花田沒看頭，整案改成方案 2 或方案 3。</p>
+    </div>
+  </div>
+</section><section class="panel" id="plan5" role="tabpanel" style="--c:#8A6AAE" hidden>
+  <div class="phead">
+    <div class="badge">5</div>
+    <div><h2>方案 5：混搭推薦</h2><p class="tagline">順著馬拉松管制解除的方向移動：上午百道、中午天神（帽子、墨鏡）、下午祇園與運河城、傍晚博多站（寶可夢中心），306 直達回家。</p></div>
+  </div>
+  <div class="meta">
+    <div><b>適合誰</b>想景點與購物各半、搭車少、四個人的清單都能顧到的人（我的推薦）</div>
+    <div><b>交通</b>上午步行；巴士到天神；地鐵 5 分到祇園；步行到博多站；306 直達飯店；全天搭車約 40 分</div>
+    <div><b>預算</b>午餐 ¥1,500、晚餐 ¥1,500、購物另計</div>
+    <div><b>馬拉松</b>全程順著管制解除方向：上午在百道看跑者，下午才進天神，祇園與博多不受影響。</div>
+  </div>
+  <div class="personal">
+    <div><b>🧢 帽子</b>13:00 天神段的 OVERRIDE 與 CA4LA；戶外帽則在 16:15 的 Alpen Outdoors</div>
+    <div><b>🕶 墨鏡</b>13:00 天神段的 JINS（快）或金子眼鏡店（好）；運動墨鏡在 Alpen Outdoors</div>
+    <div><b>⚡ 寶可夢</b>17:45 博多マルイ 2F，就在晚餐與回程巴士旁邊</div>
+  </div>
+  <div class="layout">
+    <aside class="mapbox">
+      <div class="bar"><h3>當日路線</h3><a href="https://www.google.com/maps/dir/?api=1&origin=%E7%A6%8F%E5%B2%A1%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%82%E3%82%82%E3%81%A1%E6%B5%9C&destination=%E5%8D%9A%E5%A4%9A%E9%A7%85&waypoints=%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E7%89%A9%E9%A4%A8%7C%E7%A6%8F%E5%B2%A1%E3%82%BF%E3%83%AF%E3%83%BC%7CMARK%20IS%20%E7%A6%8F%E5%B2%A1%E3%82%82%E3%82%82%E3%81%A1%7C%E7%A6%8F%E5%B2%A1%E3%82%BF%E3%83%AF%E3%83%BC%E5%8D%97%E5%8F%A3%20%E3%83%90%E3%82%B9%E5%81%9C%7C%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85%7C%E3%83%A2%E3%83%B3%E3%83%99%E3%83%AB%20%E7%A6%8F%E5%B2%A1%E5%A4%A9%E7%A5%9E%E5%BA%97%7C%E3%82%BD%E3%83%A9%E3%83%AA%E3%82%A2%E3%83%97%E3%83%A9%E3%82%B6%7CCA4LA%20%E7%A6%8F%E5%B2%A1%7C%E7%A5%87%E5%9C%92%E9%A7%85%20%E7%A6%8F%E5%B2%A1%7C%E6%9D%B1%E9%95%B7%E5%AF%BA%7C%E5%B7%9D%E7%AB%AF%E3%81%9C%E3%82%93%E3%81%96%E3%81%84%E5%BA%83%E5%A0%B4%7C%E3%82%AD%E3%83%A3%E3%83%8A%E3%83%AB%E3%82%B7%E3%83%86%E3%82%A3%E5%8D%9A%E5%A4%9A%7C%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%AF%E3%82%AA%E3%82%AB%20%E5%8D%9A%E5%A4%9A%E3%83%9E%E3%83%AB%E3%82%A4&travelmode=transit&hl=zh-TW" target="_blank" rel="noopener">在 Google 地圖開啟</a></div>
+      <div class="frame"><iframe data-src="https://www.google.com/maps?saddr=33.5922%2C130.3535&daddr=33.5905,130.353+to:33.5932,130.3514+to:33.5945,130.359+to:33.592,130.3515+to:33.5895,130.3995+to:33.5878,130.3984+to:33.589,130.3995+to:33.5896,130.3988+to:33.5932,130.4155+to:33.5937,130.4158+to:33.5935,130.41+to:33.5897,130.4115+to:33.59,130.4195+to:33.5897,130.4207&hl=zh-TW&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      <div class="legend"><ol><li>福岡王子大飯店百道濱</li><li>福岡市博物館（金印）</li><li>福岡塔</li><li>MARK IS 福岡ももち</li><li>福岡タワー南口 巴士站</li><li>天神（西鐵福岡站）</li><li>mont-bell 福岡天神店</li><li>ソラリアプラザ（ABC-MART 5F・OVERRIDE 帽子 B1F）</li><li>CA4LA 福岡（帽子）</li><li>祇園站</li><li>東長寺（福岡大佛）</li><li>川端通商店街・川端ぜんざい廣場</li><li>博多運河城（Alpen Outdoors、MUJI）</li><li>寶可夢中心 福岡（博多マルイ 2F）</li><li>博多站（阪急、KITTE、AMU、金子眼鏡店）</li></ol></div>
+    </aside>
+    <div>
+      <h3 class="sec">時間軸</h3>
+      <ol class="timeline"><li><time>08:40</time>路邊看馬拉松 30 分</li><li><time>09:30</time>福岡市博物館金印 → 福岡塔 → MARK IS 買 UNIQLO、GU 基本款</li><li><time>12:00</time>巴士 302 到天神，午餐天神（水炊き或地下街）</li><li><time>13:00</time>mont-bell → ソラリアプラザ（ABC-MART 鞋、OVERRIDE 帽子）→ CA4LA → JINS 或金子眼鏡店 墨鏡，約 1.5 小時</li><li><time>14:45</time>地鐵 5 分到祇園：東長寺福岡大佛、承天寺、川端通商店街與ぜんざい</li><li><time>16:15</time>運河城 Alpen Outdoors 旗艦店、MUJI，約 1.5 小時</li><li><time>17:45</time>步行 10 分到博多站：寶可夢中心（博多マルイ 2F）40 分，其他人逛阪急與 JR 博多シティ 7F 金子眼鏡店</li><li><time>18:30</time>晚餐：一雙或一幸舎</li><li><time>19:45</time>博多站搭 306 巴士直達福岡タワー南口</li></ol>
+      <h3 class="sec">這案會去的地點</h3>
+      <div class="chips"><a class="chip" href="#s-museum">福岡市博物館（金印）</a><a class="chip" href="#s-tower">福岡塔</a><a class="chip" href="#s-markis">MARK IS 福岡ももち</a><a class="chip" href="#s-montbell">mont-bell 福岡天神店</a><a class="chip" href="#s-solaria">ソラリアプラザ（ABC-MART 5F・OVERRIDE 帽子 B1F）</a><a class="chip" href="#s-ca4la">CA4LA 福岡（帽子）</a><a class="chip" href="#s-jins">JINS 天神西通店</a><a class="chip" href="#s-kaneko">金子眼鏡店 天神 VIORO</a><a class="chip" href="#s-tocho">東長寺（福岡大佛）</a><a class="chip" href="#s-joten">承天寺</a><a class="chip" href="#s-kawabata">川端通商店街・川端ぜんざい廣場</a><a class="chip" href="#s-canal">博多運河城（Alpen Outdoors、MUJI）</a><a class="chip" href="#s-pokemon">寶可夢中心 福岡（博多マルイ 2F）</a><a class="chip" href="#s-hakata">博多站（阪急、KITTE、AMU、金子眼鏡店）</a></div>
+      <p class="hint">地點的營業時間、費用與介紹在下方「地點與店家總表」只寫一次，點名稱可跳過去。</p>
+      <h3 class="sec">小提醒</h3>
+      <ul class="tips"><li>這案走路最多（約 10 公里），穿好走的鞋，購物分兩段避免手提太久。</li><li>運河城時間若不夠，優先 Alpen Outdoors 3F，MUJI 可跳過。</li><li>寶可夢中心週日傍晚可能排隊，先讓想去的人過去排，其他人晚 10 分鐘到。</li></ul>
+      <p class="rain">下雨：上午改成博物館與 E・ZO，其餘不變。</p>
+    </div>
+  </div>
+</section>
+
+<section class="shared">
+  <h2>個人採買清單</h2>
+  <div class="info">
+    <div class="box"><h3>🧢 帽子</h3><ul>
+      <li><b>OVERRIDE</b>（ソラリアプラザ B1F）：帽子選物店，款式最廣，店員會量頭圍。</li>
+      <li><b>CA4LA 福岡</b>（天神 2-6-12）：日本最知名帽子品牌，設計感與材質最好，¥6,000 起。</li>
+      <li><b>NEW ERA 福岡天神</b>（大名）：棒球帽與日本限定配色。</li>
+      <li><b>mont-bell、Alpen Outdoors</b>：戶外機能帽，防潑水、可收納。</li>
+      <li>三家時尚帽店都在天神西通到大名 300 公尺內，排同一段；台灣冬天能戴的是羊毛貝雷、針織帽、防風漁夫帽。</li>
+    </ul></div>
+    <div class="box"><h3>🕶 墨鏡</h3><ul>
+      <li><b>金子眼鏡店</b>（天神 VIORO、JR 博多シティ 7F）：鯖江手工鏡框，¥30,000 起，可換度數片，用十年的那種。</li>
+      <li><b>JINS 天神西通</b>、<b>OWNDAYS ソラリアステージ</b>：¥3,000 到 8,000，30 分鐘取件，偏光片可加價。</li>
+      <li><b>Alpen Outdoors</b>（運河城 3F）：Oakley、SWANS 運動墨鏡。</li>
+      <li>免稅同店滿 ¥5,000；配度數需 1 到 2 小時，想當天取件請一到天神就先去。</li>
+    </ul></div>
+    <div class="box"><h3>⚡ 寶可夢</h3><ul>
+      <li><b>寶可夢中心 福岡</b>：博多マルイ 2F（博多站直結），10:00 – 21:00，2025 年 6 月搬遷擴大。</li>
+      <li>福岡限定：山笠法被皮卡丘、明太子皮卡丘、博多織卡夾；週日下午排隊 10 到 20 分。</li>
+      <li>方案 2 與方案 5 已排入；方案 1、3 的人可在傍晚從天神搭地鐵 5 分過去，再從博多站搭 306 回飯店。</li>
+      <li>第三天的由布院 Floral Village 也有寶可夢商品店，可先逛小的。</li>
+    </ul></div>
+  </div>
+</section>
+
+<section class="shared">
+  <h2>地點與店家總表</h2>
+  <div class="filter"><span>只看：</span><button aria-pressed="true" data-f="all">全部</button><button aria-pressed="false" data-f="1">方案 1</button><button aria-pressed="false" data-f="2">方案 2</button><button aria-pressed="false" data-f="3">方案 3</button><button aria-pressed="false" data-f="4">方案 4</button><button aria-pressed="false" data-f="5">方案 5</button></div>
+  <article class="spot" id="s-kego" data-plans="1 3">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E8%AD%A6%E5%9B%BA%E7%A5%9E%E7%A4%BE" target="_blank" rel="noopener">警固神社（足湯）</a></h3><span class="kind">景點・休息</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區天神 2-2-20｜天神南步行 3 分</div>
+    <div class="hours"><b>營業</b><span>足湯 約 10:00 – 18:00</span><b>公休</b><span>無</span><b>費用</b><span>免費</span></div>
+    <p>天神正中央的神社，境內有免費足湯，逛街走累了泡腳 10 分鐘。</p>
+    <div class="tip">帶小毛巾。</div>
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span><span class="pk pk3">方案 3</span></div>
+  </article><article class="spot" id="s-ohori" data-plans="1">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E6%BF%A0%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">大濠公園</a></h3><span class="kind">景點</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區大濠公園｜地鐵大濠公園站 1 分，天神搭地鐵 1 站或步行 15 分</div>
+    <div class="hours"><b>營業</b><span>全日</span><b>公休</b><span>無</span><b>費用</b><span>免費（日本庭園 ¥250）</span></div>
+    <p>黑田長政築城時的外濠，1929 年仿西湖整理成周長 2 公里的湖畔公園，是福岡人的客廳。緊鄰的福岡城跡保留日本最大級石垣群，天守台可看整個天神到博多灣。</p>
+    <div class="tip">11 月上旬舞鶴公園銀杏開始轉黃；上午可能受馬拉松管制，下午去。需時 90 分。</div>
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span></div>
+  </article><article class="spot" id="s-rgc" data-plans="1">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%AD%E3%82%A4%E3%83%A4%E3%83%AB%E3%82%AC%E3%83%BC%E3%83%87%E3%83%B3%E3%82%AB%E3%83%95%E3%82%A7%20%E5%A4%A7%E6%BF%A0%E5%85%AC%E5%9C%92" target="_blank" rel="noopener">Royal Garden Cafe 大濠公園</a></h3><span class="kind">午餐</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">大濠公園湖畔</div>
+    <div class="hours"><b>營業</b><span>11:00 – 22:00（請再確認）</span><b>公休</b><span>無</span><b>費用</b><span>午餐 ¥1,500 – 2,500</span></div>
+    <p>湖景玻璃屋餐廳，週日中午會排隊，4 人建議 11:30 前到或改吃天神。</p>
+    
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span></div>
+  </article><article class="spot" id="s-uniqlo" data-plans="1 4">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%A6%E3%83%8B%E3%82%AF%E3%83%AD%20%E5%A4%A9%E7%A5%9E%E5%BA%97" target="_blank" rel="noopener">UNIQLO 天神店</a></h3><span class="kind">購物・衣</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區天神 2 丁目｜地鐵天神站 1-a 出口旁</div>
+    <div class="hours"><b>營業</b><span>10:00 – 21:00</span><b>公休</b><span>無</span></div>
+    <p>九州最大 UNIQLO（約 2,843 ㎡），機能基本款最齊，日本限定與聯名款在這裡看。</p>
+    <div class="tip">基本款若已在 MARK IS 買過，這裡只看限定。</div>
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span><span class="pk pk4">方案 4</span></div>
+  </article><article class="spot" id="s-montbell" data-plans="1 3 4 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%A2%E3%83%B3%E3%83%99%E3%83%AB%20%E7%A6%8F%E5%B2%A1%E5%A4%A9%E7%A5%9E%E5%BA%97" target="_blank" rel="noopener">mont-bell 福岡天神店</a></h3><span class="kind">購物・機能衣</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區天神 2-4-38 NTT-KF ビル 1F</div>
+    <div class="hours"><b>營業</b><span>10:30 – 21:00</span><b>公休</b><span>年中無休</span></div>
+    <p>日本機能服飾性價比最高的品牌：雨衣、輕羽絨、速乾衣、登山鞋，也有登山帽、遮陽帽與運動墨鏡。台灣有售但日本便宜約三成，適合台灣濕冷冬天的三季款最多。</p>
+    <div class="tip">尺寸偏小，L 約台灣 M 到 L。</div>
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span><span class="pk pk3">方案 3</span><span class="pk pk4">方案 4</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-solaria" data-plans="1 3 4 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%82%BD%E3%83%A9%E3%83%AA%E3%82%A2%E3%83%97%E3%83%A9%E3%82%B6" target="_blank" rel="noopener">ソラリアプラザ（ABC-MART 5F・OVERRIDE 帽子 B1F）</a></h3><span class="kind">購物・鞋與帽子</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區天神 2-2-43｜西鐵福岡站旁</div>
+    <div class="hours"><b>營業</b><span>週日 10:00 – 20:00</span><b>公休</b><span>無</span></div>
+    <p>一棟樓兩個目標：5F 的 ABC-MART 是鞋子最齊的連鎖（New Balance、ASICS、Onitsuka Tiger、Hoka 與日本限定配色，寬楦款好找）；B1F 的 OVERRIDE 是帽子選物店，從漁夫帽、棒球帽到毛帽都有，自有品牌與國內外帽款並陳，店員會幫你量頭圍。</p>
+    <div class="tip">鞋子以公分標示，先量好腳長；帽子日本尺寸多為 57 到 59 公分，頭大的人問有無 61 公分款。</div>
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span><span class="pk pk3">方案 3</span><span class="pk pk4">方案 4</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-ca4la" data-plans="1 3 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=CA4LA%20%E7%A6%8F%E5%B2%A1" target="_blank" rel="noopener">CA4LA 福岡（帽子）</a></h3><span class="kind">購物・帽子</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區天神 2-6-12 1F｜天神站步行 4 分｜092-736-3132</div>
+    <div class="hours"><b>營業</b><span>11:00 – 20:00（請再確認）</span><b>公休</b><span>無</span><b>費用</b><span>帽子 ¥6,000 – 20,000</span></div>
+    <p>日本最知名的帽子品牌，設計感強、材質講究，從日常棒球帽到紳士帽都有，秋冬的羊毛貝雷與針織帽在台灣冬天剛好能戴。想買一頂「有型但天天能戴」的帽子，先來這裡。</p>
+    <div class="tip">和 OVERRIDE 相距 3 分鐘，兩家都看再決定。</div>
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span><span class="pk pk3">方案 3</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-kaneko" data-plans="1 3 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E9%87%91%E5%AD%90%E7%9C%BC%E9%8F%A1%E5%BA%97%20%E5%A4%A9%E7%A5%9EVIORO%E5%BA%97" target="_blank" rel="noopener">金子眼鏡店 天神 VIORO</a></h3><span class="kind">購物・墨鏡</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區天神 2-10-3 VIORO 內｜天神站步行 3 分</div>
+    <div class="hours"><b>營業</b><span>11:00 – 21:00</span><b>公休</b><span>無</span><b>費用</b><span>墨鏡 ¥30,000 起</span></div>
+    <p>鯖江手工眼鏡的代表品牌，鈦金屬與賽璐珞鏡框的做工是日本眼鏡的頂點，墨鏡款可以現場換成度數片。想買一副用十年的墨鏡，來這裡；博多站 JR 博多シティ 7F 也有分店。</p>
+    <div class="tip">免稅可用；配度數片需 1 到 2 小時，當天取件請一開始就先來。</div>
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span><span class="pk pk3">方案 3</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-jins" data-plans="1 3 4 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=JINS%20%E5%A4%A9%E7%A5%9E%E8%A5%BF%E9%80%9A%E3%82%8A%E5%BA%97" target="_blank" rel="noopener">JINS 天神西通店</a></h3><span class="kind">購物・墨鏡</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區天神 2-4-20 天神プラッサ 1F</div>
+    <div class="hours"><b>營業</b><span>11:00 – 20:00</span><b>公休</b><span>無</span><b>費用</b><span>墨鏡 ¥3,000 – 8,000</span></div>
+    <p>日本平價眼鏡的代表，墨鏡款式多、偏光片可加價，30 分鐘可取件。想買「出國用、弄丟不心疼」的墨鏡，這裡最快；OWNDAYS ソラリアステージ店（西鐵福岡站旁）是同等級的替代。</p>
+    <div class="tip">台灣有 JINS，但日本款式與價格都較好；運動型墨鏡則去 Alpen Outdoors。</div>
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span><span class="pk pk3">方案 3</span><span class="pk pk4">方案 4</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-nakasu" data-plans="1">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%8D%9A%E3%81%A7%E3%81%82%E3%81%84%E6%A9%8B" target="_blank" rel="noopener">中洲・福博であい橋</a></h3><span class="kind">景點・夜景</span><span class="fit bad">週日部分公休</span></div>
+    <div class="addr">天神步行 15 分</div>
+    <div class="hours"><b>營業</b><span>全日</span><b>公休</b><span>週日部分屋台休（大ちゃん、小島商店）</span></div>
+    <p>福岡最大的歡樂街，沿那珂川的屋台燈光是福岡代表畫面。週日仍營業的屋台有喜柳、十番；只散步的話看福博であい橋的河景。</p>
+    <div class="tip">晚餐備案：西中洲 鉄なべ（週日 11:30 – 24:00）。</div>
+    <div class="usedby">出現在：<span class="pk pk1">方案 1</span></div>
+  </article><article class="spot" id="s-tocho" data-plans="2 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E6%9D%B1%E9%95%B7%E5%AF%BA" target="_blank" rel="noopener">東長寺（福岡大佛）</a></h3><span class="kind">景點・必看</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">博多區御供所町 2-4｜地鐵祇園站 1 分</div>
+    <div class="hours"><b>營業</b><span>09:00 – 17:00</span><b>公休</b><span>無</span><b>費用</b><span>免費（大佛自由樂捐）</span></div>
+    <p>806 年空海從唐朝回國後創建的第一座寺院，比高野山還早。木造坐佛「福岡大佛」高 10.8 公尺，是日本最大級木造佛像；佛像底下的「地獄極樂巡禮」通道要摸黑走過。</p>
+    <div class="tip">需時 30 分。</div>
+    <div class="usedby">出現在：<span class="pk pk2">方案 2</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-joten" data-plans="2 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E6%89%BF%E5%A4%A9%E5%AF%BA%20%E5%8D%9A%E5%A4%9A" target="_blank" rel="noopener">承天寺</a></h3><span class="kind">景點</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">博多區博多駅前 1-29-9｜東長寺步行 5 分</div>
+    <div class="hours"><b>營業</b><span>境內自由</span><b>公休</b><span>無</span><b>費用</b><span>免費</span></div>
+    <p>1242 年聖一國師從宋朝帶回製粉技術，這裡被視為日本烏龍麵、蕎麥麵與饅頭的發祥地，寺前有紀念碑。枯山水「洗濤庭」與博多千年門的參道很安靜。</p>
+    <div class="tip">需時 20 分。</div>
+    <div class="usedby">出現在：<span class="pk pk2">方案 2</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-kawabata" data-plans="2 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%B7%9D%E7%AB%AF%E3%81%9C%E3%82%93%E3%81%96%E3%81%84%E5%BA%83%E5%A0%B4" target="_blank" rel="noopener">川端通商店街・川端ぜんざい廣場</a></h3><span class="kind">小吃・景點</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">博多區上川端町 10-256｜祇園站步行 8 分</div>
+    <div class="hours"><b>營業</b><span>週五、六、日 11:00 – 18:00</span><b>公休</b><span>週一到週四（週日有開）</span><b>費用</b><span>ぜんざい ¥550</span></div>
+    <p>博多最老的商店街，130 家店的拱廊。川端ぜんざい廣場只開週五到週日，紅豆湯配烤麻糬，旁邊常設一座飾り山笠。第五天會去櫛田神社，這天只走商店街。</p>
+    <div class="tip">需時 30 分。</div>
+    <div class="usedby">出現在：<span class="pk pk2">方案 2</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-canal" data-plans="2 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%82%AD%E3%83%A3%E3%83%8A%E3%83%AB%E3%82%B7%E3%83%86%E3%82%A3%E5%8D%9A%E5%A4%9A" target="_blank" rel="noopener">博多運河城（Alpen Outdoors、MUJI）</a></h3><span class="kind">購物・戶外機能</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">博多區住吉 1-2｜川端通步行 3 分</div>
+    <div class="hours"><b>營業</b><span>10:00 – 21:00</span><b>公休</b><span>無</span></div>
+    <p>South Bldg 3F 的 Alpen Outdoors 旗艦店總面積約 3,000 坪，Snow Peak Store、Coleman、Osprey、Gregory，戶外帽與運動墨鏡（Oakley、SWANS）也在這裡；2F Sports Depo 有運動鞋與機能服；MUJI 是博多最大。中庭每半小時一次噴水秀，5F 拉麵競技場可當午餐。</p>
+    <div class="tip">UNIQLO 運河城店已關閉。需時 90 到 120 分。</div>
+    <div class="usedby">出現在：<span class="pk pk2">方案 2</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-pokemon" data-plans="2 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%AF%E3%82%AA%E3%82%AB%20%E5%8D%9A%E5%A4%9A%E3%83%9E%E3%83%AB%E3%82%A4" target="_blank" rel="noopener">寶可夢中心 福岡（博多マルイ 2F）</a></h3><span class="kind">購物・寶可夢</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">博多區博多駅中央街 9-1 博多マルイ 2F｜博多站直結｜092-413-5185</div>
+    <div class="hours"><b>營業</b><span>10:00 – 21:00</span><b>公休</b><span>無</span></div>
+    <p>九州唯一的寶可夢中心，2025 年 6 月從 AMU PLAZA 8F 搬到博多マルイ 2F 並擴大。福岡限定商品是穿著博多祇園山笠法被與明太子造型的皮卡丘、博多織圖案的卡夾；玩偶、卡牌、文具都齊，週日下午排隊 10 到 20 分。</p>
+    <div class="tip">免稅可用。限定款在入口附近的「ご当地」區；喜歡寶可夢的同伴可以在這裡待 40 分，其他人去同棟樓上或對面的博多阪急。</div>
+    <div class="usedby">出現在：<span class="pk pk2">方案 2</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-hakata" data-plans="2 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E9%A7%85" target="_blank" rel="noopener">博多站（阪急、KITTE、AMU、金子眼鏡店）</a></h3><span class="kind">購物・晚餐</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">博多區博多駅中央街 1-1</div>
+    <div class="hours"><b>營業</b><span>阪急 10:00 – 20:00、AMU/KITTE 10:00 – 21:00</span><b>公休</b><span>無</span></div>
+    <p>博多阪急 8F 有 New Balance 直營，JR 博多シティ 7F 有金子眼鏡店分店；回飯店的 306 巴士從博多站直達福岡タワー南口。晚餐：一幸舎 博多本店、一雙 博多駅東本店（11:00 – 24:00）。</p>
+    <div class="tip">11 月中旬起站前廣場有聖誕燈飾。</div>
+    <div class="usedby">出現在：<span class="pk pk2">方案 2</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-museum" data-plans="3 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E5%B8%82%E5%8D%9A%E7%89%A9%E9%A4%A8" target="_blank" rel="noopener">福岡市博物館（金印）</a></h3><span class="kind">景點・必看</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">早良區百道浜 3-1-1｜飯店步行 5 分</div>
+    <div class="hours"><b>營業</b><span>09:30 – 17:30（入館 17:00）</span><b>公休</b><span>週一（週日有開）</span><b>費用</b><span>常設展 ¥200</span></div>
+    <p>國寶「漢委奴國王」金印就在這裡。西元 57 年漢光武帝賜給倭奴國王、1784 年在志賀島被挖出，是日本與中國最早有文字記錄的外交證物。金印只有 2.3 公分見方，放在獨立的暗室裡，旁邊有放大模型。</p>
+    <div class="tip">常設展還有黑田長政的水牛角兜頭盔。需時 45 到 60 分。</div>
+    <div class="usedby">出現在：<span class="pk pk3">方案 3</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-tower" data-plans="3 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%B2%A1%E3%82%BF%E3%83%AF%E3%83%BC" target="_blank" rel="noopener">福岡塔</a></h3><span class="kind">景點</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">早良區百道浜 2-3-26｜飯店步行 5 分</div>
+    <div class="hours"><b>營業</b><span>展望室 09:30 – 22:00</span><b>公休</b><span>無</span><b>費用</b><span>¥800</span></div>
+    <p>234 公尺的海濱電波塔，8,000 片鏡面玻璃，123 公尺展望室可 360 度看博多灣、能古島與整個福岡市。看完就能理解福岡「海、城、山」的地形，也能俯瞰我們住的百道人工島。</p>
+    <div class="tip">下午逆光時海面最亮。需時約 40 分。</div>
+    <div class="usedby">出現在：<span class="pk pk3">方案 3</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-markis" data-plans="3 5">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=MARK%20IS%20%E7%A6%8F%E5%B2%A1%E3%82%82%E3%82%82%E3%81%A1" target="_blank" rel="noopener">MARK IS 福岡ももち</a></h3><span class="kind">購物・基本款</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區地行浜 2-2-1｜飯店步行 8 分</div>
+    <div class="hours"><b>營業</b><span>10:00 – 21:00</span><b>公休</b><span>無</span></div>
+    <p>1 樓 UNIQLO、3 樓 GU、Kojima×Bic Camera 與美食街。巴士若受馬拉松影響晚發車，先在這裡把 UNIQLO、GU 的機能基本款買完，不用擠天神。</p>
+    <div class="tip">免稅同店同日滿 ¥5,000，帶護照。</div>
+    <div class="usedby">出現在：<span class="pk pk3">方案 3</span><span class="pk pk5">方案 5</span></div>
+  </article><article class="spot" id="s-snowpeak" data-plans="3">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%82%B9%E3%83%8E%E3%83%BC%E3%83%94%E3%83%BC%E3%82%AF%20%E3%83%AF%E3%83%B3%E3%83%BB%E3%83%95%E3%82%AF%E3%82%AA%E3%82%AB%E3%83%BB%E3%83%93%E3%83%AB%E3%83%87%E3%82%A3%E3%83%B3%E3%82%B0" target="_blank" rel="noopener">Snow Peak ワン・フクオカ</a></h3><span class="kind">購物・機能衣</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">中央區天神 1-11-1 ワン・フクオカ・ビルディング 4F</div>
+    <div class="hours"><b>營業</b><span>週日 10:00 – 20:00</span><b>公休</b><span>無</span></div>
+    <p>2025 年 4 月開的直營店，服飾線的防火棉外套、機能褲日常也好穿。</p>
+    
+    <div class="usedby">出現在：<span class="pk pk3">方案 3</span></div>
+  </article><article class="spot" id="s-meinohama" data-plans="4">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%A7%AA%E6%B5%9C%E6%97%85%E5%AE%A2%E5%BE%85%E5%90%88%E6%89%80" target="_blank" rel="noopener">姪浜渡船場</a></h3><span class="kind">交通</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">西區姪浜 3-54｜飯店計程車 10 分</div>
+    <div class="hours"><b>營業</b><span>渡輪每小時 1 到 2 班，約 10 分航程</span><b>公休</b><span>無</span><b>費用</b><span>渡輪來回約 ¥460</span></div>
+    <p>福岡市營渡船到能古島，10 分鐘就到博多灣中的小島。</p>
+    <div class="tip">回程班次先拍下來。</div>
+    <div class="usedby">出現在：<span class="pk pk4">方案 4</span></div>
+  </article><article class="spot" id="s-nokonoshima" data-plans="4">
+    <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%AE%E3%81%93%E3%81%AE%E3%81%97%E3%81%BE%E3%82%A2%E3%82%A4%E3%83%A9%E3%83%B3%E3%83%89%E3%83%91%E3%83%BC%E3%82%AF" target="_blank" rel="noopener">能古島 Island Park</a></h3><span class="kind">景點</span><span class="fit ok">週日營業</span></div>
+    <div class="addr">西區能古島</div>
+    <div class="hours"><b>營業</b><span>09:00 – 17:30</span><b>公休</b><span>無</span><b>費用</b><span>¥1,500</span></div>
+    <p>Island Park 的花田面海，秋天是大波斯菊與一串紅；11 月上旬大波斯菊接近尾聲，花況需再查。島上的能古烏龍麵。</p>
+    <div class="tip">渡船場到園區有巴士 13 分。</div>
+    <div class="usedby">出現在：<span class="pk pk4">方案 4</span></div>
+  </article>
+</section>
+
+<section class="shared">
+  <h2>交通與付款</h2>
+  <div class="info">
+    <div class="box"><h3>巴士與地鐵</h3><ul>
+      <li>飯店最近的巴士站「福岡タワー南口」步行 1 分：302 / W1 到天神約 15 到 20 分，306 / 312 到博多站約 25 分，單程 ¥260。</li>
+      <li>西鐵巴士後門上車、前門下車，上下車各刷一次 IC 卡（Suica、ICOCA、手機 Suica 皆可）。</li>
+      <li>地鐵單程 ¥210 起，一天只搭一兩趟用 IC 卡逐次付即可，不需一日券。</li>
+      <li>回飯店末班巴士約 23:00；之後搭計程車，天神出發約 ¥1,800，4 人分攤每人約 ¥450。</li>
+    </ul></div>
+    <div class="box"><h3>購物與免稅</h3><ul>
+      <li>免稅：同店同日滿 ¥5,000（未稅）退 10%，帶護照，4 人湊單請同一人結帳。</li>
+      <li>衣服鞋子以台灣能用的三季款為主：防風防水薄外套、輕羽絨、速乾內搭、機能褲；鞋子以公分標示，先量腳長。</li>
+      <li>UNIQLO 運河城店已關閉，UNIQLO 在天神店或 MARK IS；Workman 最近在吉塚（博多站 JR 一站）。</li>
+    </ul></div>
+  </div>
+</section>
+
+<div class="other"><a href="Day4_自由行_規劃討論.md">規劃討論 md</a><a href="九州五日遊_路線圖.html">五日路線圖</a><a href="Day3_深度導覽.html">Day 3 深度導覽</a><a href="Day5_深度導覽.html">Day 5 深度導覽</a></div>
+<footer>營業時間、價格與馬拉松資訊整理自各官網與 2026 年 10 月查詢結果，來源見 Day4_自由行_規劃討論.md。路線座標為概略值，導航請用 Google 地圖連結。</footer>
+</div>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('.tabs [role=tab]'));
+  var panels=[].slice.call(document.querySelectorAll('.panel'));
+  function show(key){
+    tabs.forEach(function(t){t.setAttribute('aria-selected',String(t.dataset.key===key));});
+    panels.forEach(function(p){var on=p.id==='plan'+key;p.hidden=!on;if(on){var f=p.querySelector('iframe[data-src]');if(f){f.src=f.dataset.src;f.removeAttribute('data-src');}}});
+    try{localStorage.setItem('day4plan',key);}catch(e){}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(){show(t.dataset.key);});});
+  var init='5';try{init=localStorage.getItem('day4plan')||'5';}catch(e){}
+  if(location.hash&&/^#plan[1-5]$/.test(location.hash))init=location.hash.slice(5);
+  show(init);
+  var fb=[].slice.call(document.querySelectorAll('.filter button'));
+  fb.forEach(function(b){b.addEventListener('click',function(){
+    fb.forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
+    var f=b.dataset.f;[].slice.call(document.querySelectorAll('.shared .spot')).forEach(function(s){s.classList.toggle('dim',f!=='all'&&!(s.dataset.plans||'').split(' ').includes(f));});
+  });});
+})();
+</script>

@@ -1,0 +1,241 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>九州 FUN 風路線圖</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --paper:#F5EDDF; --paper-2:#EDE2CE; --card:#FBF6EC;
+    --ink:#233A52; --ink-2:#4F6377; --ink-3:#8696A8;
+    --d1:#D9643A; --d2:#2F5D8A; --d3:#5E9C78; --d4:#C9981F; --d5:#8A6AAE;
+    --line:#D8CCB4; --shadow:0 10px 30px rgba(35,58,82,.10);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --paper:#1B2430; --paper-2:#151D27; --card:#232F3D;
+      --ink:#EDE6D8; --ink-2:#B9C2CD; --ink-3:#7E8B99;
+      --d1:#F08A5E; --d2:#7FB0DA; --d3:#7FC39C; --d4:#F0C659; --d5:#B59AD6;
+      --line:#34424F; --shadow:0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#1B2430; --paper-2:#151D27; --card:#232F3D;
+    --ink:#EDE6D8; --ink-2:#B9C2CD; --ink-3:#7E8B99;
+    --d1:#F08A5E; --d2:#7FB0DA; --d3:#7FC39C; --d4:#F0C659; --d5:#B59AD6;
+    --line:#34424F; --shadow:0 10px 30px rgba(0,0,0,.35);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;font-size:15px;line-height:1.65}
+  .wrap{max-width:1240px;margin:0 auto;padding:40px 28px 72px}
+
+  header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:24px}
+  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+  h1{font-family:"Zen Maru Gothic","Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(30px,4vw,46px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
+  h1 em{font-style:normal;color:var(--d1)}
+  .sub{color:var(--ink-2);margin:0;max-width:60ch}
+  .flight{display:grid;grid-template-columns:auto auto;gap:4px 18px;font-size:13px;color:var(--ink-2);background:var(--card);border:1px solid var(--line);padding:12px 16px;border-radius:14px;font-variant-numeric:tabular-nums}
+  .flight b{color:var(--ink);font-weight:700}
+
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+  .tab{display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 10px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:13.5px;font-weight:500;cursor:pointer;font-family:inherit;transition:transform .15s}
+  .tab:hover{transform:translateY(-1px)}
+  .tab:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+  .tab .dot{width:14px;height:14px;border-radius:50%;background:var(--c)}
+  .tab[aria-selected="true"]{background:var(--c);color:#fff;border-color:var(--c)}
+  .tab[aria-selected="true"] .dot{background:#fff}
+
+  .layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:24px;align-items:start}
+  @media (max-width:900px){.layout{grid-template-columns:1fr}}
+
+  .mapbox{position:sticky;top:16px;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
+  .mapbox .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);border-left:6px solid var(--c)}
+  .mapbox .bar .t{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:16px}
+  .mapbox .bar .t small{display:block;font-family:"Noto Sans TC",sans-serif;font-weight:400;font-size:12px;color:var(--ink-3)}
+  .open{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--c);text-decoration:none;border:1px solid var(--c);padding:6px 12px;border-radius:999px;white-space:nowrap}
+  .open:hover{background:var(--c);color:#fff}
+  .frame{position:relative;aspect-ratio:4/3.3;background:var(--paper-2)}
+  .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .frame[hidden]{display:none}
+
+  .days{display:flex;flex-direction:column;gap:12px}
+  .day{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:16px;padding:16px 18px 14px;transition:box-shadow .2s,opacity .25s;cursor:pointer}
+  .day:hover,.day.active{box-shadow:var(--shadow)}
+  .day.faded{opacity:.5}
+  .day:focus-visible{outline:2px solid var(--c);outline-offset:2px}
+  .day-head{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"num title" "num date";column-gap:10px;row-gap:2px;align-items:baseline;margin-bottom:8px}
+  .day-num{grid-area:num;font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:24px;color:var(--c);line-height:1}
+  .day-title{grid-area:title;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:16px}
+  .day-date{grid-area:date;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+  .stops{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
+  .stops li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px}
+  .stops li .n{flex:none;width:20px;height:20px;border-radius:50%;background:var(--c);color:#fff;font-size:11px;font-weight:700;display:inline-grid;place-items:center;font-family:"Zen Maru Gothic",sans-serif;margin-top:2px}
+  .stops li .time{flex:none;min-width:46px;font-variant-numeric:tabular-nums;font-size:12.5px;font-weight:700;color:var(--ink);line-height:20px;margin-top:2px;white-space:nowrap}
+  .stops li .time.est{font-weight:500;color:var(--ink-3)}
+  .stops li .time.est small{font-size:9.5px;font-weight:400;color:var(--ink-3);margin-left:2px;vertical-align:1px}
+  .stops li.extra .n{background:transparent;color:var(--ink-3);border:1px dashed var(--ink-3)}
+  .stops li.extra{color:var(--ink-2)}
+  .stops li .stay{color:var(--ink-3);font-size:12px;margin-left:4px}
+  .stops li a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ink-3)}
+  .stops li a:hover{color:var(--c);border-color:var(--c)}
+  .free{font-size:13.5px;color:var(--ink-2)}
+  .meta{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--ink-2)}
+  .meta dt{color:var(--ink-3);font-weight:500}
+  .meta dd{margin:0}
+
+  .note{margin-top:32px;padding:16px 20px;border-radius:14px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink-2);font-size:13.5px;max-width:76ch}
+  .note b{color:var(--ink)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* ---- mobile ---- */
+html{-webkit-text-size-adjust:100%}
+@media (max-width:640px){
+  .wrap,body>div{padding-left:12px;padding-right:12px}
+  h1{font-size:22px}
+  .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}
+  .tabs [role=tab],.tabs button{flex:0 0 auto;min-height:40px}
+  .layout{grid-template-columns:1fr!important}
+  .mapbox{position:static!important}
+  .frame{aspect-ratio:1/1!important}
+  .day-head{gap:6px}
+  .stops li{font-size:13.5px}
+  a,button{min-height:32px}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">2026 員工旅遊 · 第二、三、四、六梯</div>
+      <h1>九州 <em>FUN</em> 風五日遊 路線圖</h1>
+      <p class="sub">由福岡出發，繞行柳川、熊本、阿蘇、由布院一圈後回到福岡。切換天數即可在 Google 地圖上看到當天的地點與行車路線，每一站都可以直接在 Google 地圖開啟。</p>
+    </div>
+    <div class="flight">
+      <span>去程</span><span><b>CI116</b> 桃園 16:40 → 福岡 20:00</span>
+      <span>回程</span><span><b>CI117</b> 福岡 21:00 → 桃園 22:30</span>
+      <span>出發日</span><span>09/30、10/03、10/14、11/05</span>
+    </div>
+  </header>
+
+  <div class="tabs" role="tablist" id="tabs"></div>
+
+  <div class="layout">
+    <div class="mapbox" id="mapbox">
+      <div class="bar"><div class="t" id="mapTitle"></div><a class="open" id="openLink" target="_blank" rel="noopener">在 Google 地圖開啟 ↗</a></div>
+      <div id="frames"></div>
+    </div>
+    <div class="days" id="days"></div>
+  </div>
+
+  <div class="note">
+    <b>說明。</b>地圖為 Google 地圖的路線嵌入，路線依 Google 的開車導航計算，僅供位置與順序參考，實際行車路徑以遊覽車為準。第一天與第五天的桃園機場段為飛行，未納入路線。地點名稱使用日文以便 Google 正確定位。<br>
+    <b>時間。</b>除航班外，各站時間為依車程推估（標示「預估」），實際以領隊當日公布為準。
+  </div>
+</div>
+
+<script>
+(function(){
+  // q: 給 Google 地圖搜尋用的名稱（日文較準），name: 顯示名稱
+  // 地點：q 為 Google 地圖搜尋名稱（日文較準），ll 為經緯度（嵌入路線用，避免定位失敗）
+  const P = {
+    airport:{name:'福岡空港',q:'福岡空港',ll:[33.5859,130.4507]},
+    tenjin:{name:'天神商圈',q:'天神 福岡市',ll:[33.5904,130.4017]},
+    nakasu:{name:'中洲屋台街',q:'中洲屋台 福岡',ll:[33.5938,130.4057]},
+    monte:{name:'福岡蒙特埃馬納酒店',q:'ホテルモンテエルマーナ福岡',ll:[33.5852143,130.4050977]},
+    yanagawa:{name:'柳川遊船',q:'柳川川下り 松月乗船場',ll:[33.1690,130.4040]},
+    kumamoto:{name:'熊本城（上天守閣）',q:'熊本城',ll:[32.8061,130.7058]},
+    sakura:{name:'櫻之馬場城彩苑',q:'桜の馬場 城彩苑',ll:[32.8028,130.7045]},
+    daikanbo:{name:'大觀峰展望台',q:'大観峰',ll:[33.0394,131.0463]},
+    kamenoi:{name:'龜之井酒店阿蘇公園度假村',q:'亀の井ホテル 阿蘇',ll:[32.9450,131.0890]},
+    kusasenri:{name:'草千里之濱',q:'草千里ヶ浜',ll:[32.8838,131.0562]},
+    kinrin:{name:'由布院・金鱗湖',q:'金鱗湖',ll:[33.2640,131.3692]},
+    tenso:{name:'天祖神社（水上鳥居）',q:'天祖神社 由布市',ll:[33.2645,131.3687]},
+    floral:{name:'湯布院世界童話村',q:'湯布院フローラルビレッジ',ll:[33.2640,131.3615]},
+    miffy:{name:'Miffy 森之廚房',q:'みっふぃー森のきっちん 由布院',ll:[33.2636,131.3608]},
+    snoopy:{name:'史努比咖啡廳',q:'SNOOPY茶屋 由布院',ll:[33.2630,131.3583]},
+    prince:{name:'福岡王子大飯店百道濱',q:'福岡市早良区百道浜2丁目3-23',ll:[33.5930,130.3520]},
+    dazaifu:{name:'太宰府天滿宮（贈梅枝餅）',q:'太宰府天満宮',ll:[33.5214,130.5349]},
+    kushida:{name:'櫛田神社',q:'櫛田神社 福岡',ll:[33.5928,130.4106]},
+    lalaport:{name:'LaLaport 福岡',q:'ららぽーと福岡',ll:[33.5648,130.4453]},
+  };
+  const S=(k,o={})=>Object.assign({},P[k],o);
+
+  const days = [
+    {n:1,color:'var(--d1)',title:'抵達福岡・夜訪天神與中洲',dates:'09/30 · 10/03 · 10/14 · 11/05',
+     // time：到達該站的時間；航班時間為官方，其餘 est:true 為依車程推估
+     stops:[S('airport',{time:'20:00'}),S('tenjin',{time:'21:10',est:true}),S('nakasu',{time:'21:40',est:true}),S('monte',{stay:true,time:'22:30',est:true})],
+     extra:[{time:'16:40',text:'CI116 桃園起飛（機上晚餐）',before:true}],
+     meals:'早 X ／ 午 X ／ 晚 機上餐食'},
+    {n:2,color:'var(--d2)',title:'柳川・熊本・阿蘇',dates:'10/01 · 10/04 · 10/15 · 11/06',
+     stops:[S('monte',{name:'福岡蒙特埃馬納酒店（出發）',time:'08:00',est:true}),S('yanagawa',{time:'09:30',est:true}),S('kumamoto',{time:'13:30',est:true}),S('sakura',{time:'15:00',est:true}),S('daikanbo',{time:'16:30',est:true}),S('kamenoi',{stay:true,time:'17:30',est:true})],
+     meals:'早 飯店 ／ 午 柳川鰻魚飯（約 11:00）／ 晚 飯店自助餐'},
+    {n:3,color:'var(--d3)',title:'草千里・由布院',dates:'10/02 · 10/05 · 10/16 · 11/07',
+     stops:[S('kamenoi',{name:'龜之井酒店阿蘇公園度假村（出發）',time:'08:30',est:true}),S('kusasenri',{time:'09:15',est:true}),S('kinrin',{time:'11:30',est:true}),S('tenso',{time:'12:00',est:true}),S('floral',{time:'13:30',est:true}),S('miffy',{time:'14:00',est:true}),S('snoopy',{time:'14:30',est:true}),S('prince',{stay:true,time:'20:00',est:true})],
+     meals:'早 飯店 ／ 午 由布院日式風味餐（約 12:30）／ 晚 福岡燒肉吃到飽（約 18:30，含酒水）'},
+    {n:4,color:'var(--d4)',title:'福岡全日自由活動',dates:'10/03 · 10/06 · 10/17 · 11/08',
+     stops:[S('prince',{stay:true,time:'全日'})],
+     free:'全日自由活動。建議走訪天神商圈、博多站與運河城、櫛田神社、福岡塔與百道海濱公園，晚上可到中洲屋台街。',
+     meals:'早 飯店 ／ 午、晚 敬請自理'},
+    {n:5,color:'var(--d5)',title:'太宰府・返台',dates:'10/04 · 10/07 · 10/18 · 11/09',
+     stops:[S('prince',{name:'福岡王子大飯店百道濱（出發）',time:'08:30',est:true}),S('dazaifu',{time:'09:30',est:true}),S('kushida',{time:'11:30',est:true}),S('lalaport',{time:'13:00',est:true}),S('airport',{name:'免稅店（約 15:30）→ 福岡空港',time:'18:00',est:true})],
+     extra:[{time:'21:00',text:'CI117 福岡起飛 → 桃園 22:30 抵達'}],
+     note:'A 路線：自由活動 → 免稅店 → 福岡空港。B 路線（圖示）：太宰府天滿宮 → 櫛田神社 → LaLaport → 免稅店 → 福岡空港。時間以 B 路線標示，免稅店與機場集合時間兩路線共用。',
+     meals:'早 飯店 ／ 午 代金 ¥2,500 ／ 晚 代金 ¥2,000 + 機上餐食'},
+  ];
+
+  const enc = encodeURIComponent;
+  // 嵌入用網址（免金鑰的 Google 地圖 iframe）與外開網址
+  function urls(d){
+    const qs = d.stops.map(s=>s.q);
+    const lls = d.stops.map(s=>s.ll.join(','));
+    if(qs.length===1){
+      return {embed:`https://www.google.com/maps?q=${enc(lls[0])}&z=13&hl=zh-TW&output=embed`,
+              open:`https://www.google.com/maps/search/?api=1&query=${enc(qs[0])}`};
+    }
+    const sa=lls[0], da=lls.slice(1).join('+to:');
+    const origin=qs[0], dest=qs[qs.length-1], wps=qs.slice(1,-1).join('|');
+    return {embed:`https://www.google.com/maps?saddr=${enc(sa)}&daddr=${da}&hl=zh-TW&output=embed`,
+            open:`https://www.google.com/maps/dir/?api=1&origin=${enc(origin)}&destination=${enc(dest)}${wps?`&waypoints=${enc(wps)}`:''}&travelmode=driving&hl=zh-TW`};
+  }
+
+  const tabs=document.getElementById('tabs'), frames=document.getElementById('frames'), daysBox=document.getElementById('days');
+  const mapbox=document.getElementById('mapbox'), mapTitle=document.getElementById('mapTitle'), openLink=document.getElementById('openLink');
+  const loaded={};
+
+  days.forEach(d=>{
+    const u=urls(d); d.urls=u;
+    const b=document.createElement('button'); b.className='tab'; b.role='tab'; b.style.setProperty('--c',d.color);
+    b.innerHTML=`<span class="dot"></span>Day ${d.n}　${d.title}`; b.addEventListener('click',()=>show(d.n)); tabs.appendChild(b); d.tab=b;
+
+    const f=document.createElement('div'); f.className='frame'; f.hidden=true; f.dataset.day=d.n; frames.appendChild(f); d.frame=f;
+
+    const c=document.createElement('article'); c.className='day'; c.tabIndex=0; c.style.setProperty('--c',d.color);
+    // 時間欄：官方（航班）為深色粗體；est:true 為推估，淡色並加「預估」小字
+    const timeHtml=s=>s.time?`<span class="time${s.est?' est':''}">${s.time}${s.est?'<small>預估</small>':''}</span>`:'';
+    const extraHtml=(list,before)=>(list||[]).filter(x=>!!x.before===before).map(x=>`<li class="extra">${timeHtml(x)}<span class="n">✈</span><span>${x.text}</span></li>`).join('');
+    const stops=extraHtml(d.extra,true)+d.stops.map((s,i)=>`<li>${timeHtml(s)}<span class="n">${d.free?'●':i+1}</span><span><a href="https://www.google.com/maps/search/?api=1&query=${enc(s.q)}" target="_blank" rel="noopener">${s.name}</a>${s.stay?'<span class="stay">住宿</span>':''}</span></li>`).join('')+extraHtml(d.extra,false);
+    c.innerHTML=`<div class="day-head"><span class="day-num">D${d.n}</span><span class="day-title">${d.title}</span><span class="day-date">${d.dates}</span></div>
+      <ul class="stops">${stops}</ul>
+      ${d.free?`<p class="free" style="margin:8px 0 0">${d.free}</p>`:''}
+      ${d.note?`<p class="free" style="margin:8px 0 0;font-size:12.5px">${d.note}</p>`:''}
+      <dl class="meta"><dt>餐食</dt><dd>${d.meals}</dd></dl>`;
+    c.addEventListener('click',e=>{ if(e.target.closest('a')) return; show(d.n); });
+    c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(d.n);}});
+    daysBox.appendChild(c); d.card=c;
+  });
+
+  function show(n){
+    days.forEach(d=>{
+      const on=d.n===n;
+      d.tab.setAttribute('aria-selected',String(on));
+      d.card.classList.toggle('active',on); d.card.classList.toggle('faded',!on);
+      d.frame.hidden=!on;
+      if(on){
+        if(!loaded[n]){ const ifr=document.createElement('iframe'); ifr.loading='lazy'; ifr.referrerPolicy='no-referrer-when-downgrade'; ifr.src=d.urls.embed; ifr.title=`Day ${d.n} 路線地圖`; d.frame.appendChild(ifr); loaded[n]=true; }
+        mapbox.style.setProperty('--c',d.color);
+        mapTitle.innerHTML=`Day ${d.n}　${d.title}<small>${d.stops.map(s=>s.name.replace(/（.*?）/g,'')).join(' → ')}</small>`;
+        openLink.href=d.urls.open;
+      }
+    });
+  }
+  show(1);
+})();
+</script>

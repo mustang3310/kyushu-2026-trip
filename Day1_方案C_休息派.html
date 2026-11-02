@@ -1,0 +1,238 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Day 1 夜訪福岡・方案 C 休息派</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{
+  --paper:#F5EDDF; --card:#FFFBF4; --ink:#233A52; --ink-2:#51637A; --ink-3:#8A98AA; --line:#E2D6C2;
+  --c:#5E9C78; --c2:#C6E0D0; --ok:#3F8F5E; --bad:#C0392B; --bad-bg:#FBE4E0; --ok-bg:#E2F1E7;
+  --display:'Zen Maru Gothic','Noto Sans TC',sans-serif; --body:'Noto Sans TC','Zen Maru Gothic',sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --paper:#17202B; --card:#1F2A37; --ink:#EEF2F6; --ink-2:#B9C4D1; --ink-3:#7F8C9C; --line:#2F3C4B; --c2:#2B3B4C; --bad-bg:#4A2622; --ok-bg:#1F3B2B; --ok:#7FD1A0; --bad:#F09A8E;
+}}
+:root[data-theme="dark"]{
+  --paper:#17202B; --card:#1F2A37; --ink:#EEF2F6; --ink-2:#B9C4D1; --ink-3:#7F8C9C; --line:#2F3C4B; --c2:#2B3B4C; --bad-bg:#4A2622; --ok-bg:#1F3B2B; --ok:#7FD1A0; --bad:#F09A8E;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.65;font-size:15px}
+a{color:var(--c)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+header{display:grid;grid-template-columns:auto 1fr;gap:18px 22px;align-items:start;border-bottom:3px solid var(--c);padding-bottom:22px;margin-bottom:26px}
+.badge{font-family:var(--display);font-weight:900;font-size:56px;line-height:1;color:#fff;background:var(--c);width:92px;height:92px;border-radius:22px;display:grid;place-items:center}
+.eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(26px,3.4vw,38px);margin:4px 0 8px;text-wrap:balance}
+.tagline{font-size:17px;color:var(--ink-2);max-width:60ch;margin:0}
+.meta{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
+.meta div{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;padding:10px 14px}
+.meta b{display:block;font-size:11.5px;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;margin-bottom:3px}
+.layout{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
+.mapbox{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.bar h2{font-family:var(--display);font-size:16px;margin:0}
+.bar a{font-size:13px;font-weight:700;text-decoration:none;background:var(--c);color:#fff;padding:7px 12px;border-radius:999px;white-space:nowrap}
+.frame{position:relative;aspect-ratio:4/3.4}
+@media (min-width:861px){.layout{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}.mapbox{position:sticky;top:16px}}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.legend{padding:12px 16px;font-size:13.5px;color:var(--ink-2);border-top:1px solid var(--line)}
+.legend ol{margin:6px 0 0;padding-left:20px}
+h2.sec{font-family:var(--display);font-size:20px;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+h2.sec::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--c)}
+section{margin-bottom:30px}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--c2);margin-left:50px}
+.timeline li{position:relative;padding:6px 0 14px 20px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:13px;width:12px;height:12px;border-radius:50%;background:var(--c);border:2px solid var(--paper)}
+.timeline time{position:absolute;left:-60px;top:6px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+.spot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.spot .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.spot h3{font-family:var(--display);font-size:17px;margin:0}
+.spot h3 a{color:var(--ink);text-decoration:none;border-bottom:1.5px dotted var(--c)}
+.kind{font-size:11.5px;font-weight:700;letter-spacing:.1em;color:var(--c);background:var(--c2);padding:3px 9px;border-radius:999px}
+.spot .addr{font-size:13px;color:var(--ink-3);margin:4px 0 8px}
+.spot p{margin:0 0 6px}
+.spot .tip{font-size:13.5px;color:var(--ink-2);background:var(--paper);border-radius:8px;padding:6px 10px;margin-top:6px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:13.5px;margin:6px 0}
+.hours b{color:var(--ink-3);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.08em;color:var(--ink-3);font-weight:700}
+td.ok{color:var(--ok);background:var(--ok-bg);font-weight:700;text-align:center}
+td.bad{color:var(--bad);background:var(--bad-bg);font-weight:700;text-align:center}
+.tbl{overflow-x:auto}
+ul.tips{margin:0;padding-left:20px}
+ul.tips li{margin-bottom:6px}
+.rain{background:var(--c2);border-radius:12px;padding:12px 16px;font-weight:500}
+.kgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:16px}
+.kstore{background:var(--card);border:1px solid var(--line);border-top:4px solid var(--k);border-radius:14px;padding:12px 14px}
+.kstore h3{font-family:var(--display);font-size:16px;margin:0;color:var(--k)}
+.kwhere{font-size:12.5px;color:var(--ink-3);margin:2px 0 8px}
+.kstore ul{list-style:none;margin:0;padding:0}
+.kstore li{padding:6px 0;border-top:1px dashed var(--line);font-size:13.5px}
+.kstore li b{display:block;color:var(--ink)}
+.kstore li span{color:var(--ink-2)}
+h3.sub{font-family:var(--display);font-size:15px;margin:14px 0 8px;color:var(--ink-2)}
+.srcs{font-size:13px;color:var(--ink-2)}
+.srcs li{margin-bottom:3px;word-break:break-all}
+.other{display:flex;gap:10px;flex-wrap:wrap}
+.other a{text-decoration:none;font-weight:700;font-size:13.5px;border:1.5px solid var(--line);padding:7px 12px;border-radius:999px;color:var(--ink)}
+footer{margin-top:30px;font-size:12.5px;color:var(--ink-3);border-top:1px solid var(--line);padding-top:14px}
+
+/* ---- mobile ---- */
+html{-webkit-text-size-adjust:100%}
+@media (max-width:640px){
+  .wrap{padding:16px 14px 40px}
+  header{grid-template-columns:1fr;gap:10px}
+  .badge{width:64px;height:64px;font-size:36px;border-radius:16px}
+  .badge small{font-size:11px}
+  h1{font-size:24px;line-height:1.25}
+  .tagline{font-size:15px}
+  .meta{grid-template-columns:1fr;gap:8px}
+  .meta div,.weather,.marathon{padding:9px 12px;font-size:13.5px}
+  .timeline{margin-left:46px}
+  .timeline time{left:-54px;font-size:13px}
+  .timeline li{padding:4px 0 12px 16px;font-size:14px}
+  .spot{padding:14px 14px;border-radius:14px}
+  .spot h2{font-size:20px}
+  .spot h3{font-size:16px}
+  .spot-head{grid-template-columns:auto 1fr;gap:10px}
+  .spot-head .maplink{grid-column:2;justify-self:start}
+  .num{width:40px;height:40px;font-size:20px;border-radius:11px}
+  .frame{aspect-ratio:1/1}
+  .mapbox{position:static}
+  .nav{display:flex;overflow-x:auto;gap:4px;padding:8px;-webkit-overflow-scrolling:touch}
+  .nav a{grid-template-columns:1fr;min-width:150px;flex:0 0 auto;background:var(--paper);padding:8px 10px}
+  .nav .free{font-size:11px}
+  .hl,.cols,.kgrid,.souv-list{grid-template-columns:1fr}
+  table{font-size:12.5px}
+  th,td{padding:7px 8px}
+  .item{font-size:13.5px}
+  .steps{padding-left:16px}
+  .other a,.bar a{padding:9px 12px}
+  .bar{flex-wrap:wrap}
+  .bar h2{font-size:15px}
+  a,button{min-height:32px}
+  details.src ul{padding-left:14px}
+}
+</style>
+<div class="wrap">
+<header>
+  <div class="badge">C</div>
+  <div>
+    <div class="eyebrow">Day 1 · 第六梯 11/05（四） · 夜訪福岡 · 2 到 4 人小組</div>
+    <h1>方案 C：休息派</h1>
+    <p class="tagline">飯店走路 5 分鐘內解決晚餐，早點回房洗澡睡覺，把體力留給第二天的柳川、熊本、阿蘇。</p>
+  </div>
+  <div class="meta">
+    <div><b>適合誰</b>搭機累了、隔天想精神好的人，或是帶小孩、長輩的小組</div>
+    <div><b>步行距離</b>博多だるま總本店就在飯店隔壁街口，步行 2 分鐘；最遠的とりかわ粋恭約 800 公尺，步行 10 分鐘</div>
+    <div><b>預算</b>便利商店每人約 ¥800 – 1,200；拉麵或串燒每人約 ¥1,000 – 2,000</div>
+    <div><b>當晚前提</b>CI116 20:00 落地，晚餐只有機上簡餐，約 21:10 抵達渡邊通的飯店</div>
+    <div><b>交通</b>機場到飯店搭旅行社的團體遊覽車約 20 到 30 分；之後全程步行，太累或下雨可搭計程車回飯店，¥1,000 內</div>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="mapbox">
+    <div class="bar"><h2>步行路線</h2><a href="https://www.google.com/maps/dir/?api=1&origin=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%A2%E3%83%B3%E3%83%86%E3%82%A8%E3%83%AB%E3%83%9E%E3%83%BC%E3%83%8A%E7%A6%8F%E5%B2%A1&destination=%E3%83%9B%E3%83%86%E3%83%AB%E3%83%A2%E3%83%B3%E3%83%86%E3%82%A8%E3%83%AB%E3%83%9E%E3%83%BC%E3%83%8A%E7%A6%8F%E5%B2%A1&waypoints=%E5%8D%9A%E5%A4%9A%E3%81%A0%E3%82%8B%E3%81%BE%20%E7%B7%8F%E6%9C%AC%E5%BA%97%7C%E3%81%A8%E3%82%8A%E3%81%8B%E3%82%8F%E7%B2%8B%E6%81%AD%20%E8%96%AC%E9%99%A2%E6%9C%AC%E5%BA%97&travelmode=walking&hl=zh-TW" target="_blank" rel="noopener">在 Google 地圖開啟</a></div>
+    <div class="frame"><iframe src="https://www.google.com/maps?saddr=33.5852143%2C130.4050977&daddr=33.5852484,130.4060135+to:33.581978,130.397277+to:33.5852143,130.4050977&dirflg=w&hl=zh-TW&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    <div class="legend">從飯店出發、最後回飯店的步行路線（Google 推估）：
+      <ol><li>福岡蒙特埃馬納酒店</li><li>博多だるま 總本店</li><li>とりかわ粋恭 薬院本店</li><li>福岡蒙特埃馬納酒店</li></ol>
+    </div>
+  </aside>
+
+  <main>
+    <section>
+      <h2 class="sec">當晚時間軸</h2>
+      <ol class="timeline"><li><time>21:10</time>抵達飯店，放行李</li><li><time>21:20</time>三選一：① 走 2 分鐘去博多だるま總本店吃濃厚豚骨拉麵；② 走 10 分鐘去藥院的とりかわ粋恭吃博多名物雞皮串；③ 在飯店門口的全家、對面電氣大樓的羅森買宵夜回房</li><li><time>22:15</time>順路在便利商店買隔天早上的水和零食</li><li><time>22:30</time>回房泡澡、整理行李，隔天早上的集合時間請確認</li></ol>
+    </section>
+
+    <section>
+      <h2 class="sec">推薦地點</h2>
+      <article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E3%81%A0%E3%82%8B%E3%81%BE%20%E7%B8%BD%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">博多だるま 總本店</a></h3><span class="kind">拉麵・首選</span></div>
+        <div class="addr">中央區渡辺通1-8-25｜092-761-1958</div>
+        <div class="hours"><b>營業</b><span>11:30 – 翌 01:00 前後（各來源略有出入）</span><b>公休</b><span>無</span></div>
+        <p>就在飯店隔壁街口，走 2 分鐘。濃厚豚骨、極細麵，是福岡深夜拉麵的代表，吃完直接回房。</p>
+        <div class="tip">店內座位不多，4 人可能要等一輪；湯頭偏鹹，可以點「替玉」分著吃。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%81%A8%E3%82%8A%E3%81%8B%E3%82%8F%E7%B2%8B%E6%81%AD%20%E8%96%AC%E9%99%A2%E6%9C%AC%E5%BA%97" target="_blank" rel="noopener">とりかわ粋恭 薬院本店</a></h3><span class="kind">串燒・博多名物</span></div>
+        <div class="addr">中央區薬院（飯店步行約 10 分鐘）</div>
+        <div class="hours"><b>營業</b><span>17:00 – 23:00（料理 L.O. 22:00）</span><b>公休</b><span>無</span></div>
+        <p>博多獨有的「とりかわ」雞皮串，捲在竹籤上烤三天入味，一人 5 串起跳配啤酒剛好。</p>
+        <div class="tip">料理最後點餐 22:00，21:20 從飯店出發才來得及。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=Manu%20Coffee%20%E6%98%A5%E5%90%89%E5%BA%97" target="_blank" rel="noopener">Manu Coffee 春吉店</a></h3><span class="kind">咖啡・深夜</span></div>
+        <div class="addr">中央區春吉（渡邊通與中洲之間，飯店步行約 8 分）</div>
+        <div class="hours"><b>營業</b><span>09:00 – 翌 01:00</span><b>公休</b><span>無休</span></div>
+        <p>2003 年開業、比精品咖啡風潮更早的福岡老牌自家焙煎店，春吉店開到凌晨 1 點，是福岡少數深夜還能喝到手沖的地方。從中洲走回飯店剛好順路，喝咖啡的同伴可以在這裡收尾；也賣豆子。</p>
+        <div class="tip">深夜店內偏安靜，4 人請壓低音量；想帶豆子回台灣買 200 公克裝。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E7%A5%9E%E5%B1%8B%E5%8F%B0%20%E5%AE%97" target="_blank" rel="noopener">天神屋台 宗</a></h3><span class="kind">屋台・飯店旁</span></div>
+        <div class="addr">中央區渡辺通4 紙与天神ビル前</div>
+        <div class="hours"><b>營業</b><span>19:00 – 24:00</span><b>公休</b><span>週日、不定休</span></div>
+        <p>不想走到中洲，飯店往北 5 分鐘的渡邊通就有這攤，能小小體驗屋台氣氛。</p>
+        
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%85%A8%E5%AE%B6%20FamilyMart" target="_blank" rel="noopener">全家 FamilyMart（飯店正門前）</a></h3><span class="kind">便利商店</span></div>
+        <div class="addr">飯店門口</div>
+        <div class="hours"><b>營業</b><span>24 小時</span><b>公休</b><span>無</span></div>
+        <p>明太子飯糰、關東煮、炸雞、沙拉加一瓶啤酒，就是一頓合格的日本第一餐。</p>
+        
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E7%BE%85%E6%A3%AE%20Lawson" target="_blank" rel="noopener">羅森 Lawson（電氣大樓北館）</a></h3><span class="kind">便利商店</span></div>
+        <div class="addr">渡邊通對面 電気ビル北館</div>
+        <div class="hours"><b>營業</b><span>24 小時</span><b>公休</b><span>無</span></div>
+        <p>過個馬路就到，甜點和炸物選擇比全家多，可以兩家都逛。</p>
+        
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=7-Eleven" target="_blank" rel="noopener">7-Eleven（柳橋方向）</a></h3><span class="kind">便利商店</span></div>
+        <div class="addr">往柳橋方向步行 2 到 3 分鐘</div>
+        <div class="hours"><b>營業</b><span>24 小時</span><b>公休</b><span>無</span></div>
+        <p>想買隔天早餐或水，7-11 的咖啡與三明治最穩。</p>
+        
+      </article>
+    </section>
+
+    <section>
+      <h2 class="sec">11/05（四）當晚營業確認</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>地點</th><th>公休日</th><th>11/05（四）</th></tr></thead>
+        <tbody><tr><td>博多だるま 總本店</td><td>無</td><td class="ok">營業</td></tr><tr><td>とりかわ粋恭 薬院本店</td><td>無</td><td class="ok">營業</td></tr><tr><td>Manu Coffee 春吉店</td><td>無休</td><td class="ok">營業</td></tr><tr><td>天神屋台 宗</td><td>週日、不定休</td><td class="ok">營業</td></tr><tr><td>全家 FamilyMart（飯店正門前）</td><td>無</td><td class="ok">營業</td></tr><tr><td>羅森 Lawson（電氣大樓北館）</td><td>無</td><td class="ok">營業</td></tr><tr><td>7-Eleven（柳橋方向）</td><td>無</td><td class="ok">營業</td></tr></tbody>
+      </table></div>
+      <p style="font-size:13px;color:var(--ink-3);margin:8px 0 0">依固定公休日判斷（當天是週四），不定休與臨時休店無法預先得知，出發前請再查一次 Google 地圖的營業資訊。</p>
+    </section>
+
+    <section>
+      <h2 class="sec">便利商店怎麼買</h2>
+      <p style="margin:0 0 12px;color:var(--ink-2)">飯店三面各有一家，三家的強項不同。建議分頭採買、回房一起吃：全家買炸物與關東煮、羅森買甜點與炸雞君、7-11 買飯糰與明天的早餐。11 月是中華饅與關東煮的旺季，收銀台旁的熱食區最值得看。</p>
+      <div class="kgrid"><article class="kstore" style="--k:#1D7D3B">
+        <h3>全家 FamilyMart</h3><div class="kwhere">飯店正門口</div>
+        <ul><li><b>ファミチキ（FamiChiki）</b><span>無骨炸雞排，全家招牌，一塊約 ¥260，配啤酒最對味。</span></li><li><b>極旨 黒豚まん</b><span>2026 秋季收銀台旁人氣第二名的黑豚肉包，另有起司口味。</span></li><li><b>おでん 關東煮</b><span>蘿蔔、牛筋、餅巾著，一盒湯汁暖身。</span></li><li><b>手巻 辛子明太子 飯糰</b><span>福岡名產明太子，九州限定版料多。</span></li><li><b>ファミマル KITCHEN 炒麵飯（そばめし）</b><span>日清 U.F.O. 聯名，10 月飯糰類人氣第一。</span></li><li><b>霜淇淋、期間限定甜點</b><span>全家常與抹茶、水果品牌聯名，看到限定就買。</span></li></ul>
+      </article><article class="kstore" style="--k:#1E62B7">
+        <h3>羅森 Lawson</h3><div class="kwhere">過馬路，電氣大樓北館</div>
+        <ul><li><b>からあげクン 炸雞君</b><span>一盒 5 顆的一口炸雞，九州限定偶有「もつ鍋醬油味」。</span></li><li><b>グーコロ男爵 可樂餅</b><span>2026 年 10 月新品，北海道男爵薯，熱食區人氣第一，¥160。</span></li><li><b>手巻おにぎり 博多辛子明太子</b><span>九州限定飯糰，¥214。</span></li><li><b>Uchi Café 生乳蛋糕卷、巴斯克起司蛋糕</b><span>羅森甜點是三家最強，4 人各買一款分著吃。</span></li><li><b>八天堂奶油麵包聯名</b><span>2026 年秋季聯名商品，當宵夜或隔天早餐。</span></li></ul>
+      </article><article class="kstore" style="--k:#E0442A">
+        <h3>7-Eleven</h3><div class="kwhere">往柳橋方向 2 到 3 分鐘</div>
+        <ul><li><b>手巻おにぎり 具たっぷり辛子明太子</b><span>九州限定，¥213，明太子給得最大方。</span></li><li><b>かしわめし 飯糰 2 入</b><span>九州限定的雞肉炊飯飯糰，福岡在地味。</span></li><li><b>明太もちゅチーズまん</b><span>2026 秋季新品，明太子加麻糬加起司的包子，¥190。</span></li><li><b>ななチキ、串炸唐揚</b><span>7-11 的炸雞與串炸，熟食品質三家最穩。</span></li><li><b>直火燒布丁、濕潤年輪蛋糕</b><span>7 Premium 甜點，便宜又穩。</span></li><li><b>7 Café 咖啡、三明治</b><span>隔天早上集合前的保險早餐。</span></li></ul>
+      </article></div>
+      <h3 class="sub">組合建議</h3>
+      <div class="tbl"><table><tbody><tr><td style="white-space:nowrap;font-weight:700">¥1,000 吃飽組</td><td>明太子飯糰 + 關東煮 3 樣 + 一罐啤酒或茶</td></tr><tr><td style="white-space:nowrap;font-weight:700">¥1,500 宵夜組</td><td>FamiChiki 或炸雞君 + 黑豚肉包 + 羅森甜點 + 一罐 Highball</td></tr><tr><td style="white-space:nowrap;font-weight:700">四人分享組</td><td>全家炸物 2 份、羅森甜點 2 款、7-11 飯糰 4 顆、飲料各自選，約每人 ¥1,200</td></tr></tbody></table></div>
+      <h3 class="sub">購買小技巧</h3>
+      <ul class="tips"><li>熱食區（レジ横）要跟店員說，指著圖片說「これ」就好；飯糰、便當可請店員「温めてください」加熱。</li><li>結帳時店員會問要不要袋子，袋子要加價 ¥3 到 ¥5；筷子、湯匙會附。</li><li>11 月是關東煮與中華饅旺季，晚上 21:30 之後熱食可能售完，先買熱食再逛其他。</li><li>飯店房間有冰箱，可以買隔天早餐與車上的水；遊覽車上吃氣味重的食物請先問領隊。</li><li>可用 IC 卡、信用卡感應或現金，三家都接受 Suica。</li></ul>
+    </section>
+    <section>
+      <h2 class="sec">小提醒</h2>
+      <ul class="tips"><li>飯店三面都是便利商店，晚餐和隔天的水都能在門口解決。</li><li>第二天是五天裡車程最長的一天（柳川、熊本城、大觀峰到阿蘇），早睡最划算。</li><li>若想小酌，便利商店的罐裝 Highball 和在地啤酒比居酒屋便宜一半以上。</li><li>泡澡前先把第二天要用的東西整理好，早上集合不用慌。</li></ul>
+      <p class="rain" style="margin-top:12px">下雨：便利商店與拉麵店都在門口，幾乎不受影響。</p>
+    </section>
+
+    <section>
+      <h2 class="sec">其他方案</h2>
+      <div class="other"><a href="Day1_方案A_屋台派.html">方案 A：屋台派</a><a href="Day1_方案B_拉麵藥妝派.html">方案 B：拉麵加藥妝派</a><a href="九州五日遊_路線圖.html">五日路線圖</a></div>
+    </section>
+  </main>
+</div>
+
+<footer>營業時間與公休日整理自各店官網與日本美食網站（2026 年 10 月查詢），完整來源列在 Day1_福岡.md。路線與步行時間為 Google 地圖推估。</footer>
+</div>
