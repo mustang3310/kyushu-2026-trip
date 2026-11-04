@@ -42,6 +42,9 @@
   .tab .dot{width:14px;height:14px;border-radius:50%;background:var(--c)}
   .tab[aria-selected="true"]{background:var(--c);color:#fff;border-color:var(--c)}
   .tab[aria-selected="true"] .dot{background:#fff}
+.tab .tb{display:flex;flex-direction:column;line-height:1.15}.tab .tb small{font-size:.85rem;opacity:.85}.tab .tt{font-size:1rem}
+.tabs-label{font-size:1rem;color:var(--ink-2);margin:0 0 8px}
+.day .hint{display:none;font-size:.95rem;color:var(--c);font-weight:700;margin:-2px 0 8px}
 
   .layout{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(320px,.8fr);gap:24px;align-items:start}
   @media (max-width:900px){.layout{grid-template-columns:1fr}}
@@ -90,8 +93,10 @@ html{-webkit-text-size-adjust:100%}
 @media (max-width:640px){
   .wrap,body>div{padding-left:12px;padding-right:12px}
   h1{font-size:1.375rem}
-  .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}
-  .tabs [role=tab],.tabs button{flex:0 0 auto;min-height:40px}
+  .tabs{flex-wrap:wrap;gap:6px}
+  .tabs [role=tab],.tabs button{flex:1 1 calc(33.333% - 6px);min-height:52px;justify-content:center;padding:6px 4px;gap:6px}
+  .tab .dot{width:9px;height:9px}.tab .tt{display:none}.tab .tb b{font-size:1rem}.tab .tb small{font-size:.8rem}
+  .day .hint{display:block}
   .layout{grid-template-columns:1fr!important}
   .mapbox{position:static!important}
   .frame{aspect-ratio:1/1!important}
@@ -128,6 +133,7 @@ html{-webkit-text-size-adjust:100%}
     </div>
   </header>
 
+  <div class="tabs-label">點下面的天數，切換地圖與當天行程（也可以點下方任一天的卡片）</div>
   <div class="tabs" role="tablist" id="tabs"></div>
 
   <div class="layout">
@@ -216,7 +222,7 @@ html{-webkit-text-size-adjust:100%}
   days.forEach(d=>{
     const u=urls(d); d.urls=u;
     const b=document.createElement('button'); b.className='tab'; b.role='tab'; b.style.setProperty('--c',d.color);
-    b.innerHTML=`<span class="dot"></span>Day ${d.n}　${d.title}`; b.addEventListener('click',()=>show(d.n)); tabs.appendChild(b); d.tab=b;
+    b.innerHTML=`<span class="dot"></span><span class="tb"><b>Day ${d.n}</b><small>${d.dates}</small></span><span class="tt">${d.title}</span>`; b.addEventListener('click',()=>show(d.n)); tabs.appendChild(b); d.tab=b;
 
     const f=document.createElement('div'); f.className='frame'; f.hidden=true; f.dataset.day=d.n; frames.appendChild(f); d.frame=f;
 
@@ -229,8 +235,8 @@ html{-webkit-text-size-adjust:100%}
       <ul class="stops">${stops}</ul>
       ${d.free?`<p class="free" style="margin:8px 0 0">${d.free}</p>`:''}
       ${d.note?`<p class="free" style="margin:8px 0 0;font-size:1rem">${d.note}</p>`:''}
-      <dl class="meta"><dt>餐食</dt><dd>${d.meals}</dd></dl>`;
-    c.addEventListener('click',e=>{ if(e.target.closest('a')) return; show(d.n); });
+      <div class="hint">▲ 點這張卡片，上方地圖會切到這一天</div><dl class="meta"><dt>餐食</dt><dd>${d.meals}</dd></dl>`;
+    c.addEventListener('click',e=>{ if(e.target.closest('a')) return; show(d.n); if(window.innerWidth<=640) mapbox.scrollIntoView({behavior:'smooth',block:'start'}); });
     c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(d.n);}});
     daysBox.appendChild(c); d.card=c;
   });
