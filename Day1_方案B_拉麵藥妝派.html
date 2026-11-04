@@ -216,11 +216,11 @@ html{-webkit-text-size-adjust:100%}
 @media print{#ft-btn{display:none}}
 @media (max-width:640px){html,body{overflow-x:hidden}.layout,.side,main{grid-template-columns:minmax(0,1fr)!important}.wrap,.layout,.side,main,section,article{min-width:0;max-width:100%}table{display:block;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}}
 </style>
-<button id="ft-btn" type="button" aria-label="切換字級"><span>Aa</span><small id="ft-lv">標準</small></button>
+<button id="ft-btn" type="button" aria-label="切換字級"><span>Aa</span><small id="ft-lv">特大</small></button>
 <script>
 (function(){
   var LV=[['標準','100%'],['大','112%'],['特大','125%']], KEY='kyushu-font-level';
-  var i=0; try{var s=localStorage.getItem(KEY); if(s!==null&&LV[+s]) i=+s;}catch(e){}
+  var i=2; try{var s=localStorage.getItem(KEY); if(s!==null&&LV[+s]) i=+s;}catch(e){}
   var btn=document.getElementById('ft-btn'), lab=document.getElementById('ft-lv');
   function apply(){ document.documentElement.style.fontSize=LV[i][1]; lab.textContent=LV[i][0]; }
   btn.addEventListener('click',function(){ i=(i+1)%LV.length; try{localStorage.setItem(KEY,String(i));}catch(e){} apply(); });
