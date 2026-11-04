@@ -1,0 +1,220 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Day 4 行程 v1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap">
+<style>
+:root{--paper:#F5EDDF;--card:#FFFBF4;--ink:#233A52;--ink-2:#51637A;--ink-3:#56687C;--line:#E2D6C2;--c:#C9981F;--c2:#F3E6C2;--ok:#3F8F5E;--ok-bg:#E2F1E7;--bad:#C0392B;--bad-bg:#FBE4E0;--warn:#B07A12;--warn-bg:#F7EBD0;
+  --display:'Zen Maru Gothic','Noto Sans TC',sans-serif;--body:'Noto Sans TC','Zen Maru Gothic',sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#17202B;--card:#1F2A37;--ink:#EEF2F6;--ink-2:#B9C4D1;--ink-3:#AEBBC9;--line:#2F3C4B;--c2:#3E3320;--bad-bg:#4A2622;--ok-bg:#1F3B2B;--ok:#7FD1A0;--bad:#F09A8E;--warn:#E6B85C;--warn-bg:#3E3320}}
+:root[data-theme="dark"]{--paper:#17202B;--card:#1F2A37;--ink:#EEF2F6;--ink-2:#B9C4D1;--ink-3:#AEBBC9;--line:#2F3C4B;--c2:#3E3320;--bad-bg:#4A2622;--ok-bg:#1F3B2B;--ok:#7FD1A0;--bad:#F09A8E;--warn:#E6B85C;--warn-bg:#3E3320}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.75;font-size:1.25rem}
+a{color:var(--c)}
+.wrap{max-width:1180px;margin:0 auto;padding:28px 20px 60px}
+header{display:grid;grid-template-columns:auto 1fr;gap:18px 22px;align-items:start;border-bottom:3px solid var(--c);padding-bottom:22px;margin-bottom:26px}
+.badge{font-family:var(--display);font-weight:900;font-size:2.5rem;line-height:1;color:#fff;background:var(--c);width:92px;height:92px;border-radius:22px;display:grid;place-items:center}
+.eyebrow{font-size:1rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:700}
+h1{font-family:var(--display);font-weight:900;font-size:clamp(26px,3.4vw,38px);margin:4px 0 8px;text-wrap:balance}
+.tagline{font-size:1.1875rem;color:var(--ink-2);max-width:60ch;margin:0}
+.meta{grid-column:1/-1;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:6px}
+.meta div{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;padding:10px 14px}
+.meta b{display:block;font-size:1rem;letter-spacing:.14em;color:var(--ink-3);text-transform:uppercase;margin-bottom:3px}
+.marathon{grid-column:1/-1;background:var(--warn-bg);border-radius:12px;padding:10px 14px;font-size:1.125rem}
+.marathon b{color:var(--warn);margin-right:6px}
+.layout{display:grid;grid-template-columns:1fr;gap:26px;align-items:start}
+.mapbox{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.frame{position:relative;aspect-ratio:4/3.4}
+@media (min-width:861px){.layout{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}.mapbox{position:sticky;top:16px}}
+.bar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.bar h2{font-family:var(--display);font-size:1.125rem;margin:0}
+.bar a{font-size:1.0625rem;font-weight:700;text-decoration:none;background:var(--c);color:#fff;padding:7px 12px;border-radius:999px;white-space:nowrap}
+.frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.legend{padding:12px 16px;font-size:1.125rem;color:var(--ink-2);border-top:1px solid var(--line)}
+.legend ol{margin:6px 0 0;padding-left:20px}
+h2.sec{font-family:var(--display);font-size:1.25rem;margin:0 0 12px;display:flex;align-items:center;gap:10px}
+h2.sec::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--c)}
+section{margin-bottom:30px}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid var(--c2);margin-left:60px}
+.timeline li{position:relative;padding:6px 0 14px 20px}
+.timeline li::before{content:"";position:absolute;left:-7px;top:16px;width:12px;height:12px;border-radius:50%;background:var(--c);border:2px solid var(--paper)}
+.timeline time{position:absolute;left:-66px;top:6px;font-weight:700;font-variant-numeric:tabular-nums;color:var(--ink)}
+.spot{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:12px}
+.spot .top{display:flex;justify-content:space-between;gap:10px;align-items:baseline;flex-wrap:wrap}
+.spot h3{font-family:var(--display);font-size:1.1875rem;margin:0}
+.spot h3 a{color:var(--ink);text-decoration:none;border-bottom:1.5px dotted var(--c)}
+.kind{font-size:1rem;font-weight:700;letter-spacing:.1em;color:var(--c);background:var(--c2);padding:3px 9px;border-radius:999px}
+.spot .addr{font-size:1.0625rem;color:var(--ink-3);margin:4px 0 8px}
+.spot p{margin:0 0 6px}
+.spot .tip{font-size:1.125rem;color:var(--ink-2);background:var(--paper);border-radius:8px;padding:6px 10px;margin-top:6px}
+.hours{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;font-size:1.125rem;margin:6px 0}
+.hours b{color:var(--ink-3);font-weight:500}
+table{width:100%;border-collapse:collapse;font-size:1.125rem;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line)}
+th{font-size:1rem;letter-spacing:.08em;color:var(--ink-3);font-weight:700}
+td.ok{color:var(--ok);background:var(--ok-bg);font-weight:700;text-align:center;white-space:nowrap}
+td.bad{color:var(--bad);background:var(--bad-bg);font-weight:700;text-align:center;white-space:nowrap}
+.tbl{overflow-x:auto}
+ul.tips{margin:0;padding-left:20px}
+ul.tips li{margin-bottom:6px}
+.rain{background:var(--c2);border-radius:12px;padding:12px 16px;font-weight:500}
+.other{display:flex;gap:10px;flex-wrap:wrap}
+.other a{text-decoration:none;font-weight:700;font-size:1.125rem;border:1.5px solid var(--line);padding:7px 12px;border-radius:999px;color:var(--ink)}
+footer{margin-top:30px;font-size:1rem;color:var(--ink-3);border-top:1px solid var(--line);padding-top:14px}
+html{-webkit-text-size-adjust:100%}
+@media (max-width:640px){
+  html,body{overflow-x:hidden}
+  .wrap{padding:16px 14px 40px}
+  header{grid-template-columns:1fr;gap:10px}
+  .badge{width:64px;height:64px;font-size:1.75rem;border-radius:16px}
+  h1{font-size:1.5rem;line-height:1.25}
+  .tagline{font-size:1.25rem}
+  .meta{grid-template-columns:1fr;gap:8px}
+  .meta div,.marathon{padding:9px 12px;font-size:1.125rem}
+  .timeline{margin-left:56px}
+  .timeline time{left:-62px;font-size:1.0625rem}
+  .timeline li{padding:4px 0 12px 16px;font-size:1.125rem}
+  .spot{padding:14px 14px}
+  .spot h3{font-size:1.125rem}
+  .frame{aspect-ratio:1/1}
+  .mapbox{position:static}
+  .layout{grid-template-columns:minmax(0,1fr)}
+  table{display:block;overflow-x:auto;font-size:1rem}
+  th,td{padding:7px 8px}
+  .other a,.bar a{padding:9px 12px}
+  .bar{flex-direction:column;align-items:flex-start}
+  .bar h2{font-size:1.25rem}
+  a,button{min-height:32px}
+}</style>
+<div class="wrap">
+<header>
+  <div class="badge">v1</div>
+  <div>
+    <div class="eyebrow">Day 4 · 第六梯 11/08（日） · 全日自由行 · 依同事表格整理</div>
+    <h1>福岡自由行：寶可夢、運河城、天神藥妝、水炊き</h1>
+    <p class="tagline">公司接駁車 10:00 到天神，地鐵 5 分到博多先逛寶可夢中心，走路找午餐到運河城買機能衣鞋，下午回天神掃藥妝，晚餐華味鳥水炊き，21:00 天神站搭接駁車回飯店。</p>
+  </div>
+  <div class="meta">
+    <div><b>交通</b>接駁車來回各約 20 分；中間只搭一趟地鐵 5 分（¥210）；運河城到天神可步行或七隈線 1 站。全天搭車約 50 分</div>
+    <div><b>步行</b>約 5 到 6 公里：博多站到運河城 1 公里、運河城到天神 1.3 公里、晚餐後散步 2 公里（可省略）</div>
+    <div><b>預算</b>午餐 ¥1,500、晚餐 ¥5,000（水炊き）、地鐵 ¥210、購物另計</div>
+    <div><b>天氣（11/04 預報）</b>晴後多雲，最高 18°C / 最低 9°C，降雨 30%、風弱；早上約 10°C、中午 15°C、晚上 12°C。長袖加外套</div>
+  </div>
+  <div class="marathon"><b>福岡馬拉松</b>11/08 08:20 自天神起跑，路線經百道（飯店旁）往糸島，沿線 06:00 – 16:35 分段管制；百道段 09:25 關門後陸續解除。10:00 接駁車可能繞路或延後，以公司公布為準。這天行程都在博多、天神，不受管制影響。</div>
+</header>
+
+<div class="layout">
+  <aside class="mapbox">
+    <div class="bar"><h2>當日路線</h2><a href="https://www.google.com/maps/dir/?api=1&origin=%E7%A6%8F%E5%B2%A1%E3%83%97%E3%83%AA%E3%83%B3%E3%82%B9%E3%83%9B%E3%83%86%E3%83%AB%20%E3%82%82%E3%82%82%E3%81%A1%E6%B5%9C&destination=%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85&waypoints=%E8%A5%BF%E9%89%84%E7%A6%8F%E5%B2%A1%EF%BC%88%E5%A4%A9%E7%A5%9E%EF%BC%89%E9%A7%85%7C%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%AF%E3%82%AA%E3%82%AB%20%E5%8D%9A%E5%A4%9A%E3%83%9E%E3%83%AB%E3%82%A4%7C%E3%82%AD%E3%83%A3%E3%83%8A%E3%83%AB%E3%82%B7%E3%83%86%E3%82%A3%E5%8D%9A%E5%A4%9A%7C%E5%A4%A9%E7%A5%9E%E5%9C%B0%E4%B8%8B%E8%A1%97%7C%E5%8D%9A%E5%A4%9A%E8%8F%AF%E5%91%B3%E9%B3%A5%20%E5%A4%A9%E7%A5%9E%E5%BA%97%20%E4%BB%8A%E6%B3%89%7C%E7%A6%8F%E5%8D%9A%E3%81%A7%E3%81%82%E3%81%84%E6%A9%8B&travelmode=transit&hl=zh-TW" target="_blank" rel="noopener">在 Google 地圖開啟（大眾運輸）</a></div>
+    <div class="frame"><iframe src="https://www.google.com/maps?saddr=33.5922%2C130.3535&daddr=33.5895,130.3995+to:33.59,130.4195+to:33.5897,130.4115+to:33.5905,130.4+to:33.588,130.3993+to:33.5918,130.404+to:33.5895,130.3995&hl=zh-TW&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+    <div class="legend">路線順序（座標為概略，實際以 Google 地圖導航為準）：<ol><li>福岡王子大飯店百道濱（10:00 公司接駁車）</li><li>天神站（接駁車下車）</li><li>博多マルイ 2F 寶可夢中心</li><li>博多運河城</li><li>天神地下街</li><li>博多華味鳥 天神店（晚餐）</li><li>中洲 福博であい橋（消食散步，可省略）</li><li>天神站（接駁車上車）</li></ol></div>
+  </aside>
+  <main>
+    <section>
+      <h2 class="sec">當日時間軸</h2>
+      <ol class="timeline"><li><time>08:00</time>飯店早餐、補眠（前一晚福岡塔夜景回來得晚）</li><li><time>09:00</time>房間休息、整理要帶的東西：護照（退稅）、後背包、外套</li><li><time>10:00</time>公司接駁車 飯店 → 天神站，約 20 分</li><li><time>10:20</time>地鐵空港線 天神 → 博多，2 站 5 分，¥210，信用卡感應或 IC 卡</li><li><time>10:30</time>博多マルイ 2F 寶可夢中心福岡（博多口步行 3 分），約 90 分含結帳退稅</li><li><time>12:15</time>走去運河城的路上找午餐（博多口 → はかた駅前通り → 住吉，約 12 到 16 分）；候選見下方</li><li><time>13:15</time>博多運河城：Alpen Outdoors、無印良品、噴水秀，約 1 小時 45 分</li><li><time>15:00</time>運河城 → 天神：步行 15 到 20 分（經中洲），或七隈線 櫛田神社前 → 天神南 1 站 3 分</li><li><time>15:30</time>天神地下街與周邊藥妝，約 1 小時 30 分；順路 UNIQLO 天神店、mont-bell 在地上</li><li><time>18:30</time>晚餐：博多華味鳥 天神店 水炊き（今泉，天神南步行 3 分），需訂位，約 90 分</li><li><time>20:00</time>消食走走：警固公園 → 中洲 福博であい橋看河景再走回天神，約 40 分；不想走就直接集合</li><li><time>21:00</time>天神站 搭公司接駁車回飯店（集合地點與時間以公司公布為準）</li></ol>
+    </section>
+    <section>
+      <h2 class="sec">地點與店家</h2>
+      <article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC%E3%83%95%E3%82%AF%E3%82%AA%E3%82%AB%20%E5%8D%9A%E5%A4%9A%E3%83%9E%E3%83%AB%E3%82%A4" target="_blank" rel="noopener">ポケモンセンターフクオカ（寶可夢中心福岡）</a></h3><span class="kind">採買・同伴指定</span></div>
+        <div class="addr">博多區博多駅中央街 9-1 博多マルイ 2F｜JR 博多站博多口步行 3 分、地鐵博多站西 13 出口 2 分</div>
+        <div class="hours"><b>營業</b><span>10:00 – 21:00</span><b>公休</b><span>無（2025 年 6 月從 AMU PLAZA 8F 搬到博多マルイ 2F，舊資料寫 8 樓是錯的）</span></div>
+        <p>2025 年搬家後賣場大了約三倍，福岡限定的皮卡丘周邊（博多織、明太子、九州主題）只有這裡買得到。週日人潮多，10:30 到剛好是開門後最空的時段。</p>
+        <div class="tip">退稅同店同日滿 ¥5,000 可退，帶護照；結帳與退稅櫃台週日可能排 15 到 30 分，預留在 90 分內。買完先放後背包，接下來還要走路。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E9%A7%85%20%E3%83%A9%E3%83%B3%E3%83%81" target="_blank" rel="noopener">午餐：走路找吃（博多站 → 運河城沿線）</a></h3><span class="kind">午餐・走路找</span></div>
+        <div class="addr">博多マルイ出來往西，はかた駅前通り走到住吉，再接運河城南側；全程約 1 公里</div>
+        <div class="hours"><b>營業</b><span>各店不同，多為 11:00 起</span><b>公休</b><span>週日多數營業</span><b>費用</b><span>¥1,000 – 1,800</span></div>
+        <p>沿路選擇不少，先列幾個確定週日有開的：<br>・<b>博多デイトス 2F 博多めん街道</b>（博多站內，一幸舎、だるま、Shin-Shin 等博多拉麵，離寶可夢中心 3 分）<br>・<b>KITTE 博多 B1 もつ鍋おおやま カウンター店</b>（博多站直結，一人份牛腸鍋，午餐到 16:00）<br>・<b>運河城 5F 拉麵競技場</b>（走到運河城再吃，8 家拉麵一次比）<br>・<b>川端通商店街</b>（運河城北出口接過去，烏龍麵、紅豆湯 川端ぜんざい廣場 週日 11:00 – 18:00）</p>
+        <div class="tip">12:15 正是尖峰，站內拉麵街會排；想省時間就走到運河城吃拉麵競技場，順便把下午行程接上。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E3%82%AD%E3%83%A3%E3%83%8A%E3%83%AB%E3%82%B7%E3%83%86%E3%82%A3%E5%8D%9A%E5%A4%9A" target="_blank" rel="noopener">博多運河城（キャナルシティ博多）</a></h3><span class="kind">購物・戶外機能</span></div>
+        <div class="addr">博多區住吉 1-2｜博多站步行 10 到 15 分</div>
+        <div class="hours"><b>營業</b><span>商店 10:00 – 21:00、餐廳到 23:00</span><b>公休</b><span>無</span></div>
+        <p>這次要買機能衣鞋最集中的一站：<b>Alpen Outdoors 旗艦店</b>（3F，mont-bell、Snow Peak、The North Face、各牌登山鞋都有）、<b>Sports Depo</b>（2F，運動鞋）、<b>無印良品</b>。中庭噴水秀整點與半點各一次，每場 10 分。</p>
+        <div class="tip">只有 1 小時 45 分，先去 Alpen 3F 鎖定外套與鞋，無印良品看時間。帽子、墨鏡在 Alpen 也有，看到合適就買。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A9%E7%A5%9E%E5%9C%B0%E4%B8%8B%E8%A1%97" target="_blank" rel="noopener">天神地下街與周邊藥妝</a></h3><span class="kind">購物・藥妝</span></div>
+        <div class="addr">中央區天神 2 丁目地下｜地鐵天神站、天神南站直結</div>
+        <div class="hours"><b>營業</b><span>商店 10:00 – 20:00、餐飲到 21:00</span><b>公休</b><span>無</span></div>
+        <p>天神地下街 150 多家店，藥妝、雜貨、服飾都有；地上周邊還有 ドン・キホーテ 天神本店（今泉，24 小時）、大國藥妝、松本清，是全福岡藥妝最密集的一區。<b>UNIQLO 天神店</b>（地鐵天神站 1-a 出口旁）與 <b>mont-bell 福岡天神店</b> 都在步行 3 分內。</p>
+        <div class="tip">藥妝比價不用太認真，差幾十日圓；一次在同一家湊滿 ¥5,000 退稅比較划算。晚餐店就在天神南那頭，逛完直接走過去 3 分。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E5%8D%9A%E5%A4%9A%E8%8F%AF%E5%91%B3%E9%B3%A5%20%E5%A4%A9%E7%A5%9E%E5%BA%97%20%E4%BB%8A%E6%B3%89" target="_blank" rel="noopener">博多華味鳥 天神店（水炊き）</a></h3><span class="kind">晚餐・待訂位</span></div>
+        <div class="addr">中央區今泉 1-20-2 天神 MENT ビル B1F｜西鐵福岡（天神）站步行約 5 分、地鐵天神南站 3 分</div>
+        <div class="hours"><b>營業</b><span>週日 晚餐 17:00 – 24:00（最後點餐 22:30）；午餐只有週六、日、假日 11:30 – 15:00</span><b>公休</b><span>只休年末年始</span><b>費用</b><span>水炊き套餐參考每人 ¥4,000 – 5,500（請以訂位時的菜單為準）</span></div>
+        <p>華味鳥是福岡水炊き的代表品牌，用自家養的「華味鳥」雞煮的白濁雞湯鍋，先喝湯、再吃雞、最後下雜炊。4 人正好一鍋，吃完 20:00 前後離開剛好。</p>
+        <div class="tip">電話 092-738-5583；官網 hanamidori.net 有各店線上訂位。週日晚上人多，請今晚或明早就訂 18:30 四位。訂不到的備案：<b>天神西通り店</b>（天神 2-7-9 天神 27 ビル 2F，092-724-0502，週日 17:00 – 24:00）；<b>西中洲店週日公休</b>，不要訂錯。</div>
+      </article><article class="spot">
+        <div class="top"><h3><a href="https://www.google.com/maps/search/?api=1&query=%E7%A6%8F%E5%8D%9A%E3%81%A7%E3%81%82%E3%81%84%E6%A9%8B" target="_blank" rel="noopener">消食散步：警固公園 → 中洲 福博であい橋</a></h3><span class="kind">散步・可省略</span></div>
+        <div class="addr">華味鳥出來往北 2 分是警固公園，再往東步行 12 分到中洲 那珂川邊</div>
+        <div class="hours"><b>營業</b><span>全日</span><b>公休</b><span>—</span><b>費用</b><span>免費</span></div>
+        <p>那珂川兩岸是福岡最經典的夜景，橋上看得到中洲屋台的燈與河面倒影；週日屋台部分休息，但河邊燈光照常。繞一圈回天神站約 40 分。</p>
+        <div class="tip">晚上約 12°C 有風，外套帶著。累了就在天神地下街的咖啡店坐一下等集合。</div>
+      </article>
+    </section>
+    <section>
+      <h2 class="sec">11/08（日）營業確認</h2>
+      <div class="tbl"><table>
+        <thead><tr><th>地點</th><th>週日</th><th>備註</th></tr></thead>
+        <tbody>
+          <tr><td>寶可夢中心福岡（博多マルイ 2F）</td><td class="ok">營業</td><td>10:00 – 21:00</td></tr>
+          <tr><td>博多運河城</td><td class="ok">營業</td><td>商店 10:00 – 21:00</td></tr>
+          <tr><td>天神地下街</td><td class="ok">營業</td><td>商店 10:00 – 20:00</td></tr>
+          <tr><td>博多華味鳥 天神店</td><td class="ok">營業</td><td>晚餐 17:00 – 24:00，需訂位</td></tr>
+          <tr><td>博多華味鳥 西中洲店</td><td class="bad">週日公休</td><td>不要訂到這家</td></tr>
+          <tr><td>川端ぜんざい廣場</td><td class="ok">營業</td><td>週五、六、日 11:00 – 18:00</td></tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:1rem;color:var(--ink-3);margin:8px 0 0">營業時間為 2026 年 11 月 4 日查詢，臨時休店無法預知，出發前再查一次 Google 地圖。</p>
+    </section>
+    <section>
+      <h2 class="sec">交通與付款</h2>
+      <ul class="tips">
+        <li>去程與回程都是公司接駁車，集合地點與時間請以公司公布為準；回程若錯過，天神搭西鐵巴士 302 / W1 到「福岡タワー南口」約 20 分，末班約 23:00，再晚就計程車約 ¥1,800。</li>
+        <li>地鐵天神 → 博多：空港線 2 站 5 分，¥210。福岡地鐵閘門可直接感應信用卡（Visa、Master、JCB），不用買票；也可用 Suica 等 IC 卡。</li>
+        <li>運河城 → 天神：走路 15 到 20 分最順（穿過中洲）；懶得走就七隈線「櫛田神社前」→「天神南」1 站 3 分，¥210。</li>
+        <li>免稅：同店同日滿 ¥5,000（未稅）退 10%，帶護照，4 人湊單請同一人結帳。2026/11/01 起新制，部分店改為先付含稅價、出境再退，詳見 Day 5 筆記。</li>
+      </ul>
+    </section>
+    <section>
+      <h2 class="sec">小提醒</h2>
+      <ul class="tips">
+        <li>今晚就訂華味鳥天神店 18:30 四位（官網線上或電話 092-738-5583）；訂不到改天神西通り店。</li>
+        <li>寶可夢中心買完的東西先裝後背包，之後運河城、藥妝的袋子才拿得動。</li>
+        <li>帽子、墨鏡：Alpen Outdoors（運河城 3F）與 UNIQLO 天神店都有，看到合適直接買，不要特地繞。</li>
+        <li>喝咖啡的同伴：運河城 B1 與天神地下街都有 Starbucks；想喝在地的話，天神南的 REC COFFEE 薬院站前店步行 8 分，豆子可當伴手禮。</li>
+        <li>20:00 後的散步可省略；如果大家累了，直接在天神站附近等接駁車。</li>
+      </ul>
+      <p class="rain" style="margin-top:12px">下雨備案：這天預報幾乎不下雨。真的下雨的話，寶可夢中心、運河城、天神地下街、晚餐全在室內，只有博多站到運河城那 1 公里要撐傘，可改搭七隈線 櫛田神社前 下車。</p>
+    </section>
+    <section>
+      <h2 class="sec">其他頁面</h2>
+      <div class="other"><a href="Day4_自由行方案.html">五個方案比較</a><a href="Day4_自由行_規劃討論.md">規劃討論（md）</a><a href="九州五日遊_路線圖.html">五日路線圖</a><a href="index.html">回首頁</a></div>
+    </section>
+  </main>
+</div>
+<footer>時間軸依同事提供的表格整理；營業時間、地址為 2026 年 11 月 4 日查詢（寶可夢中心官方店鋪頁、華味鳥各店資訊頁）。路線座標為概略值，導航請用 Google 地圖連結。</footer>
+</div>
+
+<!-- bigtext START -->
+<style>
+#ft-btn{position:fixed;right:14px;bottom:max(14px,env(safe-area-inset-bottom));z-index:9999;border:2px solid var(--ink,#233A52);background:var(--card,#FFFBF4);color:var(--ink,#233A52);font:700 1.125rem/1 'Noto Sans TC',sans-serif;border-radius:999px;padding:12px 16px;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;display:flex;align-items:center;gap:6px}
+#ft-btn:focus-visible{outline:3px solid #D9643A;outline-offset:2px}
+#ft-btn small{font-size:.8rem;font-weight:700;opacity:.8}
+@media print{#ft-btn{display:none}}
+@media (max-width:640px){html,body{overflow-x:hidden}.layout,.side,main{grid-template-columns:minmax(0,1fr)!important}.wrap,.layout,.side,main,section,article{min-width:0;max-width:100%}table{display:block;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}}
+</style>
+<button id="ft-btn" type="button" aria-label="切換字級"><span>Aa</span><small id="ft-lv">特大</small></button>
+<script>
+(function(){
+  var LV=[['標準','100%'],['大','112%'],['特大','125%']], KEY='kyushu-font-level';
+  var i=2; try{var s=localStorage.getItem(KEY); if(s!==null&&LV[+s]) i=+s;}catch(e){}
+  var btn=document.getElementById('ft-btn'), lab=document.getElementById('ft-lv');
+  function apply(){ document.documentElement.style.fontSize=LV[i][1]; lab.textContent=LV[i][0]; }
+  btn.addEventListener('click',function(){ i=(i+1)%LV.length; try{localStorage.setItem(KEY,String(i));}catch(e){} apply(); });
+  apply();
+})();
+</script>
+<!-- bigtext END -->
