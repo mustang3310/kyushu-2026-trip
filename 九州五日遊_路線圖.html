@@ -68,9 +68,9 @@
   .stops{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
   .stops li{display:flex;align-items:flex-start;gap:8px;font-size:1.125rem}
   .stops li .n{flex:none;width:20px;height:20px;border-radius:50%;background:var(--c);color:#fff;font-size:1rem;font-weight:700;display:inline-grid;place-items:center;font-family:"Zen Maru Gothic",sans-serif;margin-top:2px}
-  .stops li .time{flex:none;min-width:46px;font-variant-numeric:tabular-nums;font-size:1rem;font-weight:700;color:var(--ink);line-height:20px;margin-top:2px;white-space:nowrap}
+  .stops li .time{flex:none;min-width:60px;font-variant-numeric:tabular-nums;font-size:1rem;font-weight:700;color:var(--ink);line-height:1.4;margin-top:2px;white-space:nowrap}
   .stops li .time.est{font-weight:500;color:var(--ink-3)}
-  .stops li .time.est small{font-size:1rem;font-weight:400;color:var(--ink-3);margin-left:2px;vertical-align:1px}
+  .stops li .time.est small{display:block;font-size:.85rem;font-weight:400;color:var(--ink-3);margin-left:2px;vertical-align:1px}
   .stops li.extra .n{background:transparent;color:var(--ink-3);border:1px dashed var(--ink-3)}
   .stops li.extra{color:var(--ink-2)}
   .stops li .stay{color:var(--ink-3);font-size:1rem;margin-left:4px}
@@ -96,6 +96,9 @@ html{-webkit-text-size-adjust:100%}
   .mapbox{position:static!important}
   .frame{aspect-ratio:1/1!important}
   .day-head{gap:6px}
+  .bar{flex-direction:column;align-items:flex-start;gap:8px}
+  .bar .t{width:100%}
+  .open{white-space:normal}
   .stops li{font-size:1.125rem}
   a,button{min-height:32px}
 }
@@ -159,22 +162,22 @@ html{-webkit-text-size-adjust:100%}
   const S=(k,o={})=>Object.assign({},P[k],o);
 
   const days = [
-    {n:1,color:'var(--d1)',title:'抵達福岡・夜訪天神與中洲',dates:'09/30 · 10/03 · 10/14 · 11/05',
+    {n:1,color:'var(--d1)',title:'抵達福岡・夜訪天神與中洲',dates:'11/05（四）',
      // time：到達該站的時間；航班時間為官方，其餘 est:true 為依車程推估
      stops:[S('airport',{time:'20:00'}),S('tenjin',{time:'21:10',est:true}),S('nakasu',{time:'21:40',est:true}),S('monte',{stay:true,time:'22:30',est:true})],
      extra:[{time:'16:40',text:'CI116 桃園起飛（機上晚餐）',before:true}],
      meals:'早 X ／ 午 X ／ 晚 機上餐食'},
-    {n:2,color:'var(--d2)',title:'柳川・熊本・阿蘇',dates:'10/01 · 10/04 · 10/15 · 11/06',
+    {n:2,color:'var(--d2)',title:'柳川・熊本・阿蘇',dates:'11/06（五）',
      stops:[S('monte',{name:'福岡蒙特埃馬納酒店（出發）',time:'08:00',est:true}),S('yanagawa',{time:'09:30',est:true}),S('kumamoto',{time:'13:30',est:true}),S('sakura',{time:'15:00',est:true}),S('daikanbo',{time:'16:30',est:true}),S('kamenoi',{stay:true,time:'17:30',est:true})],
      meals:'早 飯店 ／ 午 柳川鰻魚飯（約 11:00）／ 晚 飯店自助餐'},
-    {n:3,color:'var(--d3)',title:'草千里・由布院',dates:'10/02 · 10/05 · 10/16 · 11/07',
+    {n:3,color:'var(--d3)',title:'草千里・由布院',dates:'11/07（六）',
      stops:[S('kamenoi',{name:'龜之井酒店阿蘇公園度假村（出發）',time:'08:30',est:true}),S('kusasenri',{time:'09:15',est:true}),S('kinrin',{time:'11:30',est:true}),S('tenso',{time:'12:00',est:true}),S('floral',{time:'13:30',est:true}),S('miffy',{time:'14:00',est:true}),S('snoopy',{time:'14:30',est:true}),S('prince',{stay:true,time:'20:00',est:true})],
      meals:'早 飯店 ／ 午 由布院日式風味餐（約 12:30）／ 晚 福岡燒肉吃到飽（約 18:30，含酒水）'},
-    {n:4,color:'var(--d4)',title:'福岡全日自由活動',dates:'10/03 · 10/06 · 10/17 · 11/08',
+    {n:4,color:'var(--d4)',title:'福岡全日自由活動',dates:'11/08（日）',
      stops:[S('prince',{stay:true,time:'全日'})],
      free:'全日自由活動。建議走訪天神商圈、博多站與運河城、櫛田神社、福岡塔與百道海濱公園，晚上可到中洲屋台街。',
      meals:'早 飯店 ／ 午、晚 敬請自理'},
-    {n:5,color:'var(--d5)',title:'太宰府・返台',dates:'10/04 · 10/07 · 10/18 · 11/09',
+    {n:5,color:'var(--d5)',title:'太宰府・返台',dates:'11/09（一）',
      stops:[S('prince',{name:'福岡王子大飯店百道濱（出發）',time:'08:30',est:true}),S('dazaifu',{time:'09:30',est:true}),S('kushida',{time:'11:30',est:true}),S('lalaport',{time:'13:00',est:true}),S('airport',{name:'免稅店（約 15:30）→ 福岡空港',time:'18:00',est:true})],
      extra:[{time:'21:00',text:'CI117 福岡起飛 → 桃園 22:30 抵達'}],
      note:'A 路線：自由活動 → 免稅店 → 福岡空港。B 路線（圖示）：太宰府天滿宮 → 櫛田神社 → LaLaport → 免稅店 → 福岡空港。時間以 B 路線標示，免稅店與機場集合時間兩路線共用。',
