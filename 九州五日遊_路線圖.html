@@ -24,19 +24,19 @@
     --line:#34424F; --shadow:0 10px 30px rgba(0,0,0,.35);
   }
   *{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;font-size:15px;line-height:1.65}
+  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Noto Sans TC",system-ui,-apple-system,"PingFang TC","Microsoft JhengHei",sans-serif;font-size:1.25rem;line-height:1.75}
   .wrap{max-width:1240px;margin:0 auto;padding:40px 28px 72px}
 
   header{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;flex-wrap:wrap;margin-bottom:24px}
-  .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+  .eyebrow{font-size:1rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
   h1{font-family:"Zen Maru Gothic","Noto Sans TC",sans-serif;font-weight:900;font-size:clamp(30px,4vw,46px);line-height:1.15;margin:4px 0 6px;text-wrap:balance}
   h1 em{font-style:normal;color:var(--d1)}
   .sub{color:var(--ink-2);margin:0;max-width:60ch}
-  .flight{display:grid;grid-template-columns:auto auto;gap:4px 18px;font-size:13px;color:var(--ink-2);background:var(--card);border:1px solid var(--line);padding:12px 16px;border-radius:14px;font-variant-numeric:tabular-nums}
+  .flight{display:grid;grid-template-columns:auto auto;gap:4px 18px;font-size:1.0625rem;color:var(--ink-2);background:var(--card);border:1px solid var(--line);padding:12px 16px;border-radius:14px;font-variant-numeric:tabular-nums}
   .flight b{color:var(--ink);font-weight:700}
 
   .tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
-  .tab{display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 10px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:13.5px;font-weight:500;cursor:pointer;font-family:inherit;transition:transform .15s}
+  .tab{display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 10px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--ink);font-size:1.125rem;font-weight:500;cursor:pointer;font-family:inherit;transition:transform .15s}
   .tab:hover{transform:translateY(-1px)}
   .tab:focus-visible{outline:2px solid var(--c);outline-offset:2px}
   .tab .dot{width:14px;height:14px;border-radius:50%;background:var(--c)}
@@ -48,9 +48,9 @@
 
   .mapbox{position:sticky;top:16px;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;box-shadow:var(--shadow)}
   .mapbox .bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 16px;border-bottom:1px solid var(--line);border-left:6px solid var(--c)}
-  .mapbox .bar .t{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:16px}
-  .mapbox .bar .t small{display:block;font-family:"Noto Sans TC",sans-serif;font-weight:400;font-size:12px;color:var(--ink-3)}
-  .open{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:500;color:var(--c);text-decoration:none;border:1px solid var(--c);padding:6px 12px;border-radius:999px;white-space:nowrap}
+  .mapbox .bar .t{font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.125rem}
+  .mapbox .bar .t small{display:block;font-family:"Noto Sans TC",sans-serif;font-weight:400;font-size:1rem;color:var(--ink-3)}
+  .open{display:inline-flex;align-items:center;gap:6px;font-size:1.0625rem;font-weight:500;color:var(--c);text-decoration:none;border:1px solid var(--c);padding:6px 12px;border-radius:999px;white-space:nowrap}
   .open:hover{background:var(--c);color:#fff}
   .frame{position:relative;aspect-ratio:4/3.3;background:var(--paper-2)}
   .frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
@@ -62,26 +62,26 @@
   .day.faded{opacity:.5}
   .day:focus-visible{outline:2px solid var(--c);outline-offset:2px}
   .day-head{display:grid;grid-template-columns:auto 1fr;grid-template-areas:"num title" "num date";column-gap:10px;row-gap:2px;align-items:baseline;margin-bottom:8px}
-  .day-num{grid-area:num;font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:24px;color:var(--c);line-height:1}
-  .day-title{grid-area:title;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:16px}
-  .day-date{grid-area:date;font-size:12px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+  .day-num{grid-area:num;font-family:"Zen Maru Gothic",sans-serif;font-weight:900;font-size:1.5rem;color:var(--c);line-height:1}
+  .day-title{grid-area:title;font-family:"Zen Maru Gothic",sans-serif;font-weight:700;font-size:1.125rem}
+  .day-date{grid-area:date;font-size:1rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
   .stops{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:5px}
-  .stops li{display:flex;align-items:flex-start;gap:8px;font-size:13.5px}
-  .stops li .n{flex:none;width:20px;height:20px;border-radius:50%;background:var(--c);color:#fff;font-size:11px;font-weight:700;display:inline-grid;place-items:center;font-family:"Zen Maru Gothic",sans-serif;margin-top:2px}
-  .stops li .time{flex:none;min-width:46px;font-variant-numeric:tabular-nums;font-size:12.5px;font-weight:700;color:var(--ink);line-height:20px;margin-top:2px;white-space:nowrap}
+  .stops li{display:flex;align-items:flex-start;gap:8px;font-size:1.125rem}
+  .stops li .n{flex:none;width:20px;height:20px;border-radius:50%;background:var(--c);color:#fff;font-size:1rem;font-weight:700;display:inline-grid;place-items:center;font-family:"Zen Maru Gothic",sans-serif;margin-top:2px}
+  .stops li .time{flex:none;min-width:46px;font-variant-numeric:tabular-nums;font-size:1rem;font-weight:700;color:var(--ink);line-height:20px;margin-top:2px;white-space:nowrap}
   .stops li .time.est{font-weight:500;color:var(--ink-3)}
-  .stops li .time.est small{font-size:9.5px;font-weight:400;color:var(--ink-3);margin-left:2px;vertical-align:1px}
+  .stops li .time.est small{font-size:1rem;font-weight:400;color:var(--ink-3);margin-left:2px;vertical-align:1px}
   .stops li.extra .n{background:transparent;color:var(--ink-3);border:1px dashed var(--ink-3)}
   .stops li.extra{color:var(--ink-2)}
-  .stops li .stay{color:var(--ink-3);font-size:12px;margin-left:4px}
+  .stops li .stay{color:var(--ink-3);font-size:1rem;margin-left:4px}
   .stops li a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--ink-3)}
   .stops li a:hover{color:var(--c);border-color:var(--c)}
-  .free{font-size:13.5px;color:var(--ink-2)}
-  .meta{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:12.5px;color:var(--ink-2)}
+  .free{font-size:1.125rem;color:var(--ink-2)}
+  .meta{display:grid;grid-template-columns:auto 1fr;gap:3px 10px;margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--line);font-size:1rem;color:var(--ink-2)}
   .meta dt{color:var(--ink-3);font-weight:500}
   .meta dd{margin:0}
 
-  .note{margin-top:32px;padding:16px 20px;border-radius:14px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink-2);font-size:13.5px;max-width:76ch}
+  .note{margin-top:32px;padding:16px 20px;border-radius:14px;background:var(--paper-2);border:1px solid var(--line);color:var(--ink-2);font-size:1.125rem;max-width:76ch}
   .note b{color:var(--ink)}
   @media (prefers-reduced-motion:reduce){*{transition:none!important}}
 
@@ -89,14 +89,14 @@
 html{-webkit-text-size-adjust:100%}
 @media (max-width:640px){
   .wrap,body>div{padding-left:12px;padding-right:12px}
-  h1{font-size:22px}
+  h1{font-size:1.375rem}
   .tabs{overflow-x:auto;-webkit-overflow-scrolling:touch;flex-wrap:nowrap}
   .tabs [role=tab],.tabs button{flex:0 0 auto;min-height:40px}
   .layout{grid-template-columns:1fr!important}
   .mapbox{position:static!important}
   .frame{aspect-ratio:1/1!important}
   .day-head{gap:6px}
-  .stops li{font-size:13.5px}
+  .stops li{font-size:1.125rem}
   a,button{min-height:32px}
 }
 </style>
@@ -215,7 +215,7 @@ html{-webkit-text-size-adjust:100%}
     c.innerHTML=`<div class="day-head"><span class="day-num">D${d.n}</span><span class="day-title">${d.title}</span><span class="day-date">${d.dates}</span></div>
       <ul class="stops">${stops}</ul>
       ${d.free?`<p class="free" style="margin:8px 0 0">${d.free}</p>`:''}
-      ${d.note?`<p class="free" style="margin:8px 0 0;font-size:12.5px">${d.note}</p>`:''}
+      ${d.note?`<p class="free" style="margin:8px 0 0;font-size:1rem">${d.note}</p>`:''}
       <dl class="meta"><dt>餐食</dt><dd>${d.meals}</dd></dl>`;
     c.addEventListener('click',e=>{ if(e.target.closest('a')) return; show(d.n); });
     c.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();show(d.n);}});
@@ -239,3 +239,24 @@ html{-webkit-text-size-adjust:100%}
   show(1);
 })();
 </script>
+
+<!-- bigtext START -->
+<style>
+#ft-btn{position:fixed;right:14px;bottom:max(14px,env(safe-area-inset-bottom));z-index:9999;border:2px solid var(--ink,#233A52);background:var(--card,#FFFBF4);color:var(--ink,#233A52);font:700 1.125rem/1 'Noto Sans TC',sans-serif;border-radius:999px;padding:12px 16px;box-shadow:0 4px 14px rgba(0,0,0,.18);cursor:pointer;display:flex;align-items:center;gap:6px}
+#ft-btn:focus-visible{outline:3px solid #D9643A;outline-offset:2px}
+#ft-btn small{font-size:.8rem;font-weight:700;opacity:.8}
+@media print{#ft-btn{display:none}}
+@media (max-width:640px){html,body{overflow-x:hidden}.layout,.side,main{grid-template-columns:minmax(0,1fr)!important}.wrap,.layout,.side,main,section,article{min-width:0;max-width:100%}table{display:block;overflow-x:auto;max-width:100%;-webkit-overflow-scrolling:touch}}
+</style>
+<button id="ft-btn" type="button" aria-label="切換字級"><span>Aa</span><small id="ft-lv">標準</small></button>
+<script>
+(function(){
+  var LV=[['標準','100%'],['大','112%'],['特大','125%']], KEY='kyushu-font-level';
+  var i=0; try{var s=localStorage.getItem(KEY); if(s!==null&&LV[+s]) i=+s;}catch(e){}
+  var btn=document.getElementById('ft-btn'), lab=document.getElementById('ft-lv');
+  function apply(){ document.documentElement.style.fontSize=LV[i][1]; lab.textContent=LV[i][0]; }
+  btn.addEventListener('click',function(){ i=(i+1)%LV.length; try{localStorage.setItem(KEY,String(i));}catch(e){} apply(); });
+  apply();
+})();
+</script>
+<!-- bigtext END -->
