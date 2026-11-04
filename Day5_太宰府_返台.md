@@ -8,14 +8,13 @@
 
 | 項目 | 內容 |
 |------|------|
-| 預報（10/26 查詢） | 晴時多雲，最高 18°C / 最低 12°C，降雨機率 10% |
+| 預報（11/04 查詢） | 多雲後晴，最高 18°C / 最低 12°C，降雨機率 30–40%（無預估雨量）；太宰府 17°C / 10°C |
 | 11 月上旬平年 | 最高約 21°C，最低約 12°C |
 | 太宰府季節 | 第 73 回秋芳會菊花展 11/01–11/25（免費）；紅葉見頃為 11 月中旬到 12 月上旬，當天僅開始轉色 |
 
-**穿著建議**：早上出門約 12°C，長袖加外套；太宰府參道以步行為主。桃園 22:30 抵達，台灣 11 月初夜間約 22°C，回程不需厚外套。
+**穿著建議**：早上出門約 12°C，長袖加外套；雲多但下雨機會不高，摺疊傘放包裡即可。桃園 22:30 抵達，台灣 11 月初夜間約 22°C，回程不需厚外套。
 
-> 預報來源：ウェザーニュース 2 週間天氣（2026-10-26 查詢，距出發約 10 天，僅供參考，出發前 3 天請再確認）；平年值來源：気象庁平年值與福岡 11 月氣候整理。連結：https://weathernews.jp/onebox/tenki/fukuoka/40130/week.html 、https://weathernews.jp/onebox/tenki/kumamoto/43214/week.html 、https://weathernews.jp/onebox/tenki/oita/44213/week.html 、https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=86&block_no=47819 、http://weather.time-j.net/climate/chart/asosan 、https://www.smartmagazine.jp/howto/article/item/33721/
-
+> 預報來源：気象庁／tenki.jp 2 週間天氣（2026-11-04 16:00 發表）與 Open-Meteo（JMA 模式，2026-11-04 查詢）；平年值來源：気象庁平年值。連結：https://tenki.jp/forecast/9/43/8210/40130/10days.html 、https://open-meteo.com/ 、https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=86&block_no=47819
 ## 航班
 
 | 航空公司 | 航班 | 起飛 | 抵達 |

@@ -8,13 +8,13 @@
 
 | 項目 | 內容 |
 |------|------|
-| 預報（10/26 查詢） | 多雲，最高 19°C / 最低 12°C，降雨機率 30% |
-| 11 月上旬平年 | 最高約 21°C，最低約 12°C，晴天出現率約 65% |
+| 預報（11/04 查詢） | 晴後多雲，最高 18°C / 最低 9°C，降雨機率 30%（無預估雨量），風弱 |
+| 時段體感 | 07:00 約 10°C、中午 15°C、18:00 約 13°C、21:00 約 12°C |
+| 11 月上旬平年 | 最高約 21°C，最低約 12°C |
 
-**穿著建議**：長袖加薄外套，白天走天神、博多舒適；傍晚福岡塔、百道海濱風大請加外套。雨天備案：天神地下街、博多運河城、LaLaport 皆在室內。
+**穿著建議**：早晚涼、中午舒適，長袖加一件可脫的外套。全天幾乎不會下雨，適合戶外行程；傍晚海邊仍建議外套。雨天備案（天神地下街、博多運河城、LaLaport）這天大概用不上。
 
-> 預報來源：ウェザーニュース 2 週間天氣（2026-10-26 查詢，距出發約 10 天，僅供參考，出發前 3 天請再確認）；平年值來源：気象庁平年值與福岡 11 月氣候整理。連結：https://weathernews.jp/onebox/tenki/fukuoka/40130/week.html 、https://weathernews.jp/onebox/tenki/kumamoto/43214/week.html 、https://weathernews.jp/onebox/tenki/oita/44213/week.html 、https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=86&block_no=47819 、http://weather.time-j.net/climate/chart/asosan 、https://www.smartmagazine.jp/howto/article/item/33721/
-
+> 預報來源：気象庁／tenki.jp 2 週間天氣（2026-11-04 16:00 發表）與 Open-Meteo（JMA 模式，2026-11-04 查詢）；平年值來源：気象庁平年值。連結：https://tenki.jp/forecast/9/43/8210/40130/10days.html 、https://open-meteo.com/ 、https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=86&block_no=47819
 ## 行程
 
 今日為全日自由活動，貴賓們可自行前往探索福岡景點，在有「日本地中海」美名、五個世紀悠久魅力四射的九州進行一日城市探索。

@@ -8,14 +8,13 @@
 
 | 項目 | 內容 |
 |------|------|
-| 預報（10/26 查詢） | 多雲偶雨，最高 21°C / 最低 14°C，降雨機率 30% |
-| 11 月上旬平年 | 福岡平均 16.6°C，最高約 21°C，最低約 12°C，晴天出現率約 65% |
-| 夜間體感 | 20:00 落地後約 15°C 上下，河邊有風會更涼 |
+| 預報（11/04 查詢） | **雨**，最高 21°C / 最低 16°C，降雨機率 100%，雨量約 17 mm；中午到下午雨最大，傍晚轉小雨，入夜後漸停 |
+| 落地時段 | 20:00 落地時福岡約 20°C，仍有零星小雨（機率 90%），21:00 後降到 75%，22:00 起大致停雨；風偏強（最大約 27 km/h） |
+| 11 月上旬平年 | 福岡平均 16.6°C，最高約 21°C，最低約 12°C |
 
-**穿著建議**：長袖加一件薄外套或薄針織，夜訪中洲屋台請帶外套；摺疊傘放隨身包。
+**穿著建議**：氣溫偏暖，長袖加薄外套即可，重點是**摺疊傘與不怕濕的鞋**。中洲屋台是露天座位，下雨天部分攤位會休或縮短營業，當晚建議以方案 B（一蘭、唐吉訶德，皆在室內）或方案 C（飯店周邊、超商）為主；若 22:00 後雨停，再散步到河邊看看屋台也可以。
 
-> 預報來源：ウェザーニュース 2 週間天氣（2026-10-26 查詢，距出發約 10 天，僅供參考，出發前 3 天請再確認）；平年值來源：気象庁平年值與福岡 11 月氣候整理。連結：https://weathernews.jp/onebox/tenki/fukuoka/40130/week.html 、https://weathernews.jp/onebox/tenki/kumamoto/43214/week.html 、https://weathernews.jp/onebox/tenki/oita/44213/week.html 、https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=86&block_no=47819 、http://weather.time-j.net/climate/chart/asosan 、https://www.smartmagazine.jp/howto/article/item/33721/
-
+> 預報來源：気象庁／tenki.jp 2 週間天氣（2026-11-04 16:00 發表）與 Open-Meteo（JMA 模式，2026-11-04 查詢）；平年值來源：気象庁平年值。連結：https://tenki.jp/forecast/9/43/8210/40130/10days.html 、https://open-meteo.com/ 、https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=86&block_no=47819
 ## 航班
 
 | 航空公司 | 航班 | 起飛 | 抵達 |
