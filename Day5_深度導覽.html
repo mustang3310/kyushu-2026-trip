@@ -578,8 +578,13 @@ html{-webkit-text-size-adjust:100%}
 .fukchk .rs{font:700 .95rem var(--body,'Noto Sans TC',sans-serif);background:none;border:1.5px solid var(--line);color:var(--ink-2);border-radius:999px;padding:4px 12px;cursor:pointer;margin-top:10px}
 </style>
 <div class="fukchk" id="fukchk">
-  <h3>✈ 機場採買清單 <small>全部在安檢後 3F 免稅區買，勾選會記在手機</small></h3>
-  <p class="rule"><b>先退稅再託運</b>：3F 出發大廳辦 11/08 的退稅，預留 30 分。<b>膏狀食品只能安檢後買</b>：管裝明太子、抹醬超過 100 mL，安檢前買就得托運。結帳出示護照與登機證。</p>
+  <h3>✈ Day 5 採買清單 <small>太宰府一項、機場安檢後三項，勾選會記在手機</small></h3>
+  <p class="rule"><b>先退稅再託運</b>：3F 出發大廳辦 11/08 的退稅，預留 30 分。<b>膏狀食品只能安檢後買</b>：管裝明太子、抹醬超過 100 mL，安檢前買就得托運。結帳出示護照與登機證。<b>位置（網友 2026/05 實測）</b>：お土産小町在 55–56 登機口、明太子在結帳處後方；北免稅店在 50B／51A；THE MATCHA TOKYO 在 51A。</p>
+
+  <h4>太宰府參道（09:30–11:00，機場沒有）</h4>
+  <div class="items">
+    <label><input type="checkbox" data-k="kaya"><span class="n">茅乃舎 太宰府天満宮参道店：飛魚高湯包</span><span class="d">宰府 2-7-22，09:00–18:00。太宰府限定梅系列：だし茶漬け 梅、かけぽん酢 梅、だし梅干し。很輕，背一整天沒問題</span><span class="p">30 包約 <b>¥2,000</b>・機場國際線無此品牌</span></label>
+  </div>
 
   <h4>化妝品・香水區（資生堂櫃）</h4>
   <div class="items">
@@ -587,19 +592,22 @@ html{-webkit-text-size-adjust:100%}
     <label><input type="checkbox" data-k="cpbuv"><span class="n">加購：CPB クレームUV デュオ 日本限定</span><span class="d">免稅店限定組，台灣沒有</span><span class="p"><b>¥22,000</b></span></label>
   </div>
 
-  <h4>北免稅店（50B／51A 登機門旁）或 お土産小町</h4>
+  <h4>お土産小町（55–56 登機口，結帳處後方明太子區）</h4>
   <div class="items">
     <label><input type="checkbox" data-k="tube"><span class="n">やまや めんたいチューブ ×1（管裝明太子）</span><span class="d">100 g，冷藏 30 天，常溫可帶 12 小時。沒貨改買 ふくや tubu tube</span><span class="p">參考 <b>¥756</b></span></label>
     <label><input type="checkbox" data-k="toast"><span class="n">やまや 塗って焼いたら明太トースト ×2（明太子麵包抹醬）</span><span class="d">130 g 一盒，和管裝放同區，一次拿齊</span><span class="p">參考 <b>¥378</b>／盒，機場略高</span></label>
+    <label><input type="checkbox" data-k="france"><span class="n">加購：やまや 明太フランス 冷凍（明太子法國麵包）</span><span class="d">同區冷凍櫃。結帳會免費附保冷劑與保冷袋，可手提上機；到家進冷凍，烤箱回烤</span><span class="p">參考 <b>¥700–900</b></span></label>
+    <label><input type="checkbox" data-k="matcha"><span class="n">順路：THE MATCHA TOKYO 抹茶拿鐵（51A 登機口）</span><span class="d">網友推微甜濃郁。給喝咖啡的同伴換口味，登機前買</span><span class="p">約 <b>¥700–900</b></span></label>
   </div>
 
   <h4>順序</h4>
   <ol>
+    <li><b>09:30</b> 太宰府參道 茅乃舎 買高湯包</li>
     <li><b>18:00</b> 下車 → 3F 出發大廳退稅 → 團體報到、託運</li>
     <li><b>18:50</b> 安檢、出境</li>
     <li><b>19:20</b> 化妝品區 CPB 櫃（要試用，先買）</li>
-    <li><b>19:40</b> 北免稅店／お土産小町：管裝 1、抹醬 2</li>
-    <li><b>20:00</b> HAKATA FOOD HALL 吃點東西 → <b>20:30</b> 登機門集合</li>
+    <li><b>19:40</b> 55–56 登機口 お土産小町：管裝 1、抹醬 2、明太フランス 看情況</li>
+    <li><b>20:00</b> HAKATA FOOD HALL 吃點東西、51A THE MATCHA TOKYO → <b>20:30</b> 登機門集合</li>
   </ol>
   <button class="rs" type="button" id="fukchk-reset">清除勾選</button>
 </div>
@@ -614,6 +622,7 @@ html{-webkit-text-size-adjust:100%}
 })();
 </script>
 <!-- fukchk END -->
+
 
   <p class="teaser">福岡空港是全日本最靠近市中心的機場，從博多站搭地鐵只要兩站。國際線航廈在跑道另一側，與國內線之間靠免費接駁巴士（約 10–15 分）連接——所以網路上大家推薦的「拉麵滑走路」「SWEETS HALL」「ANA FESTA」「ふくや」全部在國內線航廈，我們搭 CI117 走國際線，到了之後是過不去的，請直接放棄。</p>
   <details class="fold"><summary><span class="ft">景點故事</span><span class="fm">還有 4 段・看點 5 項</span></summary><div class="fb"><div class="intro"><p>好消息是國際線在 2025–2026 年脫胎換骨。2025 年 3 月 28 日，出境安檢後的 3 樓開了「HAKATA FOOD HALL」：約 300 席、8 家店，概念是「把福岡與九州的食文化搬進候機室」——幸ちゃんラーメン（博多一幸舎創辦人監製的泡系豚骨）、釜喜利うどん、博多ぐるぐるとりかわ＆うなぎ竹乃屋、博多長浜海鮮丼 うみの食堂、天ぷら×焼餃子 屋台まるに、元祖もつ鍋 楽天地、和心とんかつ あんず、Reilly 漢堡。全店 7:00–20:30（最後點餐），我們 21:00 起飛，時間剛好夠。</p><p>2025 年 12 月 5 日，同一區又新開 13 家店：Air BicCamera（家電、遊戲、手錶，營業到末班機）、BUTTER&amp;bee 奶油甜點、擴充後的福岡空港免税店（約 130 個品牌，含香妝、酒、菸、博多通りもん等九州銘菓），讓出境後的採買從「將就」變成「可以認真逛」。</p><p>安檢前的 3 樓出發大廳則有 JAL PLAZA 國際出發ロビー店（6:30–20:30，銘菓、明太子加工品、博多通りもん）與 ROYAL キャフェテリア MIYABI 自助餐廳；1 樓有 Lawson（6:30–21:30）。想買需要冷藏的生明太子（ふくや、やまや）要在這裡或免稅店解決——台灣海關允許個人攜帶真空包裝的明太子，但請放托運或手提都要保冷。</p><p>¥2,000 晚餐代金的最佳用法：出境後直奔 HAKATA FOOD HALL，一碗幸ちゃん豚骨拉麵 ¥990 加餃子 ¥450，或釜喜利的博多烏龍麵配飯糰，剩下的買 BUTTER&amp;bee 一盒上機當點心；機上還有一餐，不必硬吃到飽。</p></div><ul class="hl"><li><b>HAKATA FOOD HALL（安檢後 3F）</b><span>8 家九州名店、300 席，7:00–20:30 L.O.</span></li><li><b>福岡空港免税店（安檢後 3F）</b><span>130 品牌，博多通りもん、めんべい、酒、化妝品</span></li><li><b>Air BicCamera／BUTTER&amp;bee</b><span>2025/12 新開，電器與奶油甜點，營業到末班機</span></li><li><b>JAL PLAZA 國際出發ロビー店（安檢前 3F）</b><span>6:30–20:30，銘菓與明太子</span></li><li><b>接駁巴士</b><span>國內線的拉麵滑走路與 ANA FESTA 這次到不了</span></li></ul></div></details>
